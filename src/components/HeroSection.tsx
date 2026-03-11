@@ -33,7 +33,7 @@ const models = [
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
   const [selectedRes, setSelectedRes] = useState("480p");
-  const [selectedRatio, setSelectedRatio] = useState("Auto");
+  const [selectedRatio, setSelectedRatio] = useState("16:9");
   const [selectedDuration, setSelectedDuration] = useState("5s");
   const [selectedModel, setSelectedModel] = useState(models[0]);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
