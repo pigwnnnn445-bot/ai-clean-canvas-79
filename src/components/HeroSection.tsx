@@ -77,7 +77,7 @@ const HeroSection = () => {
                   <Sparkles className="w-3.5 h-3.5" />
                   AI Model
                 </label>
-                <div className="flex items-center justify-between p-3 rounded-lg border border-border bg-background cursor-pointer hover:bg-hover-bg transition-colors">
+                <div className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
                       <span className="text-primary-foreground text-xs font-bold">S2</span>
