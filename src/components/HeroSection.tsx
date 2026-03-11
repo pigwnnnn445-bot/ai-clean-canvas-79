@@ -352,6 +352,13 @@ const HeroSection = () => {
                 <Sparkles className="w-4 h-4" />
                 生成
               </button>
+
+              {/* Credits Info */}
+              <div className="flex items-center justify-center gap-3 text-xs text-body-muted mt-2">
+                <span>Cost <span className="font-semibold text-foreground">{selectedRes === "1080p" ? 20 : 10}{selectedDuration === "10s" ? " × 2" : ""}</span> credits</span>
+                <span className="text-border">|</span>
+                <span>Available <span className="font-semibold text-foreground">0</span></span>
+              </div>
             </div>
 
             {/* Right: Video Preview */}
