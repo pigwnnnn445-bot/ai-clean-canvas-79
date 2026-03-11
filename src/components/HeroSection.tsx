@@ -7,7 +7,6 @@ import modelIcon20 from "@/assets/model-seedance-2.0.png";
 
 const resolutions = ["480p", "720p", "1080p"];
 const aspectRatios = [
-  { label: "Auto", icon: "⚙" },
   { label: "16:9", icon: "▬" },
   { label: "9:16", icon: "▮" },
   { label: "4:3", icon: "▬" },
