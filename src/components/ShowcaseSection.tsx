@@ -103,39 +103,20 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute -top-12 right-0 w-9 h-9 rounded-full bg-card flex items-center justify-center text-foreground hover:bg-hover-bg transition-colors cursor-pointer z-10"
+          className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-foreground/80 hover:bg-foreground flex items-center justify-center text-background transition-colors cursor-pointer z-10"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4" />
         </button>
 
-        <div className="rounded-2xl overflow-hidden bg-card shadow-lg">
-          <div className="relative cursor-pointer" onClick={togglePlay}>
-            <video
-              ref={videoRef}
-              src={item.video}
-              loop
-              playsInline
-              className="w-full h-auto"
-            />
-            {/* Play/Pause overlay */}
-            <div
-              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-                playing ? "opacity-0 hover:opacity-100" : "opacity-100"
-              }`}
-            >
-              <div className="w-16 h-16 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center">
-                {playing ? (
-                  <Pause className="w-7 h-7 text-foreground fill-foreground" />
-                ) : (
-                  <Play className="w-7 h-7 text-foreground fill-foreground ml-1" />
-                )}
-              </div>
-            </div>
-          </div>
-          {/* Prompt text */}
-          <div className="p-4">
-            <p className="text-sm text-body-secondary">{item.prompt}</p>
-          </div>
+        <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
+          <video
+            ref={videoRef}
+            src={item.video}
+            loop
+            controls
+            playsInline
+            className="w-full h-auto block"
+          />
         </div>
       </motion.div>
     </motion.div>
