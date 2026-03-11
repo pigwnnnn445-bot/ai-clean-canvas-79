@@ -10,21 +10,19 @@ const FooterCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-            Ready to Create?
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold">Ready to Create?</h2>
+          <p className="mt-4 text-body-secondary max-w-xl mx-auto">
             Join thousands of creators using Seedance 2.0 to bring their visions to life.
             Reference anything, edit anything, create anything.
           </p>
           <div className="mt-8">
-            <Button variant="hero" size="xl">Start Creating Now</Button>
+            <Button variant="gradient" size="xl">Start Creating Now</Button>
           </div>
-          <div className="mt-8 flex items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm text-body-muted">
             <span>Multi-modal input</span>
-            <span className="w-1 h-1 rounded-full bg-border" />
+            <span className="w-1 h-1 rounded-full bg-border hidden md:block" />
             <span>Watermark-free</span>
-            <span className="w-1 h-1 rounded-full bg-border" />
+            <span className="w-1 h-1 rounded-full bg-border hidden md:block" />
             <span>Reference any content</span>
           </div>
         </motion.div>
@@ -39,10 +37,10 @@ const SiteFooter = () => {
       <FooterCTA />
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-heading text-sm font-bold text-foreground">
-            Seedance <span className="text-primary">2.0</span>
+          <p className="text-sm font-bold text-foreground">
+            Seedance <span className="text-gradient-brand">2.0</span>
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-body-muted">
             © {new Date().getFullYear()} Seedance. All rights reserved.
           </p>
         </div>

@@ -14,8 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Space Grotesk', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        sans: ['Inter', '-apple-system', 'system-ui', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,7 +49,17 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          secondary: "hsl(var(--card-secondary))",
         },
+        brand: {
+          teal: "#6FD6B4",
+          purple: "#5252E5",
+        },
+        title: "hsl(var(--title-color))",
+        "body-secondary": "hsl(var(--body-secondary))",
+        "body-muted": "hsl(var(--body-muted))",
+        "hover-bg": "hsl(var(--hover-bg))",
+        "menu-selected": "hsl(var(--menu-selected))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

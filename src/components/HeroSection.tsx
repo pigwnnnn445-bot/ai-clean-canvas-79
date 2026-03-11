@@ -23,12 +23,12 @@ const HeroSection = () => {
     <section className="pt-24 pb-16">
       {/* Title */}
       <div className="container text-center mb-10">
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight">
-          Seedance 2.0
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+          Seedance <span className="text-gradient-brand">2.0</span>
         </h1>
-        <p className="mt-4 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-4 text-body-secondary max-w-3xl mx-auto leading-relaxed">
           Experience{" "}
-          <span className="text-primary">true multi-modal AI video creation</span>.
+          <span className="text-gradient-brand font-semibold">true multi-modal AI video creation</span>.
           Combine images, videos, audio, and text to generate cinematic content with
           precise reference capabilities, seamless video extension, and natural language control.
         </p>
@@ -40,7 +40,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-xl border border-border bg-card p-4 md:p-6"
+          className="rounded-xl border border-border bg-card shadow-soft p-4 md:p-6"
         >
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Left: Tool Panel */}
@@ -49,10 +49,10 @@ const HeroSection = () => {
               <div className="flex rounded-lg border border-border overflow-hidden">
                 <button
                   onClick={() => setActiveTab("image")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors cursor-pointer ${
                     activeTab === "image"
-                      ? "bg-secondary text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "bg-menu-selected text-foreground"
+                      : "text-body-secondary hover:bg-hover-bg"
                   }`}
                 >
                   <Image className="w-4 h-4" />
@@ -60,10 +60,10 @@ const HeroSection = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab("text")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors cursor-pointer ${
                     activeTab === "text"
-                      ? "bg-secondary text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "bg-menu-selected text-foreground"
+                      : "text-body-secondary hover:bg-hover-bg"
                   }`}
                 >
                   <Type className="w-4 h-4" />
@@ -73,24 +73,24 @@ const HeroSection = () => {
 
               {/* AI Model */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   AI Model
                 </label>
-                <div className="flex items-center justify-between p-3 rounded-lg border border-border bg-background cursor-pointer hover:border-primary/40 transition-colors">
+                <div className="flex items-center justify-between p-3 rounded-lg border border-border bg-background cursor-pointer hover:bg-hover-bg transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                      <span className="text-primary text-xs font-bold">S2</span>
+                    <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
+                      <span className="text-primary-foreground text-xs font-bold">S2</span>
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-semibold text-foreground">Seedance 1.5 Pro</span>
-                        <span className="px-1.5 py-0.5 text-[10px] rounded bg-primary/20 text-primary font-medium">With Audio</span>
+                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-primary/10 text-primary font-medium">With Audio</span>
                       </div>
-                      <p className="text-xs text-muted-foreground">Joint audio-video with multilingual lip-sync</p>
+                      <p className="text-xs text-body-muted">Joint audio-video with multilingual lip-sync</p>
                     </div>
                   </div>
-                  <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                  <ChevronDown className="w-4 h-4 text-body-muted" />
                 </div>
               </div>
 
@@ -98,24 +98,24 @@ const HeroSection = () => {
               {activeTab === "image" && (
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <label className="flex items-center gap-1.5 text-xs text-body-muted">
                       <Image className="w-3.5 h-3.5" />
                       Images
                     </label>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2 text-xs text-body-muted">
                       <span>Add end frame</span>
                       <div className="w-8 h-4 rounded-full bg-border relative cursor-pointer">
-                        <div className="w-3 h-3 rounded-full bg-muted-foreground absolute left-0.5 top-0.5" />
+                        <div className="w-3 h-3 rounded-full bg-body-muted absolute left-0.5 top-0.5" />
                       </div>
                       <span>0/1</span>
                     </div>
                   </div>
-                  <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/40 transition-colors">
+                  <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
                     <Upload className="w-6 h-6 text-primary" />
                     <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
-                    <p className="text-xs text-muted-foreground">PNG, JPG, JPEG, WEBP</p>
+                    <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-2">
+                  <p className="text-xs text-body-muted mt-2">
                     Don't have an image?{" "}
                     <span className="text-primary cursor-pointer hover:underline">✦ Generate images with AI</span>
                   </p>
@@ -124,33 +124,31 @@ const HeroSection = () => {
 
               {/* Prompt */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Type className="w-3.5 h-3.5" />
                   Prompt
                 </label>
                 <div className="relative">
                   <textarea
                     placeholder="Describe how you want your image to animate..."
-                    className="w-full h-28 p-3 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:border-primary/40 transition-colors"
+                    className="w-full h-28 p-3 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-body-muted resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                   />
-                  <span className="absolute bottom-2 right-3 text-xs text-muted-foreground">0/5000</span>
+                  <span className="absolute bottom-2 right-3 text-xs text-body-muted">0/5000</span>
                 </div>
               </div>
 
               {/* Resolution */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
-                  Resolution
-                </label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Resolution</label>
                 <div className="flex gap-2">
                   {resolutions.map((r) => (
                     <button
                       key={r}
                       onClick={() => setSelectedRes(r)}
-                      className={`px-4 py-1.5 text-sm rounded-lg border transition-colors ${
+                      className={`px-4 py-1.5 text-sm rounded-lg border transition-colors cursor-pointer ${
                         selectedRes === r
                           ? "border-primary bg-primary/10 text-primary"
-                          : "border-border text-muted-foreground hover:border-primary/30"
+                          : "border-border text-body-secondary hover:bg-hover-bg"
                       }`}
                     >
                       {r}
@@ -161,32 +159,28 @@ const HeroSection = () => {
 
               {/* Duration */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
-                  Duration
-                </label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Duration</label>
                 <div className="flex items-center gap-3">
                   <div className="flex-1 relative h-2 bg-border rounded-full">
-                    <div className="absolute left-0 top-0 h-full w-1/4 bg-primary rounded-full" />
+                    <div className="absolute left-0 top-0 h-full w-1/4 bg-gradient-brand rounded-full" />
                     <div className="absolute left-[25%] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background cursor-pointer" />
                   </div>
-                  <span className="text-sm text-muted-foreground w-6 text-right">5s</span>
+                  <span className="text-sm text-body-secondary w-6 text-right">5s</span>
                 </div>
               </div>
 
               {/* Aspect Ratio */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
-                  Aspect Ratio
-                </label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Aspect Ratio</label>
                 <div className="flex flex-wrap gap-2">
                   {aspectRatios.map((ar) => (
                     <button
                       key={ar.label}
                       onClick={() => setSelectedRatio(ar.label)}
-                      className={`flex flex-col items-center justify-center w-14 h-14 rounded-lg border text-xs transition-colors ${
+                      className={`flex flex-col items-center justify-center w-14 h-14 rounded-lg border text-xs transition-colors cursor-pointer ${
                         selectedRatio === ar.label
                           ? "border-primary bg-primary/10 text-primary"
-                          : "border-border text-muted-foreground hover:border-primary/30"
+                          : "border-border text-body-secondary hover:bg-hover-bg"
                       }`}
                     >
                       <span className="text-base">{ar.icon}</span>
@@ -197,7 +191,7 @@ const HeroSection = () => {
               </div>
 
               {/* Generate Button */}
-              <button className="w-full py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 shadow-[var(--shadow-amber)] hover:shadow-[var(--shadow-amber-strong)] transition-all hover:scale-[1.02] active:scale-100">
+              <button className="w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-100 transition-all cursor-pointer">
                 <Sparkles className="w-4 h-4" />
                 Generate
               </button>
@@ -205,7 +199,7 @@ const HeroSection = () => {
 
             {/* Right: Video Preview */}
             <div className="flex-1 flex flex-col items-center justify-center">
-              <div className="relative w-full rounded-lg overflow-hidden bg-background border border-border">
+              <div className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft">
                 <div className="aspect-video relative">
                   <img
                     src={heroStill}
@@ -213,25 +207,23 @@ const HeroSection = () => {
                     className="w-full h-full object-cover"
                     loading="eager"
                   />
-                  {/* Video controls overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <Play className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors" />
-                        <span className="text-xs text-muted-foreground">0:00 / 0:13</span>
+                        <span className="text-xs text-body-secondary">0:00 / 0:13</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <Volume2 className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
-                        <Maximize2 className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
-                        <MoreVertical className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
+                        <Volume2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
+                        <Maximize2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
+                        <MoreVertical className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              {/* Dots indicator */}
               <div className="flex items-center gap-2 mt-4">
-                <div className="w-6 h-2 rounded-full bg-primary" />
+                <div className="w-6 h-2 rounded-full bg-gradient-brand" />
                 <div className="w-2 h-2 rounded-full bg-border" />
                 <div className="w-2 h-2 rounded-full bg-border" />
               </div>

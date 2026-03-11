@@ -16,7 +16,7 @@ const UseCasesSection = () => {
       <div className="container max-w-5xl">
         <div className="text-center mb-16">
           <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">Use Cases</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold">
             Endless Possibilities For Every Creator
           </h2>
         </div>
@@ -29,13 +29,13 @@ const UseCasesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="p-6 rounded-lg border border-border bg-card"
+              className="p-6 rounded-lg border border-border bg-card shadow-soft hover:bg-hover-bg transition-colors cursor-pointer"
             >
-              <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{uc.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{uc.desc}</p>
+              <h3 className="text-lg font-semibold mb-2">{uc.title}</h3>
+              <p className="text-sm text-body-secondary mb-4">{uc.desc}</p>
               <div className="flex flex-wrap gap-2">
                 {uc.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 text-xs rounded-full border border-border text-muted-foreground">
+                  <span key={tag} className="px-3 py-1 text-xs rounded-full border border-border text-body-secondary bg-card-secondary">
                     {tag}
                   </span>
                 ))}
@@ -45,7 +45,7 @@ const UseCasesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">Get Started Now</Button>
+          <Button variant="gradient" size="lg">Get Started Now</Button>
         </div>
       </div>
     </section>
