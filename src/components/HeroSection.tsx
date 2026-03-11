@@ -96,29 +96,35 @@ const HeroSection = () => {
 
               {/* Images Upload */}
               {activeTab === "image" && (
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <label className="flex items-center gap-1.5 text-xs text-body-muted">
-                      <Image className="w-3.5 h-3.5" />
-                      Images
+                <div className="space-y-4">
+                  {/* Reference Image (Required) */}
+                  <div>
+                    <label className="flex items-center gap-1.5 text-sm font-medium text-foreground mb-2">
+                      参考图片
+                      <span className="text-xs text-destructive font-medium">（❗必填）</span>
                     </label>
-                    <div className="flex items-center gap-2 text-xs text-body-muted">
-                      <span>Add end frame</span>
-                      <div className="w-8 h-4 rounded-full bg-border relative cursor-pointer">
-                        <div className="w-3 h-3 rounded-full bg-body-muted absolute left-0.5 top-0.5" />
-                      </div>
-                      <span>0/1</span>
+                    <div className="border-2 border-dashed border-border rounded-xl p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                      <Upload className="w-6 h-6 text-body-muted" />
+                      <p className="text-sm text-body-secondary">上传</p>
                     </div>
                   </div>
-                  <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                    <Upload className="w-6 h-6 text-primary" />
-                    <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
-                    <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
+
+                  {/* First & Last Frame */}
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      第一帧和最后一帧
+                    </label>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="border-2 border-dashed border-border rounded-xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <Upload className="w-5 h-5 text-body-muted" />
+                        <p className="text-xs text-body-secondary">上传第一帧</p>
+                      </div>
+                      <div className="border-2 border-dashed border-border rounded-xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <Upload className="w-5 h-5 text-body-muted" />
+                        <p className="text-xs text-body-secondary">上传最后一帧</p>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-xs text-body-muted mt-2">
-                    Don't have an image?{" "}
-                    <span className="text-primary cursor-pointer hover:underline">✦ Generate images with AI</span>
-                  </p>
                 </div>
               )}
 
