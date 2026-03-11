@@ -1,4 +1,4 @@
-import { Play, Pause, X } from "lucide-react";
+import { Play, X } from "lucide-react";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
