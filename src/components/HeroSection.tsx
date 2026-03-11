@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical } from "lucide-react";
 import heroStill from "@/assets/hero-still.jpg";
+import modelIcon15 from "@/assets/model-seedance-1.5.png";
+import modelIcon20 from "@/assets/model-seedance-2.0.png";
 
 const resolutions = ["480p", "720p", "1080p"];
 const aspectRatios = [
@@ -18,13 +20,13 @@ const models = [
   {
     id: "seedance-1.5-pro",
     name: "Seedance 1.5 Pro",
-    badge: "S1.5",
+    icon: modelIcon15,
     description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
   },
   {
     id: "seedance-2.0",
     name: "Seedance 2.0",
-    badge: "S2",
+    icon: modelIcon20,
     description: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
   },
 ];
@@ -119,9 +121,7 @@ const HeroSection = () => {
                   className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
-                      <span className="text-primary-foreground text-xs font-bold">{selectedModel.badge}</span>
-                    </div>
+                    <img src={selectedModel.icon} alt={selectedModel.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                     <div>
                       <span className="text-sm font-semibold text-foreground">{selectedModel.name}</span>
                       <p className="text-xs text-body-muted line-clamp-1">{selectedModel.description}</p>
@@ -146,9 +146,7 @@ const HeroSection = () => {
                             : "hover:bg-hover-bg"
                         }`}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center flex-shrink-0">
-                          <span className="text-primary-foreground text-xs font-bold">{model.badge}</span>
-                        </div>
+                        <img src={model.icon} alt={model.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                         <div className="min-w-0">
                           <span className="text-sm font-semibold text-foreground">{model.name}</span>
                           <p className="text-xs text-body-muted line-clamp-2">{model.description}</p>
