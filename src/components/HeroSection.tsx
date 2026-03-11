@@ -46,7 +46,7 @@ const HeroSection = () => {
             {/* Left: Tool Panel */}
             <div className="lg:w-[400px] flex-shrink-0 space-y-5">
               {/* Tabs */}
-              <div className="flex rounded-lg border border-border overflow-hidden">
+              <div className="flex rounded-lg overflow-hidden bg-card-secondary">
                 <button
                   onClick={() => setActiveTab("image")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors cursor-pointer ${
