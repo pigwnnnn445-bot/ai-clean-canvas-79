@@ -20,13 +20,13 @@ const models = [
   {
     id: "seedance-1.5-pro",
     name: "Seedance 1.5 Pro",
-    badge: "S1.5",
+    icon: modelIcon15,
     description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
   },
   {
     id: "seedance-2.0",
     name: "Seedance 2.0",
-    badge: "S2",
+    icon: modelIcon20,
     description: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
   },
 ];
