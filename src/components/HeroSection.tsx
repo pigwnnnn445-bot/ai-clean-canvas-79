@@ -146,9 +146,7 @@ const HeroSection = () => {
                             : "hover:bg-hover-bg"
                         }`}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center flex-shrink-0">
-                          <span className="text-primary-foreground text-xs font-bold">{model.badge}</span>
-                        </div>
+                        <img src={model.icon} alt={model.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                         <div className="min-w-0">
                           <span className="text-sm font-semibold text-foreground">{model.name}</span>
                           <p className="text-xs text-body-muted line-clamp-2">{model.description}</p>
