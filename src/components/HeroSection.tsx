@@ -38,7 +38,18 @@ const HeroSection = () => {
   const [selectedModel, setSelectedModel] = useState(models[0]);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [endFrameEnabled, setEndFrameEnabled] = useState(false);
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [firstFrame, setFirstFrame] = useState<string | null>(null);
+  const [lastFrame, setLastFrame] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setter(url);
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
