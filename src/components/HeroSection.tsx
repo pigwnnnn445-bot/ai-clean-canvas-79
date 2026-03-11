@@ -37,6 +37,7 @@ const HeroSection = () => {
   const [selectedDuration, setSelectedDuration] = useState("5s");
   const [selectedModel, setSelectedModel] = useState(models[0]);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
+  const [endFrameEnabled, setEndFrameEnabled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
