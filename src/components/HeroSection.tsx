@@ -168,12 +168,20 @@ const HeroSection = () => {
               {/* Duration */}
               <div>
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Duration</label>
-                <div className="flex items-center gap-3">
-                  <div className="flex-1 relative h-2 bg-border rounded-full">
-                    <div className="absolute left-0 top-0 h-full w-1/4 bg-gradient-brand rounded-full" />
-                    <div className="absolute left-[25%] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background cursor-pointer" />
-                  </div>
-                  <span className="text-sm text-body-secondary w-6 text-right">5s</span>
+                <div className="flex gap-2">
+                  {["5s", "10s"].map((d) => (
+                    <button
+                      key={d}
+                      onClick={() => setSelectedDuration(d)}
+                      className={`px-4 py-1.5 text-sm rounded-lg border transition-colors cursor-pointer ${
+                        selectedDuration === d
+                          ? "border-primary bg-primary/10 text-primary"
+                          : "border-border text-body-secondary hover:bg-hover-bg"
+                      }`}
+                    >
+                      {d}
+                    </button>
+                  ))}
                 </div>
               </div>
 
