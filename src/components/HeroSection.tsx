@@ -46,13 +46,21 @@ const HeroSection = () => {
             {/* Left: Tool Panel */}
             <div className="lg:w-[400px] flex-shrink-0 space-y-5">
               {/* Tabs */}
-              <div className="flex rounded-lg overflow-hidden bg-card-secondary">
+              <div className="relative flex rounded-lg overflow-hidden bg-card-secondary p-1">
+                {/* Sliding indicator */}
+                <div
+                  className="absolute top-1 bottom-1 rounded-md bg-menu-selected shadow-sm transition-all duration-300 ease-out"
+                  style={{
+                    left: activeTab === "image" ? "4px" : "50%",
+                    width: "calc(50% - 4px)",
+                  }}
+                />
                 <button
                   onClick={() => setActiveTab("image")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors cursor-pointer ${
+                  className={`relative z-10 flex-1 flex items-center justify-center gap-2 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer rounded-md ${
                     activeTab === "image"
-                      ? "bg-menu-selected text-foreground"
-                      : "text-body-secondary hover:bg-hover-bg"
+                      ? "text-foreground"
+                      : "text-body-secondary hover:text-foreground"
                   }`}
                 >
                   <Image className="w-4 h-4" />
@@ -60,10 +68,10 @@ const HeroSection = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab("text")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors cursor-pointer ${
+                  className={`relative z-10 flex-1 flex items-center justify-center gap-2 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer rounded-md ${
                     activeTab === "text"
-                      ? "bg-menu-selected text-foreground"
-                      : "text-body-secondary hover:bg-hover-bg"
+                      ? "text-foreground"
+                      : "text-body-secondary hover:text-foreground"
                   }`}
                 >
                   <Type className="w-4 h-4" />
