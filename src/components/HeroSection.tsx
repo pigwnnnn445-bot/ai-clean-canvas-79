@@ -183,26 +183,29 @@ const HeroSection = () => {
                   </div>
                   {endFrameEnabled ? (
                     <div className="flex items-center gap-3">
-                      <div className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                      <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" />
                         <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                           <Plus className="w-5 h-5 text-primary" />
                         </div>
                         <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
-                      </div>
+                      </label>
                       <ArrowRight className="w-5 h-5 text-body-muted flex-shrink-0" />
-                      <div className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                      <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" />
                         <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                           <Plus className="w-5 h-5 text-primary" />
                         </div>
                         <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
-                      </div>
+                      </label>
                     </div>
                   ) : (
-                    <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                    <label className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                      <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" />
                       <Upload className="w-6 h-6 text-primary" />
                       <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
                       <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
-                    </div>
+                    </label>
                   )}
 
                 </div>
