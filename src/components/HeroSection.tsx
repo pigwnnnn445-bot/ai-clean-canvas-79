@@ -132,7 +132,7 @@ const HeroSection = () => {
 
                 {/* Dropdown */}
                 {modelDropdownOpen && (
-                  <div className="absolute z-50 left-0 right-0 mt-1 rounded-lg bg-popover border border-border shadow-lg overflow-hidden">
+                  <div className="absolute z-50 left-0 right-0 mt-1 rounded-lg bg-popover shadow-lg overflow-hidden">
                     {models.map((model) => (
                       <div
                         key={model.id}
