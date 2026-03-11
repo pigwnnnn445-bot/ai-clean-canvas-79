@@ -75,12 +75,6 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
     };
   }, [onClose]);
 
-  const togglePlay = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    playing ? v.pause() : v.play();
-    setPlaying(!playing);
-  };
 
   return (
     <motion.div
