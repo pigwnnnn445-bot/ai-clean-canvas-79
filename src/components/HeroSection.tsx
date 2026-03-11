@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical, Plus, ArrowRight } from "lucide-react";
+import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical, Plus, ArrowRight, X } from "lucide-react";
 import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
@@ -38,7 +38,18 @@ const HeroSection = () => {
   const [selectedModel, setSelectedModel] = useState(models[0]);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [endFrameEnabled, setEndFrameEnabled] = useState(false);
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [firstFrame, setFirstFrame] = useState<string | null>(null);
+  const [lastFrame, setLastFrame] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setter(url);
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -183,29 +194,56 @@ const HeroSection = () => {
                   </div>
                   {endFrameEnabled ? (
                     <div className="flex items-center gap-3">
-                      <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                        <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" />
-                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Plus className="w-5 h-5 text-primary" />
+                      {firstFrame ? (
+                        <div className="flex-1 relative rounded-lg overflow-hidden border border-border">
+                          <img src={firstFrame} alt="First frame" className="w-full aspect-square object-cover" />
+                          <button onClick={() => setFirstFrame(null)} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
+                            <X className="w-3.5 h-3.5 text-foreground" />
+                          </button>
                         </div>
-                        <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
-                      </label>
+                      ) : (
+                        <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                          <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setFirstFrame)} />
+                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                            <Plus className="w-5 h-5 text-primary" />
+                          </div>
+                          <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
+                        </label>
+                      )}
                       <ArrowRight className="w-5 h-5 text-body-muted flex-shrink-0" />
-                      <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                        <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" />
-                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Plus className="w-5 h-5 text-primary" />
+                      {lastFrame ? (
+                        <div className="flex-1 relative rounded-lg overflow-hidden border border-border">
+                          <img src={lastFrame} alt="Last frame" className="w-full aspect-square object-cover" />
+                          <button onClick={() => setLastFrame(null)} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
+                            <X className="w-3.5 h-3.5 text-foreground" />
+                          </button>
                         </div>
-                        <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
-                      </label>
+                      ) : (
+                        <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                          <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setLastFrame)} />
+                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                            <Plus className="w-5 h-5 text-primary" />
+                          </div>
+                          <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
+                        </label>
+                      )}
                     </div>
                   ) : (
-                    <label className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                      <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" />
-                      <Upload className="w-6 h-6 text-primary" />
-                      <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
-                      <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
-                    </label>
+                    uploadedImage ? (
+                      <div className="relative rounded-lg overflow-hidden border border-border">
+                        <img src={uploadedImage} alt="Uploaded" className="w-full aspect-video object-cover" />
+                        <button onClick={() => setUploadedImage(null)} className="absolute top-2 right-2 w-7 h-7 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
+                          <X className="w-4 h-4 text-foreground" />
+                        </button>
+                      </div>
+                    ) : (
+                      <label className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setUploadedImage)} />
+                        <Upload className="w-6 h-6 text-primary" />
+                        <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
+                        <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
+                      </label>
+                    )
                   )}
 
                 </div>
