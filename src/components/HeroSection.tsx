@@ -121,9 +121,7 @@ const HeroSection = () => {
                   className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
-                      <span className="text-primary-foreground text-xs font-bold">{selectedModel.badge}</span>
-                    </div>
+                    <img src={selectedModel.icon} alt={selectedModel.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                     <div>
                       <span className="text-sm font-semibold text-foreground">{selectedModel.name}</span>
                       <p className="text-xs text-body-muted line-clamp-1">{selectedModel.description}</p>
