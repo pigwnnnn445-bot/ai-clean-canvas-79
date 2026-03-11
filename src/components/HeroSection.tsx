@@ -41,7 +41,20 @@ const HeroSection = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [firstFrame, setFirstFrame] = useState<string | null>(null);
   const [lastFrame, setLastFrame] = useState<string | null>(null);
+  const [prompt, setPrompt] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isGenerateDisabled = (() => {
+    const hasPrompt = prompt.trim().length > 0;
+    if (activeTab === "text") {
+      return !hasPrompt;
+    }
+    // image tab
+    if (endFrameEnabled) {
+      return !(hasPrompt && firstFrame && lastFrame);
+    }
+    return !(hasPrompt && uploadedImage);
+  })();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
     const file = e.target.files?.[0];
