@@ -15,7 +15,7 @@ const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="container flex h-16 items-center justify-between" aria-label="Main navigation">
         <a href="#" className="text-xl font-bold text-foreground">
           Seedance <span className="text-gradient-brand">2.0</span>
