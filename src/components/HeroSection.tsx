@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical, Plus, ArrowRight } from "lucide-react";
+import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical, Plus, ArrowRight, X } from "lucide-react";
 import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
