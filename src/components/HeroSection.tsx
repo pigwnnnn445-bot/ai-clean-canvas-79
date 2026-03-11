@@ -41,7 +41,20 @@ const HeroSection = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [firstFrame, setFirstFrame] = useState<string | null>(null);
   const [lastFrame, setLastFrame] = useState<string | null>(null);
+  const [prompt, setPrompt] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isGenerateDisabled = (() => {
+    const hasPrompt = prompt.trim().length > 0;
+    if (activeTab === "text") {
+      return !hasPrompt;
+    }
+    // image tab
+    if (endFrameEnabled) {
+      return !(hasPrompt && firstFrame && lastFrame);
+    }
+    return !(hasPrompt && uploadedImage);
+  })();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
     const file = e.target.files?.[0];
@@ -257,10 +270,12 @@ const HeroSection = () => {
                 </label>
                 <div className="relative">
                   <textarea
+                    value={prompt}
+                    onChange={(e) => setPrompt(e.target.value.slice(0, 5000))}
                     placeholder="Describe how you want your image to animate..."
                     className="w-full h-28 p-3 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-body-muted resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                   />
-                  <span className="absolute bottom-2 right-3 text-xs text-body-muted">0/5000</span>
+                  <span className="absolute bottom-2 right-3 text-xs text-body-muted">{prompt.length}/5000</span>
                 </div>
               </div>
 
@@ -326,7 +341,14 @@ const HeroSection = () => {
               </div>
 
               {/* Generate Button */}
-              <button className="w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-100 transition-all cursor-pointer">
+              <button
+                disabled={isGenerateDisabled}
+                className={`w-full py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
+                  isGenerateDisabled
+                    ? "bg-muted text-muted-foreground cursor-not-allowed opacity-50"
+                    : "bg-gradient-brand text-primary-foreground hover:opacity-90 hover:scale-[1.02] active:scale-100 cursor-pointer"
+                }`}
+              >
                 <Sparkles className="w-4 h-4" />
                 Generate
               </button>
