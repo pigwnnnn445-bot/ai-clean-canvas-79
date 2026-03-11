@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical } from "lucide-react";
 import heroStill from "@/assets/hero-still.jpg";
@@ -14,11 +14,39 @@ const aspectRatios = [
   { label: "1:1", icon: "■" },
 ];
 
+const models = [
+  {
+    id: "seedance-1.5-pro",
+    name: "Seedance 1.5 Pro",
+    badge: "S1.5",
+    description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
+  },
+  {
+    id: "seedance-2.0",
+    name: "Seedance 2.0",
+    badge: "S2",
+    description: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
+  },
+];
+
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
   const [selectedRes, setSelectedRes] = useState("480p");
   const [selectedRatio, setSelectedRatio] = useState("Auto");
   const [selectedDuration, setSelectedDuration] = useState("5s");
+  const [selectedModel, setSelectedModel] = useState(models[0]);
+  const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setModelDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <section className="pt-24 pb-16">
