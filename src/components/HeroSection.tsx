@@ -167,17 +167,43 @@ const HeroSection = () => {
                     </label>
                     <div className="flex items-center gap-2 text-xs text-body-muted">
                       <span>Add end frame</span>
-                      <div className="w-8 h-4 rounded-full bg-border relative cursor-pointer">
-                        <div className="w-3 h-3 rounded-full bg-body-muted absolute left-0.5 top-0.5" />
+                      <div
+                        onClick={() => setEndFrameEnabled(!endFrameEnabled)}
+                        className={`w-9 h-5 rounded-full relative cursor-pointer transition-colors ${
+                          endFrameEnabled ? "bg-primary" : "bg-border"
+                        }`}
+                      >
+                        <div
+                          className={`w-3.5 h-3.5 rounded-full bg-white absolute top-[3px] transition-all ${
+                            endFrameEnabled ? "left-[18px]" : "left-[3px]"
+                          }`}
+                        />
                       </div>
-                      <span>0/1</span>
                     </div>
                   </div>
-                  <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                    <Upload className="w-6 h-6 text-primary" />
-                    <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
-                    <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
-                  </div>
+                  {endFrameEnabled ? (
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Plus className="w-5 h-5 text-primary" />
+                        </div>
+                        <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-body-muted flex-shrink-0" />
+                      <div className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Plus className="w-5 h-5 text-primary" />
+                        </div>
+                        <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                      <Upload className="w-6 h-6 text-primary" />
+                      <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
+                      <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
+                    </div>
+                  )
                 </div>
               )}
 
