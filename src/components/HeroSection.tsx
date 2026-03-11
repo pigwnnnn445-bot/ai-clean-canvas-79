@@ -40,7 +40,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-xl border border-border bg-card shadow-soft p-4 md:p-6"
+          className="rounded-xl bg-card shadow-soft p-4 md:p-6"
         >
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Left: Tool Panel */}
