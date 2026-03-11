@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical } from "lucide-react";
 import heroStill from "@/assets/hero-still.jpg";
@@ -14,11 +14,39 @@ const aspectRatios = [
   { label: "1:1", icon: "■" },
 ];
 
+const models = [
+  {
+    id: "seedance-1.5-pro",
+    name: "Seedance 1.5 Pro",
+    badge: "S1.5",
+    description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
+  },
+  {
+    id: "seedance-2.0",
+    name: "Seedance 2.0",
+    badge: "S2",
+    description: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
+  },
+];
+
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
   const [selectedRes, setSelectedRes] = useState("480p");
   const [selectedRatio, setSelectedRatio] = useState("Auto");
   const [selectedDuration, setSelectedDuration] = useState("5s");
+  const [selectedModel, setSelectedModel] = useState(models[0]);
+  const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setModelDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <section className="pt-24 pb-16">
@@ -81,26 +109,54 @@ const HeroSection = () => {
               </div>
 
               {/* AI Model */}
-              <div>
+              <div ref={dropdownRef} className="relative">
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   AI Model
                 </label>
-                <div className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors">
+                <div
+                  onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
+                  className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
-                      <span className="text-primary-foreground text-xs font-bold">S2</span>
+                      <span className="text-primary-foreground text-xs font-bold">{selectedModel.badge}</span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold text-foreground">Seedance 1.5 Pro</span>
-                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-primary/10 text-primary font-medium">With Audio</span>
-                      </div>
-                      <p className="text-xs text-body-muted">Joint audio-video with multilingual lip-sync</p>
+                      <span className="text-sm font-semibold text-foreground">{selectedModel.name}</span>
+                      <p className="text-xs text-body-muted line-clamp-1">{selectedModel.description}</p>
                     </div>
                   </div>
-                  <ChevronDown className="w-4 h-4 text-body-muted" />
+                  <ChevronDown className={`w-4 h-4 text-body-muted transition-transform duration-200 ${modelDropdownOpen ? "rotate-180" : ""}`} />
                 </div>
+
+                {/* Dropdown */}
+                {modelDropdownOpen && (
+                  <div className="absolute z-50 left-0 right-0 mt-1 rounded-lg bg-popover border border-border shadow-lg overflow-hidden">
+                    {models.map((model) => (
+                      <div
+                        key={model.id}
+                        onClick={() => {
+                          setSelectedModel(model);
+                          setModelDropdownOpen(false);
+                        }}
+                        className={`flex items-center gap-3 p-3 cursor-pointer transition-colors ${
+                          selectedModel.id === model.id
+                            ? "bg-primary/10"
+                            : "hover:bg-hover-bg"
+                        }`}
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center flex-shrink-0">
+                          <span className="text-primary-foreground text-xs font-bold">{model.badge}</span>
+                        </div>
+                        <div className="min-w-0">
+                          <span className="text-sm font-semibold text-foreground">{model.name}</span>
+                          <p className="text-xs text-body-muted line-clamp-2">{model.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Images Upload */}
