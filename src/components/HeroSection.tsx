@@ -109,26 +109,54 @@ const HeroSection = () => {
               </div>
 
               {/* AI Model */}
-              <div>
+              <div ref={dropdownRef} className="relative">
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   AI Model
                 </label>
-                <div className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors">
+                <div
+                  onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
+                  className="flex items-center justify-between p-3 rounded-lg bg-card-secondary cursor-pointer hover:bg-hover-bg transition-colors"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
-                      <span className="text-primary-foreground text-xs font-bold">S2</span>
+                      <span className="text-primary-foreground text-xs font-bold">{selectedModel.badge}</span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold text-foreground">Seedance 1.5 Pro</span>
-                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-primary/10 text-primary font-medium">With Audio</span>
-                      </div>
-                      <p className="text-xs text-body-muted">Joint audio-video with multilingual lip-sync</p>
+                      <span className="text-sm font-semibold text-foreground">{selectedModel.name}</span>
+                      <p className="text-xs text-body-muted line-clamp-1">{selectedModel.description}</p>
                     </div>
                   </div>
-                  <ChevronDown className="w-4 h-4 text-body-muted" />
+                  <ChevronDown className={`w-4 h-4 text-body-muted transition-transform duration-200 ${modelDropdownOpen ? "rotate-180" : ""}`} />
                 </div>
+
+                {/* Dropdown */}
+                {modelDropdownOpen && (
+                  <div className="absolute z-50 left-0 right-0 mt-1 rounded-lg bg-popover border border-border shadow-lg overflow-hidden">
+                    {models.map((model) => (
+                      <div
+                        key={model.id}
+                        onClick={() => {
+                          setSelectedModel(model);
+                          setModelDropdownOpen(false);
+                        }}
+                        className={`flex items-center gap-3 p-3 cursor-pointer transition-colors ${
+                          selectedModel.id === model.id
+                            ? "bg-primary/10"
+                            : "hover:bg-hover-bg"
+                        }`}
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center flex-shrink-0">
+                          <span className="text-primary-foreground text-xs font-bold">{model.badge}</span>
+                        </div>
+                        <div className="min-w-0">
+                          <span className="text-sm font-semibold text-foreground">{model.name}</span>
+                          <p className="text-xs text-body-muted line-clamp-2">{model.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Images Upload */}
