@@ -341,7 +341,14 @@ const HeroSection = () => {
               </div>
 
               {/* Generate Button */}
-              <button className="w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-100 transition-all cursor-pointer">
+              <button
+                disabled={isGenerateDisabled}
+                className={`w-full py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
+                  isGenerateDisabled
+                    ? "bg-muted text-muted-foreground cursor-not-allowed opacity-50"
+                    : "bg-gradient-brand text-primary-foreground hover:opacity-90 hover:scale-[1.02] active:scale-100 cursor-pointer"
+                }`}
+              >
                 <Sparkles className="w-4 h-4" />
                 Generate
               </button>
