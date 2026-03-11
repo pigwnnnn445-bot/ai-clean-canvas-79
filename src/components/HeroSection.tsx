@@ -203,7 +203,8 @@ const HeroSection = () => {
                       <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
                       <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
                     </div>
-                  )
+                  )}
+
                 </div>
               )}
 
