@@ -18,6 +18,7 @@ const HeroSection = () => {
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
   const [selectedRes, setSelectedRes] = useState("480p");
   const [selectedRatio, setSelectedRatio] = useState("Auto");
+  const [selectedDuration, setSelectedDuration] = useState("5s");
 
   return (
     <section className="pt-24 pb-16">
