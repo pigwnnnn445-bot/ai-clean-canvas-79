@@ -32,7 +32,7 @@ const models = [
 
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
-  const [selectedRes, setSelectedRes] = useState("480p");
+  const [selectedRes, setSelectedRes] = useState("720p");
   const [selectedRatio, setSelectedRatio] = useState("16:9");
   const [selectedDuration, setSelectedDuration] = useState("5s");
   const [selectedModel, setSelectedModel] = useState(models[0]);
