@@ -177,10 +177,6 @@ const HeroSection = () => {
                     <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
                     <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
                   </div>
-                  <p className="text-xs text-body-muted mt-2">
-                    Don't have an image?{" "}
-                    <span className="text-primary cursor-pointer hover:underline">✦ Generate images with AI</span>
-                  </p>
                 </div>
               )}
 
