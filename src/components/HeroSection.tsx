@@ -5,7 +5,7 @@ import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
 
-const resolutions = ["480p", "720p", "1080p"];
+const resolutions = ["720p", "1080p"];
 const aspectRatios = [
   { label: "16:9", icon: "▬" },
   { label: "9:16", icon: "▮" },
