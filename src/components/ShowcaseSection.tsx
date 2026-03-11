@@ -62,8 +62,7 @@ const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => vo
 };
 
 const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing] = useState(true);
 
   useEffect(() => {
     videoRef.current?.play();
