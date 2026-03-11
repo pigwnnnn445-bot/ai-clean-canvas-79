@@ -19,21 +19,18 @@ const ShowcaseSection = () => {
   return (
     <section className="py-24 overflow-hidden" aria-label="Showcase gallery">
       <div className="container text-center mb-12">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-          Get Inspired
-        </h2>
-        <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold">Get Inspired</h2>
+        <p className="mt-3 text-body-secondary max-w-xl mx-auto">
           Stunning video examples created with Seedance 2.0's multi-modal capabilities.
         </p>
       </div>
 
-      {/* Film strip */}
       <div className="relative">
         <div className="flex gap-4 animate-filmstrip" style={{ width: "max-content" }}>
           {doubled.map((src, i) => (
             <div
               key={i}
-              className="w-64 h-40 md:w-80 md:h-48 flex-shrink-0 rounded-lg overflow-hidden border border-border"
+              className="w-64 h-40 md:w-80 md:h-48 flex-shrink-0 rounded-lg overflow-hidden border border-border shadow-soft"
             >
               <img
                 src={src}
