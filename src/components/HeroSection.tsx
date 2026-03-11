@@ -1,82 +1,243 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical } from "lucide-react";
 import heroStill from "@/assets/hero-still.jpg";
 
-const fullText = "One Image, One Blockbuster.";
+const resolutions = ["480p", "720p", "1080p"];
+const aspectRatios = [
+  { label: "Auto", icon: "⚙" },
+  { label: "16:9", icon: "▬" },
+  { label: "9:16", icon: "▮" },
+  { label: "4:3", icon: "▬" },
+  { label: "3:4", icon: "▮" },
+  { label: "21:9", icon: "▬" },
+  { label: "1:1", icon: "■" },
+];
 
 const HeroSection = () => {
-  const [displayedText, setDisplayedText] = useState("");
-  const [showCursor, setShowCursor] = useState(true);
-  const [typingDone, setTypingDone] = useState(false);
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < fullText.length) {
-        setDisplayedText(fullText.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(interval);
-        setTypingDone(true);
-        setTimeout(() => {
-          setShowCursor(false);
-          setShowButton(true);
-        }, 1000);
-      }
-    }, 80);
-    return () => clearInterval(interval);
-  }, []);
+  const [activeTab, setActiveTab] = useState<"image" | "text">("image");
+  const [selectedRes, setSelectedRes] = useState("480p");
+  const [selectedRatio, setSelectedRatio] = useState("Auto");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={heroStill}
-          alt="Dramatic dancer illuminated by amber spotlight"
-          className="w-full h-full object-cover opacity-30"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-background/60" />
+    <section className="pt-24 pb-16">
+      {/* Title */}
+      <div className="container text-center mb-10">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight">
+          Seedance 2.0
+        </h1>
+        <p className="mt-4 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Experience{" "}
+          <span className="text-primary">true multi-modal AI video creation</span>.
+          Combine images, videos, audio, and text to generate cinematic content with
+          precise reference capabilities, seamless video extension, and natural language control.
+        </p>
       </div>
 
-      <div className="relative z-10 container text-center max-w-4xl mx-auto px-6">
-        <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-tight min-h-[1.2em]">
-          {displayedText}
-          {showCursor && (
-            <span className="cursor-blink inline-block w-[3px] h-[0.8em] bg-primary ml-1 align-baseline" />
-          )}
-        </h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+      {/* Tool + Preview */}
+      <div className="container max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.5, duration: 0.8 }}
-          className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="rounded-xl border border-border bg-card p-4 md:p-6"
         >
-          Experience true multi-modal AI video creation. Combine images, videos,
-          audio, and text to generate cinematic content with unprecedented control.
-        </motion.p>
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Left: Tool Panel */}
+            <div className="lg:w-[400px] flex-shrink-0 space-y-5">
+              {/* Tabs */}
+              <div className="flex rounded-lg border border-border overflow-hidden">
+                <button
+                  onClick={() => setActiveTab("image")}
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                    activeTab === "image"
+                      ? "bg-secondary text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Image className="w-4 h-4" />
+                  Image to Video
+                </button>
+                <button
+                  onClick={() => setActiveTab("text")}
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                    activeTab === "text"
+                      ? "bg-secondary text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Type className="w-4 h-4" />
+                  Text to Video
+                </button>
+              </div>
 
-        <AnimatePresence>
-          {showButton && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <Button variant="hero" size="xl">
-                Start Creating Now
-              </Button>
-              <Button variant="heroOutline" size="lg">
-                View Showcase
-              </Button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {/* AI Model */}
+              <div>
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  AI Model
+                </label>
+                <div className="flex items-center justify-between p-3 rounded-lg border border-border bg-background cursor-pointer hover:border-primary/40 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                      <span className="text-primary text-xs font-bold">S2</span>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-semibold text-foreground">Seedance 1.5 Pro</span>
+                        <span className="px-1.5 py-0.5 text-[10px] rounded bg-primary/20 text-primary font-medium">With Audio</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Joint audio-video with multilingual lip-sync</p>
+                    </div>
+                  </div>
+                  <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                </div>
+              </div>
+
+              {/* Images Upload */}
+              {activeTab === "image" && (
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <Image className="w-3.5 h-3.5" />
+                      Images
+                    </label>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <span>Add end frame</span>
+                      <div className="w-8 h-4 rounded-full bg-border relative cursor-pointer">
+                        <div className="w-3 h-3 rounded-full bg-muted-foreground absolute left-0.5 top-0.5" />
+                      </div>
+                      <span>0/1</span>
+                    </div>
+                  </div>
+                  <div className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/40 transition-colors">
+                    <Upload className="w-6 h-6 text-primary" />
+                    <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
+                    <p className="text-xs text-muted-foreground">PNG, JPG, JPEG, WEBP</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Don't have an image?{" "}
+                    <span className="text-primary cursor-pointer hover:underline">✦ Generate images with AI</span>
+                  </p>
+                </div>
+              )}
+
+              {/* Prompt */}
+              <div>
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                  <Type className="w-3.5 h-3.5" />
+                  Prompt
+                </label>
+                <div className="relative">
+                  <textarea
+                    placeholder="Describe how you want your image to animate..."
+                    className="w-full h-28 p-3 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:border-primary/40 transition-colors"
+                  />
+                  <span className="absolute bottom-2 right-3 text-xs text-muted-foreground">0/5000</span>
+                </div>
+              </div>
+
+              {/* Resolution */}
+              <div>
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                  Resolution
+                </label>
+                <div className="flex gap-2">
+                  {resolutions.map((r) => (
+                    <button
+                      key={r}
+                      onClick={() => setSelectedRes(r)}
+                      className={`px-4 py-1.5 text-sm rounded-lg border transition-colors ${
+                        selectedRes === r
+                          ? "border-primary bg-primary/10 text-primary"
+                          : "border-border text-muted-foreground hover:border-primary/30"
+                      }`}
+                    >
+                      {r}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Duration */}
+              <div>
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                  Duration
+                </label>
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 relative h-2 bg-border rounded-full">
+                    <div className="absolute left-0 top-0 h-full w-1/4 bg-primary rounded-full" />
+                    <div className="absolute left-[25%] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background cursor-pointer" />
+                  </div>
+                  <span className="text-sm text-muted-foreground w-6 text-right">5s</span>
+                </div>
+              </div>
+
+              {/* Aspect Ratio */}
+              <div>
+                <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
+                  Aspect Ratio
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {aspectRatios.map((ar) => (
+                    <button
+                      key={ar.label}
+                      onClick={() => setSelectedRatio(ar.label)}
+                      className={`flex flex-col items-center justify-center w-14 h-14 rounded-lg border text-xs transition-colors ${
+                        selectedRatio === ar.label
+                          ? "border-primary bg-primary/10 text-primary"
+                          : "border-border text-muted-foreground hover:border-primary/30"
+                      }`}
+                    >
+                      <span className="text-base">{ar.icon}</span>
+                      <span className="mt-0.5">{ar.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Generate Button */}
+              <button className="w-full py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 shadow-[var(--shadow-amber)] hover:shadow-[var(--shadow-amber-strong)] transition-all hover:scale-[1.02] active:scale-100">
+                <Sparkles className="w-4 h-4" />
+                Generate
+              </button>
+            </div>
+
+            {/* Right: Video Preview */}
+            <div className="flex-1 flex flex-col items-center justify-center">
+              <div className="relative w-full rounded-lg overflow-hidden bg-background border border-border">
+                <div className="aspect-video relative">
+                  <img
+                    src={heroStill}
+                    alt="Seedance 2.0 AI generated video preview"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  {/* Video controls overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <Play className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors" />
+                        <span className="text-xs text-muted-foreground">0:00 / 0:13</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Volume2 className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
+                        <Maximize2 className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
+                        <MoreVertical className="w-4 h-4 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Dots indicator */}
+              <div className="flex items-center gap-2 mt-4">
+                <div className="w-6 h-2 rounded-full bg-primary" />
+                <div className="w-2 h-2 rounded-full bg-border" />
+                <div className="w-2 h-2 rounded-full bg-border" />
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
