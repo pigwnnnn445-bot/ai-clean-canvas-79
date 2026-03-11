@@ -5,7 +5,7 @@ import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
 
-const resolutions = ["480p", "720p", "1080p"];
+const resolutions = ["720p", "1080p"];
 const aspectRatios = [
   { label: "16:9", icon: "▬" },
   { label: "9:16", icon: "▮" },
@@ -32,7 +32,7 @@ const models = [
 
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
-  const [selectedRes, setSelectedRes] = useState("480p");
+  const [selectedRes, setSelectedRes] = useState("720p");
   const [selectedRatio, setSelectedRatio] = useState("16:9");
   const [selectedDuration, setSelectedDuration] = useState("5s");
   const [selectedModel, setSelectedModel] = useState(models[0]);
