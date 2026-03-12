@@ -343,15 +343,21 @@ const HeroSection = () => {
 
               {/* Generate Button */}
               <button
-                disabled={isGenerateDisabled}
+                disabled={isGenerateDisabled || isGenerating}
+                onClick={() => {
+                  if (!isGenerateDisabled && !isGenerating) {
+                    setIsGenerating(true);
+                    setTimeout(() => setIsGenerating(false), 5000);
+                  }
+                }}
                 className={`w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
-                  isGenerateDisabled
+                  isGenerateDisabled || isGenerating
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:opacity-90 hover:scale-[1.02] active:scale-100 cursor-pointer"
                 }`}
               >
                 <Sparkles className="w-4 h-4" />
-                生成
+                {isGenerating ? "生成中..." : "生成"}
               </button>
 
               {/* Credits Info */}
