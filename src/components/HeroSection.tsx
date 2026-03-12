@@ -43,7 +43,8 @@ const HeroSection = () => {
   const [selectedRatio, setSelectedRatio] = useState("16:9");
   const [selectedDuration, setSelectedDuration] = useState("5s");
   const models = getModels(t);
-  const [selectedModel, setSelectedModel] = useState(models[0]);
+  const [selectedModelId, setSelectedModelId] = useState(models[0].id);
+  const selectedModel = models.find(m => m.id === selectedModelId) || models[0];
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [endFrameEnabled, setEndFrameEnabled] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
