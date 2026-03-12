@@ -541,7 +541,7 @@ const HeroSection = () => {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <button
-                          onClick={() => navigate("/video-history")}
+                          onClick={() => window.open("https://www.rita.ai/zh/ai-video", "_blank")}
                           className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                         >
                           <History className="w-4 h-4" />
