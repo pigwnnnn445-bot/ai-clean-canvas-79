@@ -376,7 +376,7 @@ const HeroSection = () => {
                 }`}
               >
                 <Sparkles className="w-4 h-4" />
-                {isGenerating ? "生成中..." : "生成"}
+                {isGenerating ? t.hero.generating : t.hero.generate}
               </button>
 
               {/* Credits Info */}
