@@ -11,7 +11,7 @@ const pl: Translations = {
     { title: "Rozszerzanie i Edycja Wideo", description: "Rozszerzaj istniejące wideo, łącz klipy lub edytuj konkretne segmenty." },
     { title: "Wbudowana Generacja Audio", description: "Automatycznie generuj efekty dźwiękowe i muzykę w tle." },
   ]},
-  useCases: { label: "Zastosowania", title: "Nieskończone Możliwości dla Każdego Twórcy", cta: "Zacznij Teraz", items: [
+  useCases: { label: "Zastosowania", title: "Nieskończone Możliwości dla Każdego Twórcy", subtitle: "Od reklamy po kreatywne opowiadanie historii, odkryj nieskończone zastosowania wideo AI", cta: "Zacznij Teraz", items: [ "Zastosowania", title: "Nieskończone Możliwości dla Każdego Twórcy", cta: "Zacznij Teraz", items: [
     { title: "Reklama i Marketing", desc: "Twórz przekonujące treści promocyjne.", tags: ["Wideo Produktowe", "Treści Marki", "Reklamy"] },
     { title: "Kreatywne Opowiadanie", desc: "Twórz unikalne narracje z multimodalnymi wejściami.", tags: ["Filmy Krótkometrażowe", "Projekty Artystyczne", "Teledyski"] },
     { title: "Treści Social Media", desc: "Generuj angażujące treści z trendowymi szablonami.", tags: ["Instagram Reels", "TikTok Wideo", "YouTube Shorts"] },
