@@ -382,16 +382,8 @@ const HeroSection = () => {
 
             {/* Right: Video Preview */}
             <div className="flex-1 flex flex-col">
-              {/* Main video display */}
-              <div
-                className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft cursor-pointer group"
-                onClick={() => {
-                  if (!isGenerating) {
-                    setModalVideoSrc(presetVideos[activePreviewIndex]);
-                    setVideoModalOpen(true);
-                  }
-                }}
-              >
+              {/* Main video card with carousel */}
+              <div className="relative w-full rounded-xl overflow-hidden bg-[#1a1a1a] border border-border shadow-soft">
                 <div className="aspect-video relative">
                   {isGenerating ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-4">
@@ -421,11 +413,58 @@ const HeroSection = () => {
                         muted
                         playsInline
                         preload="metadata"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain bg-black"
                       />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                          <Play className="w-5 h-5 text-foreground fill-foreground ml-0.5" />
+                      {/* Left arrow */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActivePreviewIndex((prev) => (prev - 1 + presetVideos.length) % presetVideos.length);
+                        }}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      {/* Right arrow */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActivePreviewIndex((prev) => (prev + 1) % presetVideos.length);
+                        }}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                      {/* Bottom controls bar */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-2 pt-8">
+                        {/* Progress bar */}
+                        <div className="w-full h-0.5 bg-foreground/20 rounded-full mb-2">
+                          <div className="w-1/5 h-full bg-primary rounded-full" />
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <Play
+                              className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setModalVideoSrc(presetVideos[activePreviewIndex]);
+                                setVideoModalOpen(true);
+                              }}
+                            />
+                            <span className="text-xs text-foreground/70">0:00 / 0:05</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <Volume2 className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
+                            <Maximize2
+                              className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setModalVideoSrc(presetVideos[activePreviewIndex]);
+                                setVideoModalOpen(true);
+                              }}
+                            />
+                            <MoreVertical className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
+                          </div>
                         </div>
                       </div>
                     </>
@@ -433,26 +472,18 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Thumbnail selector */}
-              <div className="flex items-center gap-2 mt-3">
-                {presetVideos.map((vid, idx) => (
+              {/* Dot indicators */}
+              <div className="flex items-center justify-center gap-2 mt-3">
+                {presetVideos.map((_, idx) => (
                   <div
                     key={idx}
                     onClick={() => setActivePreviewIndex(idx)}
-                    className={`relative w-20 h-12 rounded-md overflow-hidden cursor-pointer border-2 transition-all ${
+                    className={`rounded-full cursor-pointer transition-all ${
                       activePreviewIndex === idx
-                        ? "border-primary shadow-sm"
-                        : "border-transparent opacity-60 hover:opacity-100"
+                        ? "w-6 h-2 bg-primary"
+                        : "w-2 h-2 bg-foreground/20 hover:bg-foreground/40"
                     }`}
-                  >
-                    <video
-                      src={vid}
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  />
                 ))}
               </div>
 
