@@ -24,7 +24,7 @@ const lt: Translations = {
     { title: "Aprašykite Viziją", description: "Naudokite natūralią kalbą aprašyti ko norite." },
     { title: "Generuokite ir Kartokite", description: "Generuokite 4-15 sekundžių video." },
   ]},
-  testimonials: { label: "Atsiliepimai", title: "Mylimas Kūrėjų Visame Pasaulyje" },
+  testimonials: { title: "Kūrėjų Mėgstamas Visame Pasaulyje", subtitle: "Kūrėjai iš viso pasaulio dalijasi savo patirtimi su Seedance 2.0" }, "Atsiliepimai", title: "Mylimas Kūrėjų Visame Pasaulyje" },
   pricing: { title: "Kainos", subtitle: "Pasirinkite tinkamiausią planą.", monthly: "Mėnesinis", annually: "Metinis", save: "Sutaupykite 50%", perMonth: "/mėn.", subscribe: "Prenumeruoti", mostPopular: "Populiariausias", plans: [
     { name: "Bazinis", desc: "Idealus pradedantiesiems", credits: "800 kreditų/mėn.", features: ["Iki 80 video/mėn.", "Keli AI modeliai", "Standartinis greitis", "Be vandens ženklo", "Komercinė licencija"] },
     { name: "Standartinis", desc: "Puikus daugumai kūrėjų", credits: "2 000 kreditų/mėn.", features: ["Iki 200 video/mėn.", "Keli AI modeliai", "Prioritetinis generavimas", "Be vandens ženklo", "Prioritetinis palaikymas", "Komercinė licencija"] },

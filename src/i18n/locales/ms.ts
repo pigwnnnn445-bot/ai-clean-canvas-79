@@ -24,7 +24,7 @@ const ms: Translations = {
     { title: "Huraikan Visi Anda", description: "Gunakan bahasa semula jadi untuk menghuraikan apa yang anda mahu." },
     { title: "Jana & Ulang", description: "Jana video 4-15 saat." },
   ]},
-  testimonials: { label: "Testimoni", title: "Digemari Pencipta di Seluruh Dunia" },
+  testimonials: { title: "Digemari Pencipta di Seluruh Dunia", subtitle: "Pencipta dari seluruh dunia berkongsi pengalaman mereka dengan Seedance 2.0" }, "Testimoni", title: "Digemari Pencipta di Seluruh Dunia" },
   pricing: { title: "Harga", subtitle: "Pilih pelan yang sesuai.", monthly: "Bulanan", annually: "Tahunan", save: "Jimat 50%", perMonth: "/bulan", subscribe: "Langgan", mostPopular: "Paling Popular", plans: [
     { name: "Asas", desc: "Untuk hobi dan pemula", credits: "800 kredit/bulan", features: ["Sehingga 80 video/bulan", "Pelbagai model AI", "Kelajuan standard", "Tanpa tera air", "Lesen komersial"] },
     { name: "Standard", desc: "Untuk kebanyakan pencipta", credits: "2,000 kredit/bulan", features: ["Sehingga 200 video/bulan", "Pelbagai model AI", "Penjanaan keutamaan", "Tanpa tera air", "Sokongan keutamaan", "Lesen komersial"] },

@@ -24,7 +24,7 @@ const ro: Translations = {
     { title: "Descrie Viziunea Ta", description: "Folosește limbajul natural pentru a descrie ce vrei." },
     { title: "Generează și Iterează", description: "Generează video de 4-15 secunde." },
   ]},
-  testimonials: { label: "Testimoniale", title: "Iubit de Creatori din Întreaga Lume" },
+  testimonials: { title: "Iubit de Creatori din Întreaga Lume", subtitle: "Creatori din întreaga lume își împărtășesc experiența cu Seedance 2.0" }, "Testimoniale", title: "Iubit de Creatori din Întreaga Lume" },
   pricing: { title: "Prețuri", subtitle: "Alege planul potrivit.", monthly: "Lunar", annually: "Anual", save: "Economisește 50%", perMonth: "/lună", subscribe: "Abonează-te", mostPopular: "Cel Mai Popular", plans: [
     { name: "Basic", desc: "Ideal pentru hobbyiști", credits: "800 credite/lună", features: ["Până la 80 videouri/lună", "Mai multe modele AI", "Viteză standard", "Fără filigran", "Licență comercială"] },
     { name: "Standard", desc: "Perfect pentru creatori", credits: "2.000 credite/lună", features: ["Până la 200 videouri/lună", "Mai multe modele AI", "Generare prioritară", "Fără filigran", "Suport prioritar", "Licență comercială"] },

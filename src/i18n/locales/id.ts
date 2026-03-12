@@ -24,7 +24,7 @@ const id: Translations = {
     { title: "Jelaskan Visi Anda", description: "Gunakan bahasa alami untuk menjelaskan apa yang Anda inginkan." },
     { title: "Hasilkan & Iterasi", description: "Hasilkan video 4-15 detik." },
   ]},
-  testimonials: { label: "Testimoni", title: "Dicintai Kreator di Seluruh Dunia" },
+  testimonials: { title: "Dicintai Kreator di Seluruh Dunia", subtitle: "Kreator dari seluruh dunia berbagi pengalaman mereka dengan Seedance 2.0" }, "Testimoni", title: "Dicintai Kreator di Seluruh Dunia" },
   pricing: { title: "Harga", subtitle: "Pilih paket yang cocok untuk Anda.", monthly: "Bulanan", annually: "Tahunan", save: "Hemat 50%", perMonth: "/bulan", subscribe: "Berlangganan", mostPopular: "Paling Populer", plans: [
     { name: "Dasar", desc: "Ideal untuk pemula", credits: "800 kredit/bulan", features: ["Hingga 80 video/bulan", "Beberapa model AI", "Kecepatan standar", "Tanpa watermark", "Lisensi komersial"] },
     { name: "Standar", desc: "Cocok untuk kebanyakan kreator", credits: "2.000 kredit/bulan", features: ["Hingga 200 video/bulan", "Beberapa model AI", "Generasi prioritas", "Tanpa watermark", "Dukungan prioritas", "Lisensi komersial"] },

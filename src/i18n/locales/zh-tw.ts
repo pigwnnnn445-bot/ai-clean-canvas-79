@@ -24,7 +24,7 @@ const zhTw: Translations = {
     { title: "描述您的願景", description: "使用自然語言描述您想要的內容。" },
     { title: "生成與迭代", description: "生成4-15秒的影片。擴展、編輯或調整您的作品。" },
   ]},
-  testimonials: { label: "使用者評價", title: "全球創作者的選擇" },
+  testimonials: { title: "全球創作者的選擇", subtitle: "來自世界各地的創作者分享使用 Seedance 2.0 的體驗" }, "使用者評價", title: "全球創作者的選擇" },
   pricing: { title: "定價", subtitle: "選擇最適合您的方案。", monthly: "月付", annually: "年付", save: "節省50%", perMonth: "/月", subscribe: "訂閱", mostPopular: "最受歡迎", plans: [
     { name: "基礎版", desc: "適合愛好者和初學者", credits: "800 積分/月", features: ["每月最多80個影片", "多種AI影片模型", "標準生成速度", "無浮水印", "商業使用許可"] },
     { name: "標準版", desc: "適合大多數創作者", credits: "2,000 積分/月", features: ["每月最多200個影片", "多種AI影片模型", "優先生成", "無浮水印", "優先支援", "商業使用許可"] },

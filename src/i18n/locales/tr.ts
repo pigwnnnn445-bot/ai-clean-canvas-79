@@ -11,7 +11,7 @@ const tr: Translations = {
     { title: "Video Uzatma ve Düzenleme", description: "Mevcut videoları uzatın veya belirli bölümleri düzenleyin." },
     { title: "Dahili Ses Üretimi", description: "Otomatik ses efektleri ve arka plan müziği oluşturun." },
   ]},
-  useCases: { label: "Kullanım Alanları", title: "Her Yaratıcı İçin Sonsuz Olasılıklar", cta: "Hemen Başlayın", items: [
+  useCases: { label: "Kullanım Alanları", title: "Her Yaratıcı İçin Sonsuz Olasılıklar", subtitle: "Reklamdan yaratıcı hikaye anlatımına, AI videonun sonsuz uygulamalarını keşfedin", cta: "Hemen Başlayın", items: [ "Kullanım Alanları", title: "Her Yaratıcı İçin Sonsuz Olasılıklar", cta: "Hemen Başlayın", items: [
     { title: "Reklam ve Pazarlama", desc: "Etkileyici tanıtım içeriği oluşturun.", tags: ["Ürün Videoları", "Marka İçeriği", "Reklamlar"] },
     { title: "Yaratıcı Hikaye Anlatımı", desc: "Çok modlu girdilerle benzersiz hikayeler oluşturun.", tags: ["Kısa Filmler", "Sanat Projeleri", "Müzik Videoları"] },
     { title: "Sosyal Medya İçeriği", desc: "Dikkat çekici içerik oluşturun.", tags: ["Instagram Reels", "TikTok Video", "YouTube Shorts"] },

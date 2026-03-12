@@ -11,7 +11,7 @@ const tl: Translations = {
     { title: "Video Extension at Editing", description: "I-extend ang mga umiiral na video o i-edit ang mga partikular na segment." },
     { title: "Built-in Audio Generation", description: "Awtomatikong gumawa ng sound effects at background music." },
   ]},
-  useCases: { label: "Mga Gamit", title: "Walang Katapusang Posibilidad Para sa Bawat Creator", cta: "Magsimula Na", items: [
+  useCases: { label: "Mga Gamit", title: "Walang Katapusang Posibilidad Para sa Bawat Creator", subtitle: "Mula sa advertising hanggang creative storytelling, tuklasin ang walang katapusang gamit ng AI video", cta: "Magsimula Na", items: [ "Mga Gamit", title: "Walang Katapusang Posibilidad Para sa Bawat Creator", cta: "Magsimula Na", items: [
     { title: "Advertising at Marketing", desc: "Gumawa ng nakakaakit na promotional content.", tags: ["Product Videos", "Brand Content", "Commercial Ads"] },
     { title: "Creative Storytelling", desc: "Gumawa ng natatanging kwento.", tags: ["Short Films", "Art Projects", "Music Videos"] },
     { title: "Social Media Content", desc: "Gumawa ng nakakaakit na content.", tags: ["Instagram Reels", "TikTok Videos", "YouTube Shorts"] },

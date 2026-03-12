@@ -24,7 +24,7 @@ const it: Translations = {
     { title: "Descrivi la tua Visione", description: "Usa il linguaggio naturale per descrivere ciò che vuoi." },
     { title: "Genera e Itera", description: "Genera video da 4-15 secondi. Estendi, modifica o perfeziona la tua creazione." },
   ]},
-  testimonials: { label: "Testimonianze", title: "Amato dai Creatori di Tutto il Mondo" },
+  testimonials: { title: "Amato dai Creatori di Tutto il Mondo", subtitle: "Creatori da tutto il mondo condividono la loro esperienza con Seedance 2.0" }, "Testimonianze", title: "Amato dai Creatori di Tutto il Mondo" },
   pricing: { title: "Prezzi", subtitle: "Scegli il piano più adatto a te.", monthly: "Mensile", annually: "Annuale", save: "Risparmia 50%", perMonth: "/mese", subscribe: "Abbonati", mostPopular: "Più Popolare", plans: [
     { name: "Base", desc: "Ideale per hobbisti e principianti", credits: "800 crediti/mese", features: ["Fino a 80 video/mese", "Diversi modelli IA", "Velocità standard", "Nessun watermark", "Licenza commerciale"] },
     { name: "Standard", desc: "Perfetto per la maggior parte dei creatori", credits: "2.000 crediti/mese", features: ["Fino a 200 video/mese", "Diversi modelli IA", "Generazione prioritaria", "Nessun watermark", "Supporto prioritario", "Licenza commerciale"] },

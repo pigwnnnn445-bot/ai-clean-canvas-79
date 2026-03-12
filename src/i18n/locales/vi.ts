@@ -11,7 +11,7 @@ const vi: Translations = {
     { title: "Mở rộng & Chỉnh sửa Video", description: "Mở rộng video hiện có hoặc chỉnh sửa các phân đoạn cụ thể." },
     { title: "Tạo Âm thanh Tích hợp", description: "Tự động tạo hiệu ứng âm thanh và nhạc nền." },
   ]},
-  useCases: { label: "Ứng dụng", title: "Khả năng Vô hạn Cho Mọi Nhà sáng tạo", cta: "Bắt đầu Ngay", items: [
+  useCases: { label: "Ứng dụng", title: "Khả năng Vô hạn Cho Mọi Nhà sáng tạo", subtitle: "Từ quảng cáo đến kể chuyện sáng tạo, khám phá ứng dụng vô tận của video AI", cta: "Bắt đầu Ngay", items: [ "Ứng dụng", title: "Khả năng Vô hạn Cho Mọi Nhà sáng tạo", cta: "Bắt đầu Ngay", items: [
     { title: "Quảng cáo & Tiếp thị", desc: "Tạo nội dung quảng cáo hấp dẫn.", tags: ["Video Sản phẩm", "Nội dung Thương hiệu", "Quảng cáo"] },
     { title: "Kể chuyện Sáng tạo", desc: "Tạo câu chuyện độc đáo.", tags: ["Phim ngắn", "Dự án Nghệ thuật", "Video Âm nhạc"] },
     { title: "Nội dung Mạng xã hội", desc: "Tạo nội dung thu hút.", tags: ["Instagram Reels", "TikTok Video", "YouTube Shorts"] },

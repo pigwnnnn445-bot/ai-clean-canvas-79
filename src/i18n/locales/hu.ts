@@ -24,7 +24,7 @@ const hu: Translations = {
     { title: "Írja Le Vízióját", description: "Használjon természetes nyelvet a kívánt tartalom leírásához." },
     { title: "Generáljon és Iteráljon", description: "Generáljon 4-15 másodperces videót." },
   ]},
-  testimonials: { label: "Vélemények", title: "Alkotók Kedvence Világszerte" },
+  testimonials: { title: "Alkotók Kedvence Világszerte", subtitle: "Alkotók a világ minden tájáról osztják meg tapasztalataikat a Seedance 2.0-val" }, "Vélemények", title: "Alkotók Kedvence Világszerte" },
   pricing: { title: "Árak", subtitle: "Válassza az Önnek legmegfelelőbb csomagot.", monthly: "Havi", annually: "Éves", save: "50% Megtakarítás", perMonth: "/hó", subscribe: "Feliratkozás", mostPopular: "Legnépszerűbb", plans: [
     { name: "Alap", desc: "Hobbistáknak és kezdőknek", credits: "800 kredit/hó", features: ["Havi 80 videó", "Több AI modell", "Standard sebesség", "Vízjel nélkül", "Kereskedelmi licenc"] },
     { name: "Standard", desc: "A legtöbb alkotónak", credits: "2 000 kredit/hó", features: ["Havi 200 videó", "Több AI modell", "Elsőbbségi generálás", "Vízjel nélkül", "Elsőbbségi támogatás", "Kereskedelmi licenc"] },

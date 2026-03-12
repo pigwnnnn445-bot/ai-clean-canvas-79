@@ -24,7 +24,7 @@ const nl: Translations = {
     { title: "Beschrijf Je Visie", description: "Gebruik natuurlijke taal om te beschrijven wat je wilt." },
     { title: "Genereer & Itereer", description: "Genereer video's van 4-15 seconden. Breid uit, bewerk of verfijn." },
   ]},
-  testimonials: { label: "Getuigenissen", title: "Geliefd bij Creators Wereldwijd" },
+  testimonials: { title: "Geliefd bij Creators Wereldwijd", subtitle: "Creators van over de hele wereld delen hun ervaring met Seedance 2.0" }, "Getuigenissen", title: "Geliefd bij Creators Wereldwijd" },
   pricing: { title: "Prijzen", subtitle: "Kies het plan dat het beste bij je past.", monthly: "Maandelijks", annually: "Jaarlijks", save: "Bespaar 50%", perMonth: "/maand", subscribe: "Abonneren", mostPopular: "Meest Populair", plans: [
     { name: "Basis", desc: "Ideaal voor hobbyisten en beginners", credits: "800 credits/maand", features: ["Tot 80 video's/maand", "Meerdere AI-modellen", "Standaard snelheid", "Geen watermerk", "Commerciële licentie"] },
     { name: "Standaard", desc: "Perfect voor de meeste creators", credits: "2.000 credits/maand", features: ["Tot 200 video's/maand", "Meerdere AI-modellen", "Prioriteitsgeneratie", "Geen watermerk", "Prioriteitsondersteuning", "Commerciële licentie"] },

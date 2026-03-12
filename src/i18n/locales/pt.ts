@@ -24,7 +24,7 @@ const pt: Translations = {
     { title: "Descreva sua Visão", description: "Use linguagem natural para descrever o que você quer." },
     { title: "Gere e Itere", description: "Gere vídeos de 4-15 segundos. Estenda, edite ou refine sua criação." },
   ]},
-  testimonials: { label: "Depoimentos", title: "Amado por Criadores no Mundo Todo" },
+  testimonials: { title: "Amado por Criadores em Todo o Mundo", subtitle: "Criadores do mundo inteiro compartilham suas experiências com o Seedance 2.0" }, "Depoimentos", title: "Amado por Criadores no Mundo Todo" },
   pricing: { title: "Preços", subtitle: "Escolha o plano ideal para você.", monthly: "Mensal", annually: "Anual", save: "Economize 50%", perMonth: "/mês", subscribe: "Assinar", mostPopular: "Mais Popular", plans: [
     { name: "Básico", desc: "Ideal para hobbyistas e iniciantes", credits: "800 créditos/mês", features: ["Até 80 vídeos/mês", "Vários modelos IA", "Velocidade padrão", "Sem marca d'água", "Licença comercial"] },
     { name: "Standard", desc: "Perfeito para a maioria dos criadores", credits: "2.000 créditos/mês", features: ["Até 200 vídeos/mês", "Vários modelos IA", "Geração prioritária", "Sem marca d'água", "Suporte prioritário", "Licença comercial"] },

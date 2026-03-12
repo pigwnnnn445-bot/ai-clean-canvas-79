@@ -24,7 +24,7 @@ const pl: Translations = {
     { title: "Opisz swoją Wizję", description: "Użyj języka naturalnego aby opisać czego chcesz." },
     { title: "Generuj i Iteruj", description: "Generuj wideo od 4-15 sekund. Rozszerzaj, edytuj lub udoskonalaj." },
   ]},
-  testimonials: { label: "Opinie", title: "Kochane przez Twórców na Całym Świecie" },
+  testimonials: { title: "Uwielbiane przez Twórców na Całym Świecie", subtitle: "Twórcy z całego świata dzielą się doświadczeniami z Seedance 2.0" }, "Opinie", title: "Kochane przez Twórców na Całym Świecie" },
   pricing: { title: "Cennik", subtitle: "Wybierz plan najlepszy dla Ciebie.", monthly: "Miesięcznie", annually: "Rocznie", save: "Oszczędź 50%", perMonth: "/miesiąc", subscribe: "Subskrybuj", mostPopular: "Najpopularniejszy", plans: [
     { name: "Podstawowy", desc: "Idealny dla hobbystów i początkujących", credits: "800 kredytów/miesiąc", features: ["Do 80 wideo/miesiąc", "Wiele modeli AI", "Standardowa prędkość", "Bez znaku wodnego", "Licencja komercyjna"] },
     { name: "Standard", desc: "Idealny dla większości twórców", credits: "2 000 kredytów/miesiąc", features: ["Do 200 wideo/miesiąc", "Wiele modeli AI", "Priorytetowa generacja", "Bez znaku wodnego", "Priorytetowe wsparcie", "Licencja komercyjna"] },

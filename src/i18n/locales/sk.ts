@@ -24,7 +24,7 @@ const sk: Translations = {
     { title: "Opíšte Vašu Víziu", description: "Použite prirodzený jazyk na opis toho, čo chcete." },
     { title: "Generujte a Iterujte", description: "Generujte videá od 4-15 sekúnd." },
   ]},
-  testimonials: { label: "Referencie", title: "Obľúbený Tvorcami Po Celom Svete" },
+  testimonials: { title: "Obľúbené Tvorcami po Celom Svete", subtitle: "Tvorcovia z celého sveta zdieľajú svoje skúsenosti so Seedance 2.0" }, "Referencie", title: "Obľúbený Tvorcami Po Celom Svete" },
   pricing: { title: "Cenník", subtitle: "Vyberte si plán, ktorý vám vyhovuje.", monthly: "Mesačne", annually: "Ročne", save: "Ušetrite 50%", perMonth: "/mesiac", subscribe: "Predplatiť", mostPopular: "Najobľúbenejší", plans: [
     { name: "Základný", desc: "Ideálny pre nadšencov a začiatočníkov", credits: "800 kreditov/mesiac", features: ["Až 80 videí/mesiac", "Viaceré AI modely", "Štandardná rýchlosť", "Bez vodoznaku", "Komerčná licencia"] },
     { name: "Štandard", desc: "Perfektný pre väčšinu tvorcov", credits: "2 000 kreditov/mesiac", features: ["Až 200 videí/mesiac", "Viaceré AI modely", "Prioritná generácia", "Bez vodoznaku", "Prioritná podpora", "Komerčná licencia"] },
