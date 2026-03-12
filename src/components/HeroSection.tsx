@@ -522,7 +522,7 @@ const HeroSection = () => {
                           <History className="w-4 h-4" />
                         </button>
                       </TooltipTrigger>
-                      <TooltipContent>查看历史记录</TooltipContent>
+                      <TooltipContent>{t.hero.viewHistory}</TooltipContent>
                     </Tooltip>
                   )}
                 </div>
