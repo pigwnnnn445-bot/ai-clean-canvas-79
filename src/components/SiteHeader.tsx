@@ -28,19 +28,16 @@ const SiteHeader = () => {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.isRoute ? undefined : link.href}
-                onClick={(e) => {
-                  if (link.isRoute) {
-                    e.preventDefault();
-                    navigate(link.href);
-                  }
-                }}
+                href={link.href}
+                target={link.isExternal ? "_blank" : undefined}
+                rel={link.isExternal ? "noopener noreferrer" : undefined}
                 className="text-sm text-body-secondary transition-colors hover:text-primary cursor-pointer"
               >
                 {link.label}
               </a>
             </li>
           ))}
+
         </ul>
 
         <div className="hidden md:flex items-center gap-2">
