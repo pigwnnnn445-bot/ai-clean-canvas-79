@@ -58,6 +58,7 @@ const HeroSection = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
+  const [modalVideoLoading, setModalVideoLoading] = useState(true);
   const [hasGenerated, setHasGenerated] = useState(false);
   const [hasHistory, setHasHistory] = useState(false);
   const [activePreviewIndex, setActivePreviewIndex] = useState(0);
@@ -512,9 +513,10 @@ const HeroSection = () => {
                       {isVisiblePreviewReady && (
                         <>
                           {/* Center play button - always visible */}
-                          <button
+                           <button
                             onClick={(e) => {
                               e.stopPropagation();
+                              setModalVideoLoading(true);
                               setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                               setVideoModalOpen(true);
                             }}
@@ -557,6 +559,7 @@ const HeroSection = () => {
                                   className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors"
                                   onClick={(e) => {
                                     e.stopPropagation();
+                                    setModalVideoLoading(true);
                                     setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                                     setVideoModalOpen(true);
                                   }}
@@ -569,6 +572,7 @@ const HeroSection = () => {
                                   className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors"
                                   onClick={(e) => {
                                     e.stopPropagation();
+                                    setModalVideoLoading(true);
                                     setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                                     setVideoModalOpen(true);
                                   }}
@@ -665,13 +669,35 @@ const HeroSection = () => {
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
+              <div className="rounded-xl overflow-hidden bg-card shadow-2xl relative">
+                {/* Loading spinner */}
+                <AnimatePresence>
+                  {modalVideoLoading && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute inset-0 z-10 flex items-center justify-center bg-black/90"
+                    >
+                      <div className="flex flex-col items-center gap-3">
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          className="w-10 h-10 rounded-full border-2 border-foreground/20 border-t-primary"
+                        />
+                        <span className="text-sm text-foreground/60">Loading...</span>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
                 <video
                   src={modalVideoSrc || presetVideos[0]}
                   controls
                   autoPlay
                   loop
                   playsInline
+                  onCanPlay={() => setModalVideoLoading(false)}
                   className="w-full h-auto block"
                 />
               </div>
