@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, Download, History, ChevronLeft, ChevronRight, Volume2, Maximize2, MoreVertical, AlertTriangle, RotateCcw } from "lucide-react";
+import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, Download, History, ChevronLeft, ChevronRight, Volume2, Maximize2, MoreVertical, VideoOff, RotateCcw } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
