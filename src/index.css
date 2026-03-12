@@ -163,6 +163,13 @@
   animation-play-state: paused;
 }
 
+/* View Transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
