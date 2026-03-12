@@ -75,8 +75,7 @@ const SiteHeader = () => {
             ))}
           </ul>
           <div className="mt-4 flex flex-col gap-2">
-            <Button variant="ghost" size="sm">Sign In</Button>
-            <Button size="sm" className="bg-gradient-brand text-primary-foreground" onClick={() => { setMobileOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Start Free</Button>
+            <Button size="sm" className="bg-gradient-brand text-primary-foreground">Sign In</Button>
           </div>
         </div>
       )}
