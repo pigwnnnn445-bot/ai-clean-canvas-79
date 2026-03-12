@@ -180,13 +180,16 @@ const HeroSection = () => {
                       <div
                         key={model.id}
                         onClick={() => {
+                          if (model.comingSoon) return;
                           setSelectedModel(model);
                           setModelDropdownOpen(false);
                         }}
-                        className={`flex items-center gap-3 p-3 cursor-pointer transition-colors ${
-                          selectedModel.id === model.id
-                            ? "bg-primary/10"
-                            : "hover:bg-hover-bg"
+                        className={`flex items-center gap-3 p-3 transition-colors ${
+                          model.comingSoon
+                            ? "opacity-60 cursor-not-allowed"
+                            : selectedModel.id === model.id
+                              ? "bg-primary/10 cursor-pointer"
+                              : "hover:bg-hover-bg cursor-pointer"
                         }`}
                       >
                         <img src={model.icon} alt={model.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
