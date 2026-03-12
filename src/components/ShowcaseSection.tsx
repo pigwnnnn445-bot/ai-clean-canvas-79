@@ -21,11 +21,6 @@ const showcaseItems: ShowcaseItem[] = [
   { video: "/videos/10.mp4", prompt: "Low angle view through a dense field of soft peach and pastel pink flowers, shallow depth of field..." },
 ];
 
-const distributeToColumns = (items: ShowcaseItem[], colCount: number): ShowcaseItem[][] => {
-  const columns: ShowcaseItem[][] = Array.from({ length: colCount }, () => []);
-  items.forEach((item, i) => columns[i % colCount].push(item));
-  return columns;
-};
 
 const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => void }) => {
   const [hovered, setHovered] = useState(false);
