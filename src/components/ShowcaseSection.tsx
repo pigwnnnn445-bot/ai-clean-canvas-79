@@ -109,7 +109,7 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
 
 const ShowcaseSection = () => {
   const [activeItem, setActiveItem] = useState<ShowcaseItem | null>(null);
-  const columns = distributeToColumns(showcaseItems, 4);
+  
   const { t } = useTranslation();
 
   return (
