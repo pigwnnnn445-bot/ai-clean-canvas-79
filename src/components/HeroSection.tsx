@@ -423,14 +423,13 @@ const HeroSection = () => {
                   )}
                 </div>
               </div>
-              <div className="flex items-center gap-4 mt-4">
+              {/* Action buttons - left aligned, compact */}
+              <div className="flex items-center gap-1 mt-2">
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <button
-                      onClick={() => {
-                        toast.success("下载视频成功");
-                      }}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-body-secondary hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      onClick={() => toast.success("下载视频成功")}
+                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                     >
                       <Download className="w-4 h-4" />
                     </button>
@@ -441,7 +440,7 @@ const HeroSection = () => {
                   <TooltipTrigger asChild>
                     <button
                       onClick={() => navigate("/video-history")}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-body-secondary hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                     >
                       <History className="w-4 h-4" />
                     </button>
