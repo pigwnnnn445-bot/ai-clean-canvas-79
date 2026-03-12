@@ -379,11 +379,13 @@ const HeroSection = () => {
                 onClick={() => {
                   if (!isGenerateDisabled && !isGenerating) {
                     setIsGenerating(true);
+                    setGenerationFailed(false);
                     setTimeout(() => {
                       setIsGenerating(false);
-                      setHasGenerated(true);
-                      setHasHistory(true);
-                    }, 5000);
+                      // Simulate failure
+                      setGenerationFailed(true);
+                      toast.error("Generation failed. The server is currently busy, please try again later.");
+                    }, 4000);
                   }
                 }}
                 className={`w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
