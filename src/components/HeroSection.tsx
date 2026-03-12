@@ -559,6 +559,7 @@ const HeroSection = () => {
                                   className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors"
                                   onClick={(e) => {
                                     e.stopPropagation();
+                                    setModalVideoLoading(true);
                                     setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                                     setVideoModalOpen(true);
                                   }}
