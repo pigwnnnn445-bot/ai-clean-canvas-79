@@ -11,7 +11,7 @@ const hu: Translations = {
     { title: "Videó Bővítés és Szerkesztés", description: "Bővítse a meglévő videókat vagy szerkessze az egyes szegmenseket." },
     { title: "Beépített Hanggenerálás", description: "Automatikusan generáljon hangeffekteket és háttérzenét." },
   ]},
-  useCases: { label: "Felhasználási Esetek", title: "Végtelen Lehetőségek Minden Alkotó Számára", cta: "Kezdje El Most", items: [
+  useCases: { label: "Felhasználási Területek", title: "Végtelen Lehetőségek Minden Alkotó Számára", subtitle: "A reklámoktól a kreatív történetmesélésig – fedezze fel az AI-videó végtelen alkalmazásait", cta: "Kezdje El Most", items: [ "Felhasználási Esetek", title: "Végtelen Lehetőségek Minden Alkotó Számára", cta: "Kezdje El Most", items: [
     { title: "Hirdetés és Marketing", desc: "Készítsen meggyőző promóciós tartalmat.", tags: ["Termékvideók", "Márkatartalom", "Hirdetések"] },
     { title: "Kreatív Történetmesélés", desc: "Készítsen egyedi narratívákat.", tags: ["Rövidfilmek", "Művészeti Projektek", "Zenei Videók"] },
     { title: "Közösségi Média Tartalom", desc: "Generáljon vonzó tartalmat.", tags: ["Instagram Reels", "TikTok Videók", "YouTube Shorts"] },
