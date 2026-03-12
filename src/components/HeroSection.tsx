@@ -317,7 +317,7 @@ const HeroSection = () => {
 
               {/* Duration */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Duration</label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">{t.hero.duration}</label>
                 <div className="flex gap-2">
                   {["5s", "10s"].map((d) => (
                     <button
