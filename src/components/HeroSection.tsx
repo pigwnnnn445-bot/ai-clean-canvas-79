@@ -578,7 +578,7 @@ const HeroSection = () => {
                     </Tooltip>
                   )}
                   {/* History: only when user has past generated records */}
-                  {hasHistory && (
+                  {(hasHistory || generationFailed) && (
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <button
