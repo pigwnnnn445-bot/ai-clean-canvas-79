@@ -12,6 +12,8 @@ const ko: Translations = {
     generate: "생성", generating: "생성 중...",
     cost: "비용", credits: "크레딧", available: "사용 가능",
     downloadVideo: "비디오 다운로드", downloadSuccess: "비디오가 성공적으로 다운로드되었습니다", viewHistory: "기록 보기",
+    modelDesc20: "더 안정적인 피사체, 더 부드러운 전환, 바로 사용 가능한 비디오에 가까운 결과물.",
+    modelDesc15: "영상 속 움직임이 자연스럽고 유연하며, 질감이 섬세하고 사실적이며, 전체적인 스타일이 일관되고 매우 세련됩니다.",
   },
   showcase: { title: "", titleHighlight: "영감을 얻으세요", subtitle: "Seedance 2.0의 멀티모달 기능으로 만든 놀라운 비디오 예시를 살펴보세요." },
   features: {

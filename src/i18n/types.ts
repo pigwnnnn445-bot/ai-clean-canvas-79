@@ -34,6 +34,8 @@ export interface Translations {
     downloadVideo: string;
     downloadSuccess: string;
     viewHistory: string;
+    modelDesc20: string;
+    modelDesc15: string;
   };
   showcase: {
     title: string;

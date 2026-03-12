@@ -12,6 +12,8 @@ const es: Translations = {
     generate: "Generar", generating: "Generando...",
     cost: "Costo", credits: "créditos", available: "Disponible",
     downloadVideo: "Descargar Video", downloadSuccess: "Video descargado exitosamente", viewHistory: "Ver Historial",
+    modelDesc20: "Sujetos más estables, transiciones más suaves y resultados más cercanos a video listo para usar.",
+    modelDesc15: "El movimiento es natural y fluido, la textura es delicada y realista, y el estilo general es consistente y altamente pulido.",
   },
   showcase: { title: "Obtén", titleHighlight: "Inspiración", subtitle: "Explora impresionantes ejemplos de video creados con las capacidades multimodales de Seedance 2.0." },
   features: {

@@ -12,6 +12,8 @@ const fr: Translations = {
     generate: "Générer", generating: "Génération en cours...",
     cost: "Coût", credits: "crédits", available: "Disponible",
     downloadVideo: "Télécharger la Vidéo", downloadSuccess: "Vidéo téléchargée avec succès", viewHistory: "Voir l'Historique",
+    modelDesc20: "Sujets plus stables, transitions plus fluides et résultats plus proches d'une vidéo prête à l'emploi.",
+    modelDesc15: "Le mouvement est naturel et fluide, la texture est délicate et réaliste, et le style général est cohérent et très soigné.",
   },
   showcase: { title: "Trouvez", titleHighlight: "l'Inspiration", subtitle: "Explorez des exemples vidéo époustouflants créés avec les capacités multimodales de Seedance 2.0." },
   features: {

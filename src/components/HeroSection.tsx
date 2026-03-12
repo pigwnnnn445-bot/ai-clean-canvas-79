@@ -4,7 +4,7 @@ import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, 
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
-import { useTranslation } from "@/i18n";
+import { useTranslation, Translations } from "@/i18n";
 import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
@@ -19,19 +19,19 @@ const aspectRatios = [
   { label: "1:1", icon: "■" },
 ];
 
-const models = [
+const getModels = (t: Translations) => [
   {
     id: "seedance-2.0",
     name: "Seedance 2.0",
     icon: modelIcon20,
-    description: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
+    description: t.hero.modelDesc20,
     comingSoon: true,
   },
   {
     id: "seedance-1.5-pro",
     name: "Seedance 1.5 Pro",
     icon: modelIcon15,
-    description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
+    description: t.hero.modelDesc15,
   },
 ];
 
@@ -42,7 +42,9 @@ const HeroSection = () => {
   const [selectedRes, setSelectedRes] = useState("720p");
   const [selectedRatio, setSelectedRatio] = useState("16:9");
   const [selectedDuration, setSelectedDuration] = useState("5s");
-  const [selectedModel, setSelectedModel] = useState(models[0]);
+  const models = getModels(t);
+  const [selectedModelId, setSelectedModelId] = useState(models[0].id);
+  const selectedModel = models.find(m => m.id === selectedModelId) || models[0];
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [endFrameEnabled, setEndFrameEnabled] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -181,7 +183,7 @@ const HeroSection = () => {
                         key={model.id}
                         onClick={() => {
                           if (model.comingSoon) return;
-                          setSelectedModel(model);
+                          setSelectedModelId(model.id);
                           setModelDropdownOpen(false);
                         }}
                         className={`flex items-center gap-3 p-3 transition-colors ${

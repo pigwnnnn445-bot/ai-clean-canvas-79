@@ -36,6 +36,8 @@ const en: Translations = {
     downloadVideo: "Download Video",
     downloadSuccess: "Video downloaded successfully",
     viewHistory: "View History",
+    modelDesc20: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
+    modelDesc15: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
   },
   showcase: {
     title: "Get",
