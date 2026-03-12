@@ -217,39 +217,43 @@ const HeroSection = () => {
                   </div>
                   {endFrameEnabled ? (
                     <div className="flex items-center gap-3">
-                      {firstFrame ? (
-                        <div className="flex-1 relative rounded-lg overflow-hidden border border-border">
-                          <img src={firstFrame} alt="First frame" className="w-full aspect-square object-cover" />
-                          <button onClick={() => setFirstFrame(null)} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
-                            <X className="w-3.5 h-3.5 text-foreground" />
-                          </button>
-                        </div>
-                      ) : (
-                        <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                          <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setFirstFrame)} />
-                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                            <Plus className="w-5 h-5 text-primary" />
-                          </div>
-                          <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
-                        </label>
-                      )}
+                      <div className="flex-1 relative rounded-lg overflow-hidden border border-border h-32">
+                        {firstFrame ? (
+                          <>
+                            <img src={firstFrame} alt="First frame" className="w-full h-full object-cover" />
+                            <button onClick={() => setFirstFrame(null)} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
+                              <X className="w-3.5 h-3.5 text-foreground" />
+                            </button>
+                          </>
+                        ) : (
+                          <label className="w-full h-full border-2 border-dashed border-border rounded-lg flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                            <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setFirstFrame)} />
+                            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                              <Plus className="w-5 h-5 text-primary" />
+                            </div>
+                            <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
+                          </label>
+                        )}
+                      </div>
                       <ArrowRight className="w-5 h-5 text-body-muted flex-shrink-0" />
-                      {lastFrame ? (
-                        <div className="flex-1 relative rounded-lg overflow-hidden border border-border">
-                          <img src={lastFrame} alt="Last frame" className="w-full aspect-square object-cover" />
-                          <button onClick={() => setLastFrame(null)} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
-                            <X className="w-3.5 h-3.5 text-foreground" />
-                          </button>
-                        </div>
-                      ) : (
-                        <label className="flex-1 border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
-                          <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setLastFrame)} />
-                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                            <Plus className="w-5 h-5 text-primary" />
-                          </div>
-                          <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
-                        </label>
-                      )}
+                      <div className="flex-1 relative rounded-lg overflow-hidden border border-border h-32">
+                        {lastFrame ? (
+                          <>
+                            <img src={lastFrame} alt="Last frame" className="w-full h-full object-cover" />
+                            <button onClick={() => setLastFrame(null)} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
+                              <X className="w-3.5 h-3.5 text-foreground" />
+                            </button>
+                          </>
+                        ) : (
+                          <label className="w-full h-full border-2 border-dashed border-border rounded-lg flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                            <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setLastFrame)} />
+                            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                              <Plus className="w-5 h-5 text-primary" />
+                            </div>
+                            <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
+                          </label>
+                        )}
+                      </div>
                     </div>
                   ) : (
                     uploadedImage ? (
