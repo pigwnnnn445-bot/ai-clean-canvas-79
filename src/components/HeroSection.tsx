@@ -476,7 +476,7 @@ const HeroSection = () => {
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium hover:opacity-90 transition-all cursor-pointer"
                       >
                         <RotateCcw className="w-4 h-4" />
-                        Retry
+                        {t.hero.retry}
                       </motion.button>
                     </div>
                   ) : (
