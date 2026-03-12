@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical, Plus, ArrowRight, X, Download, History } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -48,7 +48,7 @@ const HeroSection = () => {
   const [prompt, setPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
   const isGenerateDisabled = (() => {
     const hasPrompt = prompt.trim().length > 0;
     if (activeTab === "text") {
@@ -374,7 +374,10 @@ const HeroSection = () => {
 
             {/* Right: Video Preview */}
             <div className="flex-1 flex flex-col items-center justify-center">
-              <div className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft">
+               <div
+                  className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft cursor-pointer group"
+                  onClick={() => !isGenerating && setVideoModalOpen(true)}
+                >
                 <div className="aspect-video relative">
                   {isGenerating ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-4">
@@ -423,14 +426,13 @@ const HeroSection = () => {
                   )}
                 </div>
               </div>
-              <div className="flex items-center gap-4 mt-4">
+              {/* Action buttons - left aligned, compact */}
+              <div className="flex items-center gap-1 mt-2">
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <button
-                      onClick={() => {
-                        toast.success("下载视频成功");
-                      }}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-body-secondary hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      onClick={() => toast.success("下载视频成功")}
+                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                     >
                       <Download className="w-4 h-4" />
                     </button>
@@ -441,7 +443,7 @@ const HeroSection = () => {
                   <TooltipTrigger asChild>
                     <button
                       onClick={() => navigate("/video-history")}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-body-secondary hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                     >
                       <History className="w-4 h-4" />
                     </button>
@@ -453,6 +455,56 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {videoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-md"
+            onClick={() => setVideoModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative max-w-4xl w-full mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setVideoModalOpen(false)}
+                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-foreground/80 hover:bg-foreground flex items-center justify-center text-background transition-colors cursor-pointer z-10"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
+                <img
+                  src={heroStill}
+                  alt="Generated video preview"
+                  className="w-full h-auto block"
+                />
+              </div>
+
+              {/* Download button below modal */}
+              <div className="flex items-center justify-center mt-4">
+                <button
+                  onClick={() => toast.success("下载视频成功")}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-brand text-primary-foreground font-medium text-sm hover:opacity-90 transition-all cursor-pointer"
+                >
+                  <Download className="w-4 h-4" />
+                  下载视频
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
