@@ -131,7 +131,7 @@ const HeroSection = () => {
                   }`}
                 >
                   <Image className="w-4 h-4" />
-                  Image to Video
+                  {t.hero.imageToVideo}
                 </button>
                 <button
                   onClick={() => setActiveTab("text")}
