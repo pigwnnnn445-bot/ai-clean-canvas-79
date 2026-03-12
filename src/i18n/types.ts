@@ -52,6 +52,7 @@ export interface Translations {
   useCases: {
     label: string;
     title: string;
+    subtitle: string;
     cta: string;
     items: { title: string; desc: string; tags: string[] }[];
   };
