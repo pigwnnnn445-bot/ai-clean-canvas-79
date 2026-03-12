@@ -4,7 +4,7 @@ import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, 
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
-import { useTranslation } from "@/i18n";
+import { useTranslation, Translations } from "@/i18n";
 import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
