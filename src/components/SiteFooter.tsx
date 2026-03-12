@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/i18n";
 
 const FooterCTA = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 border-t border-border">
       <div className="container max-w-3xl text-center">
@@ -10,20 +13,19 @@ const FooterCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold">Ready to Create?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{t.footer.title}</h2>
           <p className="mt-4 text-body-secondary max-w-xl mx-auto">
-            Join thousands of creators using Seedance 2.0 to bring their visions to life.
-            Reference anything, edit anything, create anything.
+            {t.footer.subtitle}
           </p>
           <div className="mt-8">
-            <Button variant="gradient" size="xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Start Creating Now</Button>
+            <Button variant="gradient" size="xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t.footer.cta}</Button>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm text-body-muted">
-            <span>Multi-modal input</span>
+            <span>{t.footer.multiModal}</span>
             <span className="w-1 h-1 rounded-full bg-border hidden md:block" />
-            <span>Watermark-free</span>
+            <span>{t.footer.watermarkFree}</span>
             <span className="w-1 h-1 rounded-full bg-border hidden md:block" />
-            <span>Reference any content</span>
+            <span>{t.footer.referenceAny}</span>
           </div>
         </motion.div>
       </div>

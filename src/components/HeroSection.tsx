@@ -4,6 +4,7 @@ import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, 
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
+import { useTranslation } from "@/i18n";
 import heroStill from "@/assets/hero-still.jpg";
 import modelIcon15 from "@/assets/model-seedance-1.5.png";
 import modelIcon20 from "@/assets/model-seedance-2.0.png";
@@ -35,6 +36,7 @@ const models = [
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
   const [selectedRes, setSelectedRes] = useState("720p");
   const [selectedRatio, setSelectedRatio] = useState("16:9");
@@ -90,11 +92,11 @@ const HeroSection = () => {
       {/* Title */}
       <div className="container text-center mb-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-          Seedance <span className="text-gradient-brand">2.0</span>
+          {t.hero.title} <span className="text-gradient-brand">2.0</span>
         </h1>
         <p className="mt-4 text-body-secondary max-w-3xl mx-auto leading-relaxed">
-          Experience{" "}
-          <span className="text-gradient-brand font-semibold">true multi-modal AI video creation</span>.
+          {t.hero.subtitle}{" "}
+          <span className="text-gradient-brand font-semibold">{t.hero.subtitleHighlight}</span>.
           Combine images, videos, audio, and text to generate cinematic content with
           precise reference capabilities, seamless video extension, and natural language control.
         </p>
@@ -130,7 +132,7 @@ const HeroSection = () => {
                   }`}
                 >
                   <Image className="w-4 h-4" />
-                  Image to Video
+                  {t.hero.imageToVideo}
                 </button>
                 <button
                   onClick={() => setActiveTab("text")}
@@ -141,7 +143,7 @@ const HeroSection = () => {
                   }`}
                 >
                   <Type className="w-4 h-4" />
-                  Text to Video
+                  {t.hero.textToVideo}
                 </button>
               </div>
 
@@ -149,7 +151,7 @@ const HeroSection = () => {
               <div ref={dropdownRef} className="relative">
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  AI Model
+                  {t.hero.aiModel}
                 </label>
                 <div
                   onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
@@ -198,10 +200,10 @@ const HeroSection = () => {
                   <div className="flex items-center justify-between mb-2">
                     <label className="flex items-center gap-1.5 text-xs text-body-muted">
                       <Image className="w-3.5 h-3.5" />
-                      Images
+                      {t.hero.images}
                     </label>
                     <div className="flex items-center gap-2 text-xs text-body-muted">
-                      <span>Add end frame</span>
+                      <span>{t.hero.addEndFrame}</span>
                       <div
                         onClick={() => setEndFrameEnabled(!endFrameEnabled)}
                         className={`w-9 h-5 rounded-full relative cursor-pointer transition-colors ${
@@ -232,7 +234,7 @@ const HeroSection = () => {
                             <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                               <Plus className="w-5 h-5 text-primary" />
                             </div>
-                            <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
+                            <p className="text-xs text-foreground font-medium text-center">{t.hero.uploadFirstFrame}</p>
                           </label>
                         )}
                       </div>
@@ -251,7 +253,7 @@ const HeroSection = () => {
                             <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                               <Plus className="w-5 h-5 text-primary" />
                             </div>
-                            <p className="text-xs text-foreground font-medium text-center">Upload Last Frame</p>
+                            <p className="text-xs text-foreground font-medium text-center">{t.hero.uploadLastFrame}</p>
                           </label>
                         )}
                       </div>
@@ -267,9 +269,9 @@ const HeroSection = () => {
                     ) : (
                       <label className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
                         <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setUploadedImage)} />
-                        <Upload className="w-6 h-6 text-primary" />
-                        <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
-                        <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
+                         <Upload className="w-6 h-6 text-primary" />
+                        <p className="text-sm text-foreground font-medium">{t.hero.clickToUpload}</p>
+                        <p className="text-xs text-body-muted">{t.hero.supportedFormats}</p>
                       </label>
                     )
                   )}
@@ -281,13 +283,13 @@ const HeroSection = () => {
               <div>
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Type className="w-3.5 h-3.5" />
-                  Prompt
+                  {t.hero.prompt}
                 </label>
                 <div className="relative">
                   <textarea
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value.slice(0, 5000))}
-                    placeholder="Describe how you want your image to animate..."
+                    placeholder={t.hero.promptPlaceholder}
                     className="w-full h-28 p-3 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-body-muted resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                   />
                   <span className="absolute bottom-2 right-3 text-xs text-body-muted">{prompt.length}/5000</span>
@@ -296,7 +298,7 @@ const HeroSection = () => {
 
               {/* Resolution */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Resolution</label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">{t.hero.resolution}</label>
                 <div className="flex gap-2">
                   {resolutions.map((r) => (
                     <button
@@ -316,7 +318,7 @@ const HeroSection = () => {
 
               {/* Duration */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Duration</label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">{t.hero.duration}</label>
                 <div className="flex gap-2">
                   {["5s", "10s"].map((d) => (
                     <button
@@ -336,7 +338,7 @@ const HeroSection = () => {
 
               {/* Aspect Ratio */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Aspect Ratio</label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">{t.hero.aspectRatio}</label>
                 <div className="flex flex-wrap gap-2">
                   {aspectRatios.map((ar) => (
                     <button
@@ -375,14 +377,14 @@ const HeroSection = () => {
                 }`}
               >
                 <Sparkles className="w-4 h-4" />
-                {isGenerating ? "生成中..." : "生成"}
+                {isGenerating ? t.hero.generating : t.hero.generate}
               </button>
 
               {/* Credits Info */}
               <div className="flex items-center justify-center gap-3 text-xs text-body-muted mt-2">
-                <span>Cost <span className="font-semibold text-foreground">{selectedRes === "1080p" ? 20 : 10}{selectedDuration === "10s" ? " × 2" : ""}</span> credits</span>
+                <span>{t.hero.cost} <span className="font-semibold text-foreground">{selectedRes === "1080p" ? 20 : 10}{selectedDuration === "10s" ? " × 2" : ""}</span> {t.hero.credits}</span>
                 <span className="text-border">|</span>
-                <span>Available <span className="font-semibold text-foreground">0</span></span>
+                <span>{t.hero.available} <span className="font-semibold text-foreground">0</span></span>
               </div>
             </div>
 
@@ -501,13 +503,13 @@ const HeroSection = () => {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <button
-                          onClick={() => toast.success("下载视频成功")}
+                          onClick={() => toast.success(t.hero.downloadSuccess)}
                           className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                         >
                           <Download className="w-4 h-4" />
                         </button>
                       </TooltipTrigger>
-                      <TooltipContent>下载视频</TooltipContent>
+                      <TooltipContent>{t.hero.downloadVideo}</TooltipContent>
                     </Tooltip>
                   )}
                   {/* History: only when user has past generated records */}
@@ -521,7 +523,7 @@ const HeroSection = () => {
                           <History className="w-4 h-4" />
                         </button>
                       </TooltipTrigger>
-                      <TooltipContent>查看历史记录</TooltipContent>
+                      <TooltipContent>{t.hero.viewHistory}</TooltipContent>
                     </Tooltip>
                   )}
                 </div>

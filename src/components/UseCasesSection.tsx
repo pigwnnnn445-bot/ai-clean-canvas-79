@@ -1,30 +1,24 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
-const useCases = [
-  { title: "Advertising & Marketing", desc: "Create compelling promotional content by referencing successful ad templates.", tags: ["Product Videos", "Brand Content", "Commercial Ads"] },
-  { title: "Creative Storytelling", desc: "Craft unique narratives using multi-modal inputs. Reference film techniques and cinematic styles.", tags: ["Short Films", "Art Projects", "Music Videos"] },
-  { title: "Social Media Content", desc: "Generate scroll-stopping content by referencing trending templates and effects.", tags: ["Instagram Reels", "TikTok Videos", "YouTube Shorts"] },
-  { title: "Motion & Dance Videos", desc: "Upload reference choreography and apply them to any character.", tags: ["Dance Covers", "Action Sequences", "Choreography"] },
-  { title: "Film Pre-Visualization", desc: "Reference film clips to replicate camera movements, transitions, and visual effects.", tags: ["Storyboarding", "Camera Planning", "Concept Proofing"] },
-  { title: "Music & Audio Sync", desc: "Upload audio tracks and create perfectly beat-synced videos.", tags: ["Beat Sync", "Music Videos", "Sound Design"] },
-];
+import { useTranslation } from "@/i18n";
 
 const UseCasesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="use-cases" className="py-24">
       <div className="container max-w-5xl">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">Use Cases</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">{t.useCases.label}</p>
           <h2 className="text-3xl md:text-4xl font-bold">
-            Endless Possibilities For Every Creator
+            {t.useCases.title}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {useCases.map((uc, i) => (
+          {t.useCases.items.map((uc, i) => (
             <motion.div
-              key={uc.title}
+              key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -45,7 +39,7 @@ const UseCasesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="gradient" size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Get Started Now</Button>
+          <Button variant="gradient" size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t.useCases.cta}</Button>
         </div>
       </div>
     </section>
