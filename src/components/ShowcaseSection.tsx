@@ -1,6 +1,7 @@
 import { Play, X } from "lucide-react";
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "@/i18n";
 
 interface ShowcaseItem {
   video: string;
@@ -43,13 +44,11 @@ const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => vo
         preload="metadata"
         className="w-full h-auto object-cover block"
       />
-      {/* Play button */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-12 h-12 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
           <Play className="w-5 h-5 text-foreground fill-foreground ml-0.5" />
         </div>
       </div>
-      {/* Prompt on hover */}
       <div
         className={`absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-background/80 to-transparent transition-opacity duration-300 ${
           hovered ? "opacity-100" : "opacity-0"
@@ -75,7 +74,6 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
     };
   }, [onClose]);
 
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -93,14 +91,12 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
         className="relative max-w-4xl w-full mx-4"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-foreground/80 hover:bg-foreground flex items-center justify-center text-background transition-colors cursor-pointer z-10"
         >
           <X className="w-4 h-4" />
         </button>
-
         <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
           <video
             ref={videoRef}
@@ -119,27 +115,16 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
 const ShowcaseSection = () => {
   const [activeItem, setActiveItem] = useState<ShowcaseItem | null>(null);
   const columns = distributeToColumns(showcaseItems, 4);
-
-  const renderColumns = (colCount: number, hiddenClass: string) => (
-    <div className={`${hiddenClass} grid-cols-${colCount} gap-3`}>
-      {distributeToColumns(showcaseItems, colCount).map((col, ci) => (
-        <div key={ci} className="flex flex-col gap-3">
-          {col.map((item, i) => (
-            <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-          ))}
-        </div>
-      ))}
-    </div>
-  );
+  const { t } = useTranslation();
 
   return (
     <section className="py-24" aria-label="Showcase gallery">
       <div className="container text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold">
-          Get <span className="text-gradient-brand">Inspired</span>
+          {t.showcase.title} <span className="text-gradient-brand">{t.showcase.titleHighlight}</span>
         </h2>
         <p className="mt-3 text-body-secondary max-w-xl mx-auto">
-          Explore stunning video examples created with Seedance 2.0's multi-modal capabilities.
+          {t.showcase.subtitle}
         </p>
       </div>
 

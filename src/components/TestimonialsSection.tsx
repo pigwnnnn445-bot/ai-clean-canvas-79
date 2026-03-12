@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "@/i18n";
 
 const testimonials = [
   { quote: "Seedance 2.0's multi-modal input is a game-changer. I can finally reference a dance video and apply it to any character I want.", name: "Sarah Chen", role: "Content Creator", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop" },
@@ -10,30 +11,32 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24">
       <div className="container max-w-5xl">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">Testimonials</p>
-          <h2 className="text-3xl md:text-4xl font-bold">Loved by Creators Worldwide</h2>
+          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">{t.testimonials.label}</p>
+          <h2 className="text-3xl md:text-4xl font-bold">{t.testimonials.title}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
+          {testimonials.map((item, i) => (
             <motion.blockquote
-              key={t.name}
+              key={item.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="p-6 rounded-lg border border-border bg-card shadow-soft hover:bg-hover-bg transition-colors"
             >
-              <p className="text-sm text-body-secondary leading-relaxed mb-6 italic">"{t.quote}"</p>
+              <p className="text-sm text-body-secondary leading-relaxed mb-6 italic">"{item.quote}"</p>
               <div className="flex items-center gap-3">
-                <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" loading="lazy" />
+                <img src={item.avatar} alt={item.name} className="w-10 h-10 rounded-full object-cover" loading="lazy" />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-body-muted">{t.role}</p>
+                  <p className="text-sm font-semibold text-foreground">{item.name}</p>
+                  <p className="text-xs text-body-muted">{item.role}</p>
                 </div>
               </div>
             </motion.blockquote>
