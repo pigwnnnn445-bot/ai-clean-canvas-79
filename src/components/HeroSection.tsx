@@ -51,6 +51,7 @@ const HeroSection = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
   const [hasGenerated, setHasGenerated] = useState(false);
+  const [hasHistory, setHasHistory] = useState(false);
   const [activePreviewIndex, setActivePreviewIndex] = useState(0);
 
   const presetVideos = ["/videos/1.mp4", "/videos/2.mp4", "/videos/3.mp4"];
@@ -363,6 +364,7 @@ const HeroSection = () => {
                     setTimeout(() => {
                       setIsGenerating(false);
                       setHasGenerated(true);
+                      setHasHistory(true);
                     }, 5000);
                   }
                 }}
@@ -491,31 +493,37 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              {/* Action buttons - only when user has generated */}
-              {hasGenerated && (
+              {/* Action buttons */}
+              {(hasGenerated || hasHistory) && (
                 <div className="flex items-center gap-1 mt-2">
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button
-                        onClick={() => toast.success("下载视频成功")}
-                        className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
-                      >
-                        <Download className="w-4 h-4" />
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent>下载视频</TooltipContent>
-                  </Tooltip>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button
-                        onClick={() => navigate("/video-history")}
-                        className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
-                      >
-                        <History className="w-4 h-4" />
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent>查看历史记录</TooltipContent>
-                  </Tooltip>
+                  {/* Download: only when current session has a successfully generated video */}
+                  {hasGenerated && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => toast.success("下载视频成功")}
+                          className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                        >
+                          <Download className="w-4 h-4" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent>下载视频</TooltipContent>
+                    </Tooltip>
+                  )}
+                  {/* History: only when user has past generated records */}
+                  {hasHistory && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => navigate("/video-history")}
+                          className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                        >
+                          <History className="w-4 h-4" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent>查看历史记录</TooltipContent>
+                    </Tooltip>
+                  )}
                 </div>
               )}
             </div>
