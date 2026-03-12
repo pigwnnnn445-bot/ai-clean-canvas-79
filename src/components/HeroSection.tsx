@@ -503,7 +503,7 @@ const HeroSection = () => {
                               setVisiblePreviewIndex(idx);
                             }
                           }}
-                          className={`absolute inset-0 w-full h-full object-contain bg-black transition-opacity duration-200 ${
+                          className={`absolute inset-0 w-full h-full object-cover bg-black transition-opacity duration-200 ${
                             visiblePreviewIndex === idx ? "opacity-100 z-[1]" : "opacity-0 z-0"
                           }`}
                         />
