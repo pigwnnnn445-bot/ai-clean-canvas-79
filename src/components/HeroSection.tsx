@@ -516,7 +516,7 @@ const HeroSection = () => {
 
               <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
                 <video
-                  src="/videos/1.mp4"
+                  src={modalVideoSrc || presetVideos[0]}
                   controls
                   autoPlay
                   loop
