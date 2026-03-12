@@ -48,7 +48,7 @@ const ko: Translations = {
       { title: "생성 및 반복", description: "4-15초 비디오를 생성하세요. 확장, 편집 또는 조정으로 작품을 다듬으세요." },
     ],
   },
-  testimonials: { label: "후기", title: "전 세계 크리에이터들이 사랑합니다" },
+  testimonials: { title: "전 세계 크리에이터들이 사랑합니다", subtitle: "전 세계 크리에이터들이 Seedance 2.0 경험을 공유합니다" },
   pricing: {
     title: "가격", subtitle: "가장 적합한 플랜을 선택하세요.",
     monthly: "월간", annually: "연간", save: "50% 절약", perMonth: "/월", subscribe: "구독하기", mostPopular: "가장 인기",

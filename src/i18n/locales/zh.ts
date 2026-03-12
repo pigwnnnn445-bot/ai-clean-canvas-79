@@ -60,7 +60,7 @@ const zh: Translations = {
       { title: "生成与迭代", description: "生成4-15秒的视频。扩展、编辑或通过有针对性的调整优化你的作品。" },
     ],
   },
-  testimonials: { label: "用户评价", title: "全球创作者的选择" },
+  testimonials: { title: "全球创作者的选择", subtitle: "来自世界各地的创作者分享他们使用 Seedance 2.0 的体验" },
   pricing: {
     title: "定价",
     subtitle: "选择最适合你的方案。",

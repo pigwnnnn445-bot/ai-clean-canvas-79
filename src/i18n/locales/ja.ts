@@ -48,7 +48,7 @@ const ja: Translations = {
       { title: "生成＆反復", description: "4-15秒の動画を生成。拡張、編集、または調整で作品を洗練。" },
     ],
   },
-  testimonials: { label: "お客様の声", title: "世界中のクリエイターに愛されています" },
+  testimonials: { title: "世界中のクリエイターに愛されています", subtitle: "世界中のクリエイターがSeedance 2.0での体験を共有しています" },
   pricing: {
     title: "料金", subtitle: "最適なプランをお選びください。",
     monthly: "月額", annually: "年額", save: "50%お得", perMonth: "/月", subscribe: "購読する", mostPopular: "一番人気",

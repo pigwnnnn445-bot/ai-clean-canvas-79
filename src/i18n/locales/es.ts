@@ -48,7 +48,7 @@ const es: Translations = {
       { title: "Genera e Itera", description: "Genera tu video de 4-15 segundos. Extiende, edita o refina tu creación." },
     ],
   },
-  testimonials: { label: "Testimonios", title: "Amado por Creadores en Todo el Mundo" },
+  testimonials: { title: "Amado por Creadores en Todo el Mundo", subtitle: "Creadores de todo el mundo comparten sus experiencias con Seedance 2.0" },
   pricing: {
     title: "Precios", subtitle: "Elige el plan que mejor te funcione.",
     monthly: "Mensual", annually: "Anual", save: "Ahorra 50%", perMonth: "/mes", subscribe: "Suscribirse", mostPopular: "Más Popular",

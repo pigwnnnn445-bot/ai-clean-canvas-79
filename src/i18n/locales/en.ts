@@ -82,8 +82,8 @@ const en: Translations = {
     ],
   },
   testimonials: {
-    label: "Testimonials",
     title: "Loved by Creators Worldwide",
+    subtitle: "Creators from around the world share their experiences with Seedance 2.0",
   },
   pricing: {
     title: "Pricing",

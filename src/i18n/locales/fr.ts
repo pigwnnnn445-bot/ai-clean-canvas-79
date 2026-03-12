@@ -48,7 +48,7 @@ const fr: Translations = {
       { title: "Générez & Itérez", description: "Générez votre vidéo de 4-15 secondes. Étendez, éditez ou affinez votre création." },
     ],
   },
-  testimonials: { label: "Témoignages", title: "Adoré par les Créateurs du Monde Entier" },
+  testimonials: { title: "Adoré par les Créateurs du Monde Entier", subtitle: "Des créateurs du monde entier partagent leurs expériences avec Seedance 2.0" },
   pricing: {
     title: "Tarifs", subtitle: "Choisissez le plan qui vous convient.",
     monthly: "Mensuel", annually: "Annuel", save: "Économisez 50%", perMonth: "/mois", subscribe: "S'abonner", mostPopular: "Le Plus Populaire",
