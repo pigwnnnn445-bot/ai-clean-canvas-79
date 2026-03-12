@@ -142,7 +142,7 @@ const HeroSection = () => {
                   }`}
                 >
                   <Type className="w-4 h-4" />
-                  Text to Video
+                  {t.hero.textToVideo}
                 </button>
               </div>
 
