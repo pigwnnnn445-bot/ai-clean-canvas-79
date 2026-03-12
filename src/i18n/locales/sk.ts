@@ -11,7 +11,7 @@ const sk: Translations = {
     { title: "Rozšírenie a Úprava Videa", description: "Rozšírte existujúce videá, zlúčte klipy alebo upravte konkrétne segmenty." },
     { title: "Vstavaná Generácia Audia", description: "Automaticky generujte zvukové efekty a hudbu na pozadí." },
   ]},
-  useCases: { label: "Použitie", title: "Nekonečné Možnosti Pre Každého Tvorcu", cta: "Začnite Teraz", items: [
+  useCases: { label: "Použitie", title: "Nekonečné Možnosti Pre Každého Tvorcu", subtitle: "Od reklamy po kreatívne rozprávanie príbehov – objavte nekonečné využitie AI videa", cta: "Začnite Teraz", items: [ "Použitie", title: "Nekonečné Možnosti Pre Každého Tvorcu", cta: "Začnite Teraz", items: [
     { title: "Reklama a Marketing", desc: "Vytvárajte presvedčivý propagačný obsah.", tags: ["Produktové Videá", "Obsah Značky", "Reklamy"] },
     { title: "Kreatívne Rozprávanie", desc: "Vytvárajte jedinečné príbehy s multimodálnymi vstupmi.", tags: ["Krátke Filmy", "Umelecké Projekty", "Hudobné Videá"] },
     { title: "Obsah Sociálnych Médií", desc: "Generujte pútavý obsah.", tags: ["Instagram Reels", "TikTok Videá", "YouTube Shorts"] },
