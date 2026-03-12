@@ -37,6 +37,10 @@ export interface Translations {
     viewHistory: string;
     modelDesc20: string;
     modelDesc15: string;
+    generationFailed: string;
+    generationFailedDesc: string;
+    retry: string;
+    generationFailedToast: string;
   };
   showcase: {
     title: string;

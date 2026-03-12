@@ -22,6 +22,10 @@ const zh: Translations = {
     downloadVideo: "下载视频", downloadSuccess: "视频下载成功", viewHistory: "查看历史记录",
     modelDesc20: "主体更稳定，转场更流畅，输出结果更接近可直接使用的视频。",
     modelDesc15: "画面运动自然流畅，质感细腻逼真，整体风格统一且高度精致。",
+    generationFailed: "生成失败",
+    generationFailedDesc: "服务器当前繁忙，请稍后重试或调整设置。",
+    retry: "重试",
+    generationFailedToast: "生成失败。服务器当前繁忙，请稍后重试。",
   },
   showcase: { title: "获取", titleHighlight: "灵感", subtitle: "探索使用 Seedance 2.0 多模态功能创作的精彩视频示例。" },
   features: {

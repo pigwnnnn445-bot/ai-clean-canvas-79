@@ -39,6 +39,10 @@ const en: Translations = {
     viewHistory: "View History",
     modelDesc20: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
     modelDesc15: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
+    generationFailed: "Generation Failed",
+    generationFailedDesc: "The server is currently busy. Please try again later or adjust your settings.",
+    retry: "Retry",
+    generationFailedToast: "Generation failed. The server is currently busy, please try again later.",
   },
   showcase: {
     title: "Get",

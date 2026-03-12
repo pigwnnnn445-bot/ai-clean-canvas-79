@@ -384,7 +384,7 @@ const HeroSection = () => {
                       setIsGenerating(false);
                       // Simulate failure
                       setGenerationFailed(true);
-                      toast.error("Generation failed. The server is currently busy, please try again later.");
+                      toast.error(t.hero.generationFailedToast);
                     }, 4000);
                   }
                 }}
@@ -455,8 +455,8 @@ const HeroSection = () => {
                         transition={{ delay: 0.2 }}
                         className="text-center"
                       >
-                        <p className="text-sm font-semibold text-foreground">Generation Failed</p>
-                        <p className="text-xs text-body-muted mt-1 max-w-xs">The server is currently busy. Please try again later or adjust your settings.</p>
+                        <p className="text-sm font-semibold text-foreground">{t.hero.generationFailed}</p>
+                        <p className="text-xs text-body-muted mt-1 max-w-xs">{t.hero.generationFailedDesc}</p>
                       </motion.div>
                       <motion.button
                         initial={{ opacity: 0, y: 10 }}
@@ -476,7 +476,7 @@ const HeroSection = () => {
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium hover:opacity-90 transition-all cursor-pointer"
                       >
                         <RotateCcw className="w-4 h-4" />
-                        Retry
+                        {t.hero.retry}
                       </motion.button>
                     </div>
                   ) : (
