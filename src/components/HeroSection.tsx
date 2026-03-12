@@ -288,7 +288,7 @@ const HeroSection = () => {
                   <textarea
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value.slice(0, 5000))}
-                    placeholder="Describe how you want your image to animate..."
+                    placeholder={t.hero.promptPlaceholder}
                     className="w-full h-28 p-3 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-body-muted resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                   />
                   <span className="absolute bottom-2 right-3 text-xs text-body-muted">{prompt.length}/5000</span>
