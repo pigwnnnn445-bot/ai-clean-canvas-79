@@ -52,6 +52,7 @@ const HeroSection = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [firstFrame, setFirstFrame] = useState<string | null>(null);
   const [lastFrame, setLastFrame] = useState<string | null>(null);
+  const [fileSizeError, setFileSizeError] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationFailed, setGenerationFailed] = useState(false);
