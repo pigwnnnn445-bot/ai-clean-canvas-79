@@ -11,7 +11,7 @@ const id: Translations = {
     { title: "Ekstensi & Pengeditan Video", description: "Perpanjang video yang ada, gabungkan klip, atau edit segmen tertentu." },
     { title: "Generasi Audio Bawaan", description: "Hasilkan efek suara dan musik latar secara otomatis." },
   ]},
-  useCases: { label: "Kasus Penggunaan", title: "Kemungkinan Tak Terbatas Untuk Setiap Kreator", cta: "Mulai Sekarang", items: [
+  useCases: { label: "Kasus Penggunaan", title: "Kemungkinan Tak Terbatas Untuk Setiap Kreator", subtitle: "Dari periklanan hingga storytelling kreatif, jelajahi aplikasi tak terbatas video AI", cta: "Mulai Sekarang", items: [ "Kasus Penggunaan", title: "Kemungkinan Tak Terbatas Untuk Setiap Kreator", cta: "Mulai Sekarang", items: [
     { title: "Iklan & Pemasaran", desc: "Buat konten promosi yang menarik.", tags: ["Video Produk", "Konten Merek", "Iklan Komersial"] },
     { title: "Cerita Kreatif", desc: "Buat narasi unik dengan input multi-modal.", tags: ["Film Pendek", "Proyek Seni", "Video Musik"] },
     { title: "Konten Media Sosial", desc: "Hasilkan konten menarik.", tags: ["Instagram Reels", "TikTok Video", "YouTube Shorts"] },
