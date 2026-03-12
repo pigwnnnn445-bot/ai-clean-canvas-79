@@ -21,16 +21,17 @@ const aspectRatios = [
 
 const models = [
   {
-    id: "seedance-1.5-pro",
-    name: "Seedance 1.5 Pro",
-    icon: modelIcon15,
-    description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
-  },
-  {
     id: "seedance-2.0",
     name: "Seedance 2.0",
     icon: modelIcon20,
     description: "More stable subjects, smoother transitions, and results closer to ready-to-use video output.",
+    comingSoon: true,
+  },
+  {
+    id: "seedance-1.5-pro",
+    name: "Seedance 1.5 Pro",
+    icon: modelIcon15,
+    description: "The movement in the footage is natural and fluid, the texture is delicate and realistic, and the overall style is consistent and highly polished.",
   },
 ];
 
