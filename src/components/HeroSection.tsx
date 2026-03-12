@@ -364,6 +364,7 @@ const HeroSection = () => {
                     setTimeout(() => {
                       setIsGenerating(false);
                       setHasGenerated(true);
+                      setHasHistory(true);
                     }, 5000);
                   }
                 }}
