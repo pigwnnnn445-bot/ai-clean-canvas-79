@@ -11,7 +11,7 @@ const ms: Translations = {
     { title: "Sambungan & Penyuntingan Video", description: "Sambungkan video sedia ada atau sunting segmen tertentu." },
     { title: "Penjanaan Audio Terbina", description: "Jana kesan bunyi dan muzik latar secara automatik." },
   ]},
-  useCases: { label: "Kes Penggunaan", title: "Kemungkinan Tanpa Had Untuk Setiap Pencipta", cta: "Mulakan Sekarang", items: [
+  useCases: { label: "Kes Penggunaan", title: "Kemungkinan Tanpa Had Untuk Setiap Pencipta", subtitle: "Dari pengiklanan hingga penceritaan kreatif, terokai aplikasi tanpa had video AI", cta: "Mulakan Sekarang", items: [ "Kes Penggunaan", title: "Kemungkinan Tanpa Had Untuk Setiap Pencipta", cta: "Mulakan Sekarang", items: [
     { title: "Pengiklanan & Pemasaran", desc: "Cipta kandungan promosi yang menarik.", tags: ["Video Produk", "Kandungan Jenama", "Iklan Komersial"] },
     { title: "Penceritaan Kreatif", desc: "Cipta naratif unik.", tags: ["Filem Pendek", "Projek Seni", "Video Muzik"] },
     { title: "Kandungan Media Sosial", desc: "Jana kandungan menarik.", tags: ["Instagram Reels", "TikTok Video", "YouTube Shorts"] },
