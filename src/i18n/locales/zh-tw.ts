@@ -11,7 +11,7 @@ const zhTw: Translations = {
     { title: "影片擴展與編輯", description: "擴展現有影片、合併片段或編輯特定片段，同時保留其餘部分。" },
     { title: "內建音訊生成", description: "自動生成情境感知的音效和背景音樂。將影片同步到上傳的音訊。" },
   ]},
-  useCases: { label: "應用場景", title: "為每位創作者提供無限可能", cta: "立即開始", items: [
+  useCases: { label: "應用場景", title: "為每位創作者提供無限可能", subtitle: "從廣告行銷到創意敘事，探索AI影片在各行各業的無限應用", cta: "立即開始", items: [ "應用場景", title: "為每位創作者提供無限可能", cta: "立即開始", items: [
     { title: "廣告與行銷", desc: "透過參考成功的廣告範本建立引人注目的推廣內容。", tags: ["產品影片", "品牌內容", "商業廣告"] },
     { title: "創意敘事", desc: "使用多模態輸入打造獨特敘事。", tags: ["短片", "藝術專案", "音樂影片"] },
     { title: "社群媒體內容", desc: "透過參考熱門範本生成吸引眼球的內容。", tags: ["Instagram Reels", "TikTok 影片", "YouTube Shorts"] },
