@@ -372,25 +372,51 @@ const HeroSection = () => {
             <div className="flex-1 flex flex-col items-center justify-center">
               <div className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft">
                 <div className="aspect-video relative">
-                  <img
-                    src={heroStill}
-                    alt="Seedance 2.0 AI generated video preview"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Play className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors" />
-                        <span className="text-xs text-body-secondary">0:00 / 0:13</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Volume2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
-                        <Maximize2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
-                        <MoreVertical className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
+                  {isGenerating ? (
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+                      {/* Spinner */}
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                        className="text-body-muted"
+                      >
+                        <Sparkles className="w-12 h-12" />
+                      </motion.div>
+                      {/* Generating text */}
+                      <div className="absolute bottom-4 left-4 flex items-center gap-1">
+                        <span className="text-sm text-body-muted font-medium">Generating...</span>
+                        <motion.span
+                          animate={{ opacity: [0.3, 1, 0.3] }}
+                          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                          className="text-primary font-bold text-sm"
+                        >
+                          ❯❯❯
+                        </motion.span>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <>
+                      <img
+                        src={heroStill}
+                        alt="Seedance 2.0 AI generated video preview"
+                        className="w-full h-full object-cover"
+                        loading="eager"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <Play className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors" />
+                            <span className="text-xs text-body-secondary">0:00 / 0:13</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <Volume2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
+                            <Maximize2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
+                            <MoreVertical className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
               <div className="flex items-center gap-2 mt-4">
