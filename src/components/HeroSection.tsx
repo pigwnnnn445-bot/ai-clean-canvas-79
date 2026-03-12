@@ -35,6 +35,8 @@ const getModels = (t: Translations) => [
   },
 ];
 
+const presetVideos = ["/videos/1.mp4", "/videos/2.mp4", "/videos/3.mp4"];
+
 const HeroSection = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
