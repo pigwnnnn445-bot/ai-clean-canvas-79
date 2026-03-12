@@ -268,9 +268,9 @@ const HeroSection = () => {
                     ) : (
                       <label className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
                         <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setUploadedImage)} />
-                        <Upload className="w-6 h-6 text-primary" />
-                        <p className="text-sm text-foreground font-medium">Click to upload or drag & drop</p>
-                        <p className="text-xs text-body-muted">PNG, JPG, JPEG, WEBP</p>
+                         <Upload className="w-6 h-6 text-primary" />
+                        <p className="text-sm text-foreground font-medium">{t.hero.clickToUpload}</p>
+                        <p className="text-xs text-body-muted">{t.hero.supportedFormats}</p>
                       </label>
                     )
                   )}
