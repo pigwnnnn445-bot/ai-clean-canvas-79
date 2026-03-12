@@ -83,11 +83,12 @@ const HeroSection = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 10 * 1024 * 1024) {
-        toast.error("为了保证视频生成速度，请您上传的照片不超过10M");
+      if (file.size > 5 * 1024 * 1024) {
+        setFileSizeError(true);
         e.target.value = "";
         return;
       }
+      setFileSizeError(false);
       const url = URL.createObjectURL(file);
       setter(url);
     }
