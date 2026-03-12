@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, LogOut } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -11,14 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Use Cases", href: "#use-cases" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "https://www.rita.ai/pricing", isExternal: true },
-  { label: "FAQ", href: "#faq" },
-];
+import { useTranslation } from "@/i18n";
 
 const mockUser = {
   name: "Alex Chen",
@@ -29,6 +23,15 @@ const mockUser = {
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { label: t.nav.features, href: "#features" },
+    { label: t.nav.useCases, href: "#use-cases" },
+    { label: t.nav.howItWorks, href: "#how-it-works" },
+    { label: t.nav.pricing, href: "https://www.rita.ai/pricing", isExternal: true },
+    { label: t.nav.faq, href: "#faq" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
@@ -53,6 +56,7 @@ const SiteHeader = () => {
         </ul>
 
         <div className="hidden md:flex items-center gap-2">
+          <LanguageSwitcher />
           <ThemeToggle />
           {isLoggedIn ? (
             <DropdownMenu>
@@ -72,17 +76,18 @@ const SiteHeader = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => setIsLoggedIn(false)} className="cursor-pointer">
                   <LogOut className="mr-2 h-4 w-4" />
-                  Sign Out
+                  {t.nav.signOut}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90" onClick={() => setIsLoggedIn(true)}>Sign In</Button>
+            <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90" onClick={() => setIsLoggedIn(true)}>{t.nav.signIn}</Button>
           )}
         </div>
 
         {/* Mobile toggle */}
         <div className="flex md:hidden items-center gap-2">
+          <LanguageSwitcher />
           <ThemeToggle />
           {isLoggedIn && (
             <Avatar className="h-7 w-7">
@@ -121,10 +126,10 @@ const SiteHeader = () => {
           <div className="mt-4 flex flex-col gap-2">
             {isLoggedIn ? (
               <Button size="sm" variant="ghost" onClick={() => { setIsLoggedIn(false); setMobileOpen(false); }}>
-                <LogOut className="mr-2 h-4 w-4" /> Sign Out
+                <LogOut className="mr-2 h-4 w-4" /> {t.nav.signOut}
               </Button>
             ) : (
-              <Button size="sm" className="bg-gradient-brand text-primary-foreground" onClick={() => { setIsLoggedIn(true); setMobileOpen(false); }}>Sign In</Button>
+              <Button size="sm" className="bg-gradient-brand text-primary-foreground" onClick={() => { setIsLoggedIn(true); setMobileOpen(false); }}>{t.nav.signIn}</Button>
             )}
           </div>
         </div>
