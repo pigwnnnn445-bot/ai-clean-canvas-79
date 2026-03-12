@@ -669,7 +669,7 @@ const HeroSection = () => {
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="rounded-xl overflow-hidden bg-card shadow-2xl relative">
+              <div className="rounded-xl overflow-hidden bg-card shadow-2xl relative min-h-[200px]">
                 {/* Loading spinner */}
                 <AnimatePresence>
                   {modalVideoLoading && (
@@ -678,7 +678,7 @@ const HeroSection = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute inset-0 z-10 flex items-center justify-center bg-black/90"
+                      className="absolute inset-0 z-10 flex items-center justify-center"
                     >
                       <div className="flex flex-col items-center gap-3">
                         <motion.div
@@ -686,7 +686,6 @@ const HeroSection = () => {
                           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                           className="w-10 h-10 rounded-full border-2 border-foreground/20 border-t-primary"
                         />
-                        <span className="text-sm text-foreground/60">Loading...</span>
                       </div>
                     </motion.div>
                   )}
@@ -698,7 +697,7 @@ const HeroSection = () => {
                   loop
                   playsInline
                   onCanPlay={() => setModalVideoLoading(false)}
-                  className="w-full h-auto block"
+                  className={`w-full h-auto block transition-opacity duration-300 ${modalVideoLoading ? 'opacity-0' : 'opacity-100'}`}
                 />
               </div>
             </motion.div>
