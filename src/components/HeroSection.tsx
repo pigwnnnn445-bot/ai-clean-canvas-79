@@ -495,7 +495,7 @@ const HeroSection = () => {
               </div>
 
               {/* Dot indicators */}
-              {!isGenerating && (
+              {!isGenerating && !hasGenerated && (
                 <div className="flex items-center justify-center gap-2 mt-3">
                   {presetVideos.map((_, idx) => (
                     <div
