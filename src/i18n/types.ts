@@ -52,6 +52,7 @@ export interface Translations {
   useCases: {
     label: string;
     title: string;
+    subtitle: string;
     cta: string;
     items: { title: string; desc: string; tags: string[] }[];
   };
@@ -61,8 +62,8 @@ export interface Translations {
     steps: { title: string; description: string }[];
   };
   testimonials: {
-    label: string;
     title: string;
+    subtitle: string;
   };
   pricing: {
     title: string;
