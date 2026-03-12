@@ -62,8 +62,8 @@ export interface Translations {
     steps: { title: string; description: string }[];
   };
   testimonials: {
-    label: string;
     title: string;
+    subtitle: string;
   };
   pricing: {
     title: string;

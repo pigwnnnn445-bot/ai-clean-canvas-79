@@ -17,8 +17,8 @@ const TestimonialsSection = () => {
     <section className="py-24">
       <div className="container max-w-5xl">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">{t.testimonials.label}</p>
           <h2 className="text-3xl md:text-4xl font-bold">{t.testimonials.title}</h2>
+          <p className="text-body-secondary mt-4 max-w-2xl mx-auto">{t.testimonials.subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -9,10 +9,10 @@ const UseCasesSection = () => {
     <section id="use-cases" className="py-24">
       <div className="container max-w-5xl">
         <div className="text-center mb-16">
-          
           <h2 className="text-3xl md:text-4xl font-bold">
             {t.useCases.title}
           </h2>
+          <p className="text-body-secondary mt-4 max-w-2xl mx-auto">{t.useCases.subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
