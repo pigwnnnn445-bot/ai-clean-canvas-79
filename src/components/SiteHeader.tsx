@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Use Cases", href: "#use-cases" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "/pricing", isRoute: true },
+  { label: "Pricing", href: "https://www.rita.ai/pricing", isExternal: true },
   { label: "FAQ", href: "#faq" },
 ];
 
