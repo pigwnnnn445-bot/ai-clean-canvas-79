@@ -34,6 +34,7 @@ const models = [
 ];
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<"image" | "text">("image");
   const [selectedRes, setSelectedRes] = useState("720p");
   const [selectedRatio, setSelectedRatio] = useState("16:9");
