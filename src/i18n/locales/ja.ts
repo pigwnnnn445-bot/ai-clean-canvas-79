@@ -6,7 +6,7 @@ const ja: Translations = {
     title: "Seedance", subtitle: "体験しよう", subtitleHighlight: "真のマルチモーダルAI動画制作",
     subtitleDesc: "画像、動画、音声、テキストを組み合わせて、精密な参照機能、シームレスな動画拡張、自然言語制御でシネマティックなコンテンツを生成します。",
     imageToVideo: "画像から動画", textToVideo: "テキストから動画", aiModel: "AIモデル", images: "画像",
-    addEndFrame: "最終フレームを追加", uploadFirstFrame: "最初のフレームをアップロード", uploadLastFrame: "最後のフレームをアップロード",
+    addEndFrame: "最初と最後のフレームを追加", uploadFirstFrame: "最初のフレームをアップロード", uploadLastFrame: "最後のフレームをアップロード",
     clickToUpload: "クリックしてアップロードまたはドラッグ＆ドロップ", supportedFormats: "PNG, JPG, JPEG, WEBP",
     prompt: "プロンプト", promptPlaceholder: "画像のアニメーション方法を説明してください...",
     resolution: "解像度", duration: "長さ", aspectRatio: "アスペクト比",

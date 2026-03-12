@@ -19,7 +19,7 @@ const en: Translations = {
     textToVideo: "Text to Video",
     aiModel: "AI Model",
     images: "Images",
-    addEndFrame: "Add end frame",
+    addEndFrame: "Add first & last frame",
     uploadFirstFrame: "Upload First Frame",
     uploadLastFrame: "Upload Last Frame",
     clickToUpload: "Click to upload or drag & drop",
