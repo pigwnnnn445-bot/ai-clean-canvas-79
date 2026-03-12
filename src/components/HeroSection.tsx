@@ -356,7 +356,10 @@ const HeroSection = () => {
                 onClick={() => {
                   if (!isGenerateDisabled && !isGenerating) {
                     setIsGenerating(true);
-                    setTimeout(() => setIsGenerating(false), 5000);
+                    setTimeout(() => {
+                      setIsGenerating(false);
+                      setHasGenerated(true);
+                    }, 5000);
                   }
                 }}
                 className={`w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
