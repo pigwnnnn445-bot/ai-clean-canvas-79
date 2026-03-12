@@ -495,19 +495,21 @@ const HeroSection = () => {
               </div>
 
               {/* Dot indicators */}
-              <div className="flex items-center justify-center gap-2 mt-3">
-                {presetVideos.map((_, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => setActivePreviewIndex(idx)}
-                    className={`rounded-full cursor-pointer transition-all ${
-                      activePreviewIndex === idx
-                        ? "w-6 h-2 bg-primary"
-                        : "w-2 h-2 bg-foreground/20 hover:bg-foreground/40"
-                    }`}
-                  />
-                ))}
-              </div>
+              {!isGenerating && (
+                <div className="flex items-center justify-center gap-2 mt-3">
+                  {presetVideos.map((_, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => setActivePreviewIndex(idx)}
+                      className={`rounded-full cursor-pointer transition-all ${
+                        activePreviewIndex === idx
+                          ? "w-6 h-2 bg-primary"
+                          : "w-2 h-2 bg-foreground/20 hover:bg-foreground/40"
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
 
               {/* Action buttons */}
               {(hasGenerated || hasHistory) && (
