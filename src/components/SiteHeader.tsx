@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -8,12 +8,11 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Use Cases", href: "#use-cases" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "/pricing", isRoute: true },
+  { label: "Pricing", href: "https://www.rita.ai/pricing", isExternal: true },
   { label: "FAQ", href: "#faq" },
 ];
 
 const SiteHeader = () => {
-  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -28,19 +27,16 @@ const SiteHeader = () => {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.isRoute ? undefined : link.href}
-                onClick={(e) => {
-                  if (link.isRoute) {
-                    e.preventDefault();
-                    navigate(link.href);
-                  }
-                }}
+                href={link.href}
+                target={link.isExternal ? "_blank" : undefined}
+                rel={link.isExternal ? "noopener noreferrer" : undefined}
                 className="text-sm text-body-secondary transition-colors hover:text-primary cursor-pointer"
               >
                 {link.label}
               </a>
             </li>
           ))}
+
         </ul>
 
         <div className="hidden md:flex items-center gap-2">
@@ -69,15 +65,11 @@ const SiteHeader = () => {
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
-                  href={link.isRoute ? undefined : link.href}
+                  href={link.href}
+                  target={link.isExternal ? "_blank" : undefined}
+                  rel={link.isExternal ? "noopener noreferrer" : undefined}
                   className="text-sm text-body-secondary hover:text-primary cursor-pointer"
-                  onClick={(e) => {
-                    if (link.isRoute) {
-                      e.preventDefault();
-                      navigate(link.href);
-                    }
-                    setMobileOpen(false);
-                  }}
+                  onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </a>
