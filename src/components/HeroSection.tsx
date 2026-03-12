@@ -423,10 +423,31 @@ const HeroSection = () => {
                   )}
                 </div>
               </div>
-              <div className="flex items-center gap-2 mt-4">
-                <div className="w-6 h-2 rounded-full bg-gradient-brand" />
-                <div className="w-2 h-2 rounded-full bg-border" />
-                <div className="w-2 h-2 rounded-full bg-border" />
+              <div className="flex items-center gap-4 mt-4">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={() => {
+                        toast.success("下载视频成功");
+                      }}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-body-secondary hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                    >
+                      <Download className="w-4 h-4" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>下载视频</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={() => navigate("/video-history")}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-body-secondary hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                    >
+                      <History className="w-4 h-4" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>查看历史记录</TooltipContent>
+                </Tooltip>
               </div>
             </div>
           </div>
