@@ -502,13 +502,13 @@ const HeroSection = () => {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <button
-                          onClick={() => toast.success("下载视频成功")}
+                          onClick={() => toast.success(t.hero.downloadSuccess)}
                           className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
                         >
                           <Download className="w-4 h-4" />
                         </button>
                       </TooltipTrigger>
-                      <TooltipContent>下载视频</TooltipContent>
+                      <TooltipContent>{t.hero.downloadVideo}</TooltipContent>
                     </Tooltip>
                   )}
                   {/* History: only when user has past generated records */}
