@@ -30,7 +30,7 @@ const de: Translations = {
     ],
   },
   useCases: {
-    label: "Anwendungsfälle", title: "Endlose Möglichkeiten für jeden Kreativen", cta: "Jetzt starten",
+    label: "Anwendungsfälle", title: "Endlose Möglichkeiten für jeden Kreativen", subtitle: "Von Werbung bis kreativem Storytelling – entdecken Sie die unbegrenzten Anwendungen von KI-Video", cta: "Jetzt starten",
     items: [
       { title: "Werbung & Marketing", desc: "Erstellen Sie überzeugende Werbeinhalte durch Referenzierung erfolgreicher Anzeigenvorlagen.", tags: ["Produktvideos", "Markeninhalte", "Werbeanzeigen"] },
       { title: "Kreatives Storytelling", desc: "Erstellen Sie einzigartige Erzählungen mit multimodalen Eingaben.", tags: ["Kurzfilme", "Kunstprojekte", "Musikvideos"] },
