@@ -82,8 +82,8 @@ const HeroSection = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 10 * 1024 * 1024) {
-        toast.error("File size must be less than 10MB");
+      if (file.size > 5 * 1024 * 1024) {
+        toast.error("File size must be less than 5MB");
         e.target.value = "";
         return;
       }
