@@ -183,7 +183,7 @@ const HeroSection = () => {
                         key={model.id}
                         onClick={() => {
                           if (model.comingSoon) return;
-                          setSelectedModel(model);
+                          setSelectedModelId(model.id);
                           setModelDropdownOpen(false);
                         }}
                         className={`flex items-center gap-3 p-3 transition-colors ${
