@@ -455,8 +455,8 @@ const HeroSection = () => {
                         transition={{ delay: 0.2 }}
                         className="text-center"
                       >
-                        <p className="text-sm font-semibold text-foreground">Generation Failed</p>
-                        <p className="text-xs text-body-muted mt-1 max-w-xs">The server is currently busy. Please try again later or adjust your settings.</p>
+                        <p className="text-sm font-semibold text-foreground">{t.hero.generationFailed}</p>
+                        <p className="text-xs text-body-muted mt-1 max-w-xs">{t.hero.generationFailedDesc}</p>
                       </motion.div>
                       <motion.button
                         initial={{ opacity: 0, y: 10 }}
