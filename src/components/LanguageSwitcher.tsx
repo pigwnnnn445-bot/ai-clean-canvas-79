@@ -30,7 +30,7 @@ const LanguageSwitcher = () => {
       </button>
 
       {open && (
-        <div className="absolute right-0 bottom-full mb-2 md:bottom-auto md:top-full md:mb-0 md:mt-2 w-56 max-h-80 overflow-y-auto rounded-xl border border-border bg-popover shadow-lg z-50 py-1">
+        <div onMouseDown={(e) => e.stopPropagation()} className="absolute right-0 bottom-full mb-2 md:bottom-auto md:top-full md:mb-0 md:mt-2 w-56 max-h-80 overflow-y-auto rounded-xl border border-border bg-popover shadow-lg z-50 py-1">
           {Object.entries(locales).map(([code, { label }]) => (
             <button
               key={code}
