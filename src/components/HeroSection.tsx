@@ -52,6 +52,7 @@ const HeroSection = () => {
   const [lastFrame, setLastFrame] = useState<string | null>(null);
   const [prompt, setPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [generationFailed, setGenerationFailed] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
