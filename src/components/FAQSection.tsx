@@ -33,12 +33,7 @@ const FAQSection = () => {
           ))}
         </Accordion>
 
-        <p className="text-center text-sm text-body-muted mt-8">
-          {t.faq.contactText}{" "}
-          <a href="mailto:support@seedance2.ai" className="text-primary hover:underline">
-            support@seedance2.ai
-          </a>
-        </p>
+
       </div>
     </section>
   );
