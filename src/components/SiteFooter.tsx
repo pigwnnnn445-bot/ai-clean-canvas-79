@@ -37,12 +37,6 @@ const SiteFooter = () => {
       <FooterCTA />
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm font-bold text-foreground">
-            Seedance <span className="text-gradient-brand">2.0</span>
-          </p>
-          <p className="text-xs text-body-muted">
-            © {new Date().getFullYear()} Seedance. All rights reserved.
-          </p>
         </div>
       </footer>
     </>
