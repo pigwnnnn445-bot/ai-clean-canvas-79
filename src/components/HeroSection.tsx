@@ -61,8 +61,11 @@ const HeroSection = () => {
   const [hasGenerated, setHasGenerated] = useState(false);
   const [hasHistory, setHasHistory] = useState(false);
   const [activePreviewIndex, setActivePreviewIndex] = useState(0);
+  const [visiblePreviewIndex, setVisiblePreviewIndex] = useState(0);
+  const [loadedPreviewMap, setLoadedPreviewMap] = useState<Record<string, boolean>>({});
+  const visiblePreviewSrc = presetVideos[visiblePreviewIndex];
+  const isVisiblePreviewReady = Boolean(loadedPreviewMap[visiblePreviewSrc]);
 
-  const presetVideos = ["/videos/1.mp4", "/videos/2.mp4", "/videos/3.mp4"];
   const isGenerateDisabled = (() => {
     const hasPrompt = prompt.trim().length > 0;
     if (activeTab === "text") {
