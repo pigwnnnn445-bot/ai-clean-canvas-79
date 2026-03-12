@@ -14,6 +14,7 @@ const en: Translations = {
     title: "Seedance",
     subtitle: "Experience",
     subtitleHighlight: "true multi-modal AI video creation",
+    subtitleDesc: "Combine images, videos, audio, and text to generate cinematic content with precise reference capabilities, seamless video extension, and natural language control.",
     imageToVideo: "Image to Video",
     textToVideo: "Text to Video",
     aiModel: "AI Model",

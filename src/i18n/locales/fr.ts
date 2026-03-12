@@ -4,6 +4,7 @@ const fr: Translations = {
   nav: { features: "Fonctionnalités", useCases: "Cas d'Usage", howItWorks: "Comment ça Marche", pricing: "Tarifs", faq: "FAQ", signIn: "Connexion", signOut: "Déconnexion" },
   hero: {
     title: "Seedance", subtitle: "Découvrez", subtitleHighlight: "la création vidéo IA multimodale",
+    subtitleDesc: "Combinez images, vidéos, audio et texte pour générer du contenu cinématographique avec des capacités de référence précises, une extension vidéo fluide et un contrôle en langage naturel.",
     imageToVideo: "Image vers Vidéo", textToVideo: "Texte vers Vidéo", aiModel: "Modèle IA", images: "Images",
     addEndFrame: "Ajouter image finale", uploadFirstFrame: "Télécharger Première Image", uploadLastFrame: "Télécharger Dernière Image",
     clickToUpload: "Cliquez pour télécharger ou glissez-déposez", supportedFormats: "PNG, JPG, JPEG, WEBP",
