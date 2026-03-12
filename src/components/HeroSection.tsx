@@ -497,63 +497,74 @@ const HeroSection = () => {
                           muted
                           playsInline
                           preload="auto"
-                          className={`absolute inset-0 w-full h-full object-contain bg-black transition-opacity duration-300 ${
-                            activePreviewIndex === idx ? "opacity-100 z-[1]" : "opacity-0 z-0"
+                          onCanPlay={() => {
+                            setLoadedPreviewMap((prev) => (prev[src] ? prev : { ...prev, [src]: true }));
+                            if (idx === activePreviewIndex) {
+                              setVisiblePreviewIndex(idx);
+                            }
+                          }}
+                          className={`absolute inset-0 w-full h-full object-contain bg-black transition-opacity duration-200 ${
+                            visiblePreviewIndex === idx ? "opacity-100 z-[1]" : "opacity-0 z-0"
                           }`}
                         />
                       ))}
-                      {/* Left arrow */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setActivePreviewIndex((prev) => (prev - 1 + presetVideos.length) % presetVideos.length);
-                        }}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                      </button>
-                      {/* Right arrow */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setActivePreviewIndex((prev) => (prev + 1) % presetVideos.length);
-                        }}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
-                      >
-                        <ChevronRight className="w-5 h-5" />
-                      </button>
-                      {/* Bottom controls bar */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-2 pt-8">
-                        {/* Progress bar */}
-                        <div className="w-full h-0.5 bg-foreground/20 rounded-full mb-2">
-                          <div className="w-1/5 h-full bg-primary rounded-full" />
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <Play
-                              className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setModalVideoSrc(presetVideos[activePreviewIndex]);
-                                setVideoModalOpen(true);
-                              }}
-                            />
-                            <span className="text-xs text-foreground/70">0:00 / 0:05</span>
+
+                      {isVisiblePreviewReady && (
+                        <>
+                          {/* Left arrow */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActivePreviewIndex((visiblePreviewIndex - 1 + presetVideos.length) % presetVideos.length);
+                            }}
+                            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
+                          >
+                            <ChevronLeft className="w-5 h-5" />
+                          </button>
+                          {/* Right arrow */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActivePreviewIndex((visiblePreviewIndex + 1) % presetVideos.length);
+                            }}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
+                          >
+                            <ChevronRight className="w-5 h-5" />
+                          </button>
+                          {/* Bottom controls bar */}
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-2 pt-8">
+                            {/* Progress bar */}
+                            <div className="w-full h-0.5 bg-foreground/20 rounded-full mb-2">
+                              <div className="w-1/5 h-full bg-primary rounded-full" />
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                <Play
+                                  className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setModalVideoSrc(presetVideos[visiblePreviewIndex]);
+                                    setVideoModalOpen(true);
+                                  }}
+                                />
+                                <span className="text-xs text-foreground/70">0:00 / 0:05</span>
+                              </div>
+                              <div className="flex items-center gap-3">
+                                <Volume2 className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
+                                <Maximize2
+                                  className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setModalVideoSrc(presetVideos[visiblePreviewIndex]);
+                                    setVideoModalOpen(true);
+                                  }}
+                                />
+                                <MoreVertical className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
+                              </div>
+                            </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <Volume2 className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
-                            <Maximize2
-                              className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setModalVideoSrc(presetVideos[activePreviewIndex]);
-                                setVideoModalOpen(true);
-                              }}
-                            />
-                            <MoreVertical className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
-                          </div>
-                        </div>
-                      </div>
+                        </>
+                      )}
                     </>
                   )}
                 </div>
