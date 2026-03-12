@@ -11,7 +11,7 @@ const ro: Translations = {
     { title: "Extensie și Editare Video", description: "Extinde videouri existente, combină clipuri sau editează segmente specifice." },
     { title: "Generare Audio Integrată", description: "Generează automat efecte sonore și muzică de fundal." },
   ]},
-  useCases: { label: "Cazuri de Utilizare", title: "Posibilități Infinite Pentru Fiecare Creator", cta: "Începe Acum", items: [
+  useCases: { label: "Cazuri de Utilizare", title: "Posibilități Infinite Pentru Fiecare Creator", subtitle: "De la publicitate la povestire creativă, explorează aplicațiile infinite ale video-ului AI", cta: "Începe Acum", items: [ "Cazuri de Utilizare", title: "Posibilități Infinite Pentru Fiecare Creator", cta: "Începe Acum", items: [
     { title: "Publicitate și Marketing", desc: "Creează conținut promoțional convingător.", tags: ["Video Produs", "Conținut Brand", "Reclame"] },
     { title: "Povestire Creativă", desc: "Creează narațiuni unice cu inputuri multimodale.", tags: ["Scurtmetraje", "Proiecte Artistice", "Videoclipuri"] },
     { title: "Conținut Social Media", desc: "Generează conținut captivant.", tags: ["Instagram Reels", "TikTok Video", "YouTube Shorts"] },
