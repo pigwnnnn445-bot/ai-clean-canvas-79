@@ -11,7 +11,7 @@ const nl: Translations = {
     { title: "Video-uitbreiding & Bewerking", description: "Breid bestaande video's uit, voeg clips samen of bewerk specifieke segmenten." },
     { title: "Ingebouwde Audiogeneratie", description: "Genereer automatisch contextbewuste geluidseffecten en achtergrondmuziek." },
   ]},
-  useCases: { label: "Toepassingen", title: "Eindeloze Mogelijkheden Voor Elke Creator", cta: "Nu Beginnen", items: [
+  useCases: { label: "Toepassingen", title: "Eindeloze Mogelijkheden Voor Elke Creator", subtitle: "Van reclame tot creatief storytelling, ontdek de eindeloze toepassingen van AI-video", cta: "Nu Beginnen", items: [ "Toepassingen", title: "Eindeloze Mogelijkheden Voor Elke Creator", cta: "Nu Beginnen", items: [
     { title: "Reclame & Marketing", desc: "Maak overtuigende promotionele content.", tags: ["Productvideo's", "Merkcontent", "Commerciële Advertenties"] },
     { title: "Creatief Verhalen Vertellen", desc: "Maak unieke verhalen met multimodale invoer.", tags: ["Korte Films", "Kunstprojecten", "Muziekvideo's"] },
     { title: "Social Media Content", desc: "Genereer aansprekende content met trending templates.", tags: ["Instagram Reels", "TikTok Video's", "YouTube Shorts"] },
