@@ -61,6 +61,7 @@ const en: Translations = {
   useCases: {
     label: "Use Cases",
     title: "Endless Possibilities For Every Creator",
+    subtitle: "From advertising to creative storytelling, explore the limitless applications of AI video",
     cta: "Get Started Now",
     items: [
       { title: "Advertising & Marketing", desc: "Create compelling promotional content by referencing successful ad templates.", tags: ["Product Videos", "Brand Content", "Commercial Ads"] },
