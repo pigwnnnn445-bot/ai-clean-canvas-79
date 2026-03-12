@@ -30,7 +30,7 @@ const es: Translations = {
     ],
   },
   useCases: {
-    label: "Casos de Uso", title: "Posibilidades Infinitas Para Cada Creador", cta: "Comienza Ahora",
+    label: "Casos de Uso", title: "Posibilidades Infinitas Para Cada Creador", subtitle: "Desde publicidad hasta narrativa creativa, explora las aplicaciones ilimitadas del video con IA", cta: "Comienza Ahora",
     items: [
       { title: "Publicidad y Marketing", desc: "Crea contenido promocional convincente referenciando plantillas publicitarias exitosas.", tags: ["Videos de Producto", "Contenido de Marca", "Anuncios Comerciales"] },
       { title: "Narrativa Creativa", desc: "Crea narrativas únicas usando entradas multimodales.", tags: ["Cortometrajes", "Proyectos Artísticos", "Videos Musicales"] },
