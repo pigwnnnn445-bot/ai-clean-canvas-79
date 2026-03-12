@@ -35,7 +35,7 @@ const SiteFooter = () => {
   return (
     <>
       <FooterCTA />
-      <footer className="border-t border-border py-8">
+      <footer className="py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
         </div>
       </footer>
