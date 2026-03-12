@@ -11,7 +11,7 @@ const lt: Translations = {
     { title: "Video Praplėtimas ir Redagavimas", description: "Praplėskite esamus vaizdo įrašus arba redaguokite konkrečius segmentus." },
     { title: "Integruotas Garso Generavimas", description: "Automatiškai generuokite garso efektus ir foninę muziką." },
   ]},
-  useCases: { label: "Naudojimo Atvejai", title: "Begalinės Galimybės Kiekvienam Kūrėjui", cta: "Pradėkite Dabar", items: [
+  useCases: { label: "Naudojimo Atvejai", title: "Begalinės Galimybės Kiekvienam Kūrėjui", subtitle: "Nuo reklamos iki kūrybinio pasakojimo – atraskite begalines AI vaizdo įrašų galimybes", cta: "Pradėkite Dabar", items: [ "Naudojimo Atvejai", title: "Begalinės Galimybės Kiekvienam Kūrėjui", cta: "Pradėkite Dabar", items: [
     { title: "Reklama ir Marketingas", desc: "Kurkite įtikinamą reklaminį turinį.", tags: ["Produkto Video", "Prekės Ženklo Turinys", "Reklamos"] },
     { title: "Kūrybinis Pasakojimas", desc: "Kurkite unikalius pasakojimus.", tags: ["Trumpametražiai", "Meno Projektai", "Muzikos Video"] },
     { title: "Socialinių Tinklų Turinys", desc: "Generuokite patrauklų turinį.", tags: ["Instagram Reels", "TikTok Video", "YouTube Shorts"] },
