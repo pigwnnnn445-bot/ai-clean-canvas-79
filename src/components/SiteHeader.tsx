@@ -69,9 +69,15 @@ const SiteHeader = () => {
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
-                  href={link.href}
+                  href={link.isRoute ? undefined : link.href}
                   className="text-sm text-body-secondary hover:text-primary cursor-pointer"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    if (link.isRoute) {
+                      e.preventDefault();
+                      navigate(link.href);
+                    }
+                    setMobileOpen(false);
+                  }}
                 >
                   {link.label}
                 </a>
