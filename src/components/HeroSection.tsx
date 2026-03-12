@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, Image, Type, ChevronDown, Sparkles, Play, Volume2, Maximize2, MoreVertical, Plus, ArrowRight, X, Download, History } from "lucide-react";
+import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, Download, History } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
@@ -49,6 +49,11 @@ const HeroSection = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
+  const [hasGenerated, setHasGenerated] = useState(false);
+  const [activePreviewIndex, setActivePreviewIndex] = useState(0);
+
+  const presetVideos = ["/videos/1.mp4", "/videos/2.mp4", "/videos/3.mp4"];
   const isGenerateDisabled = (() => {
     const hasPrompt = prompt.trim().length > 0;
     if (activeTab === "text") {
@@ -351,7 +356,10 @@ const HeroSection = () => {
                 onClick={() => {
                   if (!isGenerateDisabled && !isGenerating) {
                     setIsGenerating(true);
-                    setTimeout(() => setIsGenerating(false), 5000);
+                    setTimeout(() => {
+                      setIsGenerating(false);
+                      setHasGenerated(true);
+                    }, 5000);
                   }
                 }}
                 className={`w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
@@ -373,15 +381,20 @@ const HeroSection = () => {
             </div>
 
             {/* Right: Video Preview */}
-            <div className="flex-1 flex flex-col items-center justify-center">
-               <div
-                  className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft cursor-pointer group"
-                  onClick={() => !isGenerating && setVideoModalOpen(true)}
-                >
+            <div className="flex-1 flex flex-col">
+              {/* Main video display */}
+              <div
+                className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft cursor-pointer group"
+                onClick={() => {
+                  if (!isGenerating) {
+                    setModalVideoSrc(presetVideos[activePreviewIndex]);
+                    setVideoModalOpen(true);
+                  }
+                }}
+              >
                 <div className="aspect-video relative">
                   {isGenerating ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-4">
-                      {/* Spinner */}
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -389,7 +402,6 @@ const HeroSection = () => {
                       >
                         <Sparkles className="w-12 h-12" />
                       </motion.div>
-                      {/* Generating text */}
                       <div className="absolute bottom-4 left-4 flex items-center gap-1">
                         <span className="text-sm text-body-muted font-medium">Generating...</span>
                         <motion.span
@@ -403,54 +415,74 @@ const HeroSection = () => {
                     </div>
                   ) : (
                     <>
-                      <img
-                        src={heroStill}
-                        alt="Seedance 2.0 AI generated video preview"
+                      <video
+                        key={presetVideos[activePreviewIndex]}
+                        src={presetVideos[activePreviewIndex]}
+                        muted
+                        playsInline
+                        preload="metadata"
                         className="w-full h-full object-cover"
-                        loading="eager"
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <Play className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors" />
-                            <span className="text-xs text-body-secondary">0:00 / 0:13</span>
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <Volume2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
-                            <Maximize2 className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
-                            <MoreVertical className="w-4 h-4 text-body-secondary cursor-pointer hover:text-foreground transition-colors" />
-                          </div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                          <Play className="w-5 h-5 text-foreground fill-foreground ml-0.5" />
                         </div>
                       </div>
                     </>
                   )}
                 </div>
               </div>
-              {/* Action buttons - left aligned, compact */}
-              <div className="flex items-center gap-1 mt-2">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      onClick={() => toast.success("下载视频成功")}
-                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
-                    >
-                      <Download className="w-4 h-4" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent>下载视频</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      onClick={() => navigate("/video-history")}
-                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
-                    >
-                      <History className="w-4 h-4" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent>查看历史记录</TooltipContent>
-                </Tooltip>
+
+              {/* Thumbnail selector */}
+              <div className="flex items-center gap-2 mt-3">
+                {presetVideos.map((vid, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setActivePreviewIndex(idx)}
+                    className={`relative w-20 h-12 rounded-md overflow-hidden cursor-pointer border-2 transition-all ${
+                      activePreviewIndex === idx
+                        ? "border-primary shadow-sm"
+                        : "border-transparent opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <video
+                      src={vid}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
+
+              {/* Action buttons - only when user has generated */}
+              {hasGenerated && (
+                <div className="flex items-center gap-1 mt-2">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => toast.success("下载视频成功")}
+                        className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      >
+                        <Download className="w-4 h-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>下载视频</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => navigate("/video-history")}
+                        className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      >
+                        <History className="w-4 h-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>查看历史记录</TooltipContent>
+                  </Tooltip>
+                </div>
+              )}
             </div>
           </div>
         </motion.div>
@@ -484,7 +516,7 @@ const HeroSection = () => {
 
               <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
                 <video
-                  src="/videos/1.mp4"
+                  src={modalVideoSrc || presetVideos[0]}
                   controls
                   autoPlay
                   loop
