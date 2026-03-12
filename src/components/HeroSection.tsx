@@ -199,10 +199,10 @@ const HeroSection = () => {
                   <div className="flex items-center justify-between mb-2">
                     <label className="flex items-center gap-1.5 text-xs text-body-muted">
                       <Image className="w-3.5 h-3.5" />
-                      Images
+                      {t.hero.images}
                     </label>
                     <div className="flex items-center gap-2 text-xs text-body-muted">
-                      <span>Add end frame</span>
+                      <span>{t.hero.addEndFrame}</span>
                       <div
                         onClick={() => setEndFrameEnabled(!endFrameEnabled)}
                         className={`w-9 h-5 rounded-full relative cursor-pointer transition-colors ${
