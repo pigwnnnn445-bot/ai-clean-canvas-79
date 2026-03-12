@@ -40,6 +40,7 @@ const zh: Translations = {
   useCases: {
     label: "应用场景",
     title: "为每位创作者提供无限可能",
+    subtitle: "从广告到创意叙事，探索AI视频的无限应用",
     cta: "立即开始",
     items: [
       { title: "广告与营销", desc: "通过参考成功的广告模板创建引人注目的推广内容。", tags: ["产品视频", "品牌内容", "商业广告"] },
