@@ -21,11 +21,6 @@ const showcaseItems: ShowcaseItem[] = [
   { video: "/videos/10.mp4", prompt: "Low angle view through a dense field of soft peach and pastel pink flowers, shallow depth of field..." },
 ];
 
-const distributeToColumns = (items: ShowcaseItem[], colCount: number): ShowcaseItem[][] => {
-  const columns: ShowcaseItem[][] = Array.from({ length: colCount }, () => []);
-  items.forEach((item, i) => columns[i % colCount].push(item));
-  return columns;
-};
 
 const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => void }) => {
   const [hovered, setHovered] = useState(false);
@@ -114,7 +109,7 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
 
 const ShowcaseSection = () => {
   const [activeItem, setActiveItem] = useState<ShowcaseItem | null>(null);
-  const columns = distributeToColumns(showcaseItems, 4);
+  
   const { t } = useTranslation();
 
   return (
@@ -129,30 +124,10 @@ const ShowcaseSection = () => {
       </div>
 
       <div className="container max-w-7xl">
-        <div className="hidden lg:grid grid-cols-4 gap-3">
-          {columns.map((col, ci) => (
-            <div key={ci} className="flex flex-col gap-3">
-              {col.map((item, i) => (
-                <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="hidden md:grid lg:hidden grid-cols-3 gap-3">
-          {distributeToColumns(showcaseItems, 3).map((col, ci) => (
-            <div key={ci} className="flex flex-col gap-3">
-              {col.map((item, i) => (
-                <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="grid md:hidden grid-cols-2 gap-3">
-          {distributeToColumns(showcaseItems, 2).map((col, ci) => (
-            <div key={ci} className="flex flex-col gap-3">
-              {col.map((item, i) => (
-                <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-              ))}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-3 [column-fill:balanced]">
+          {showcaseItems.map((item, i) => (
+            <div key={i} className="mb-3 break-inside-avoid">
+              <ShowcaseCard item={item} onClick={() => setActiveItem(item)} />
             </div>
           ))}
         </div>
