@@ -30,7 +30,7 @@ const ja: Translations = {
     ],
   },
   useCases: {
-    label: "活用事例", title: "すべてのクリエイターに無限の可能性", cta: "今すぐ始める",
+    label: "活用事例", title: "すべてのクリエイターに無限の可能性", subtitle: "広告からクリエイティブなストーリーテリングまで、AI動画の無限の活用法を探索", cta: "今すぐ始める",
     items: [
       { title: "広告＆マーケティング", desc: "成功した広告テンプレートを参照して魅力的なプロモーションコンテンツを作成。", tags: ["商品動画", "ブランドコンテンツ", "商業広告"] },
       { title: "クリエイティブストーリーテリング", desc: "マルチモーダル入力でユニークなストーリーを作成。", tags: ["ショートフィルム", "アートプロジェクト", "ミュージックビデオ"] },
@@ -48,7 +48,7 @@ const ja: Translations = {
       { title: "生成＆反復", description: "4-15秒の動画を生成。拡張、編集、または調整で作品を洗練。" },
     ],
   },
-  testimonials: { label: "お客様の声", title: "世界中のクリエイターに愛されています" },
+  testimonials: { title: "世界中のクリエイターに愛されています", subtitle: "世界中のクリエイターがSeedance 2.0での体験を共有しています" },
   pricing: {
     title: "料金", subtitle: "最適なプランをお選びください。",
     monthly: "月額", annually: "年額", save: "50%お得", perMonth: "/月", subscribe: "購読する", mostPopular: "一番人気",

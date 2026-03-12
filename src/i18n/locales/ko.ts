@@ -30,7 +30,7 @@ const ko: Translations = {
     ],
   },
   useCases: {
-    label: "활용 사례", title: "모든 크리에이터를 위한 무한한 가능성", cta: "지금 시작하기",
+    label: "활용 사례", title: "모든 크리에이터를 위한 무한한 가능성", subtitle: "광고부터 창의적 스토리텔링까지, AI 비디오의 무한한 활용을 탐색하세요", cta: "지금 시작하기",
     items: [
       { title: "광고 및 마케팅", desc: "성공적인 광고 템플릿을 참조하여 매력적인 프로모션 콘텐츠를 만드세요.", tags: ["제품 비디오", "브랜드 콘텐츠", "상업 광고"] },
       { title: "창의적 스토리텔링", desc: "멀티모달 입력으로 독특한 내러티브를 만드세요.", tags: ["단편 영화", "아트 프로젝트", "뮤직 비디오"] },
@@ -48,7 +48,7 @@ const ko: Translations = {
       { title: "생성 및 반복", description: "4-15초 비디오를 생성하세요. 확장, 편집 또는 조정으로 작품을 다듬으세요." },
     ],
   },
-  testimonials: { label: "후기", title: "전 세계 크리에이터들이 사랑합니다" },
+  testimonials: { title: "전 세계 크리에이터들이 사랑합니다", subtitle: "전 세계 크리에이터들이 Seedance 2.0 경험을 공유합니다" },
   pricing: {
     title: "가격", subtitle: "가장 적합한 플랜을 선택하세요.",
     monthly: "월간", annually: "연간", save: "50% 절약", perMonth: "/월", subscribe: "구독하기", mostPopular: "가장 인기",

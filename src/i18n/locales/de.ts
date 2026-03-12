@@ -30,7 +30,7 @@ const de: Translations = {
     ],
   },
   useCases: {
-    label: "Anwendungsfälle", title: "Endlose Möglichkeiten für jeden Kreativen", cta: "Jetzt starten",
+    label: "Anwendungsfälle", title: "Endlose Möglichkeiten für jeden Kreativen", subtitle: "Von Werbung bis kreativem Storytelling – entdecken Sie die unbegrenzten Anwendungen von KI-Video", cta: "Jetzt starten",
     items: [
       { title: "Werbung & Marketing", desc: "Erstellen Sie überzeugende Werbeinhalte durch Referenzierung erfolgreicher Anzeigenvorlagen.", tags: ["Produktvideos", "Markeninhalte", "Werbeanzeigen"] },
       { title: "Kreatives Storytelling", desc: "Erstellen Sie einzigartige Erzählungen mit multimodalen Eingaben.", tags: ["Kurzfilme", "Kunstprojekte", "Musikvideos"] },
@@ -48,7 +48,7 @@ const de: Translations = {
       { title: "Generieren & Iterieren", description: "Generieren Sie Videos von 4-15 Sekunden. Erweitern, bearbeiten oder verfeinern Sie Ihre Kreation." },
     ],
   },
-  testimonials: { label: "Testimonials", title: "Beliebt bei Kreativen weltweit" },
+  testimonials: { title: "Beliebt bei Kreativen weltweit", subtitle: "Kreative aus aller Welt teilen ihre Erfahrungen mit Seedance 2.0" },
   pricing: {
     title: "Preise", subtitle: "Wählen Sie den Plan, der am besten zu Ihnen passt.",
     monthly: "Monatlich", annually: "Jährlich", save: "50% sparen", perMonth: "/Monat", subscribe: "Abonnieren", mostPopular: "Am beliebtesten",

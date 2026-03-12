@@ -30,7 +30,7 @@ const fr: Translations = {
     ],
   },
   useCases: {
-    label: "Cas d'Usage", title: "Des Possibilités Infinies Pour Chaque Créateur", cta: "Commencer Maintenant",
+    label: "Cas d'Usage", title: "Des Possibilités Infinies Pour Chaque Créateur", subtitle: "De la publicité à la narration créative, explorez les applications illimitées de la vidéo IA", cta: "Commencer Maintenant",
     items: [
       { title: "Publicité & Marketing", desc: "Créez du contenu promotionnel convaincant en référençant des modèles publicitaires réussis.", tags: ["Vidéos Produit", "Contenu de Marque", "Publicités"] },
       { title: "Narration Créative", desc: "Créez des récits uniques avec des entrées multimodales.", tags: ["Courts Métrages", "Projets Artistiques", "Clips Musicaux"] },
@@ -48,7 +48,7 @@ const fr: Translations = {
       { title: "Générez & Itérez", description: "Générez votre vidéo de 4-15 secondes. Étendez, éditez ou affinez votre création." },
     ],
   },
-  testimonials: { label: "Témoignages", title: "Adoré par les Créateurs du Monde Entier" },
+  testimonials: { title: "Adoré par les Créateurs du Monde Entier", subtitle: "Des créateurs du monde entier partagent leurs expériences avec Seedance 2.0" },
   pricing: {
     title: "Tarifs", subtitle: "Choisissez le plan qui vous convient.",
     monthly: "Mensuel", annually: "Annuel", save: "Économisez 50%", perMonth: "/mois", subscribe: "S'abonner", mostPopular: "Le Plus Populaire",
