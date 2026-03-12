@@ -337,7 +337,7 @@ const HeroSection = () => {
 
               {/* Aspect Ratio */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Aspect Ratio</label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">{t.hero.aspectRatio}</label>
                 <div className="flex flex-wrap gap-2">
                   {aspectRatios.map((ar) => (
                     <button
