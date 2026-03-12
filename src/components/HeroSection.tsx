@@ -138,7 +138,7 @@ const HeroSection = () => {
                   {t.hero.imageToVideo}
                 </button>
                 <button
-                  onClick={() => setActiveTab("text")}
+                  onClick={() => { setActiveTab("text"); setPrompt(""); setUploadedImage(null); setFirstFrame(null); setLastFrame(null); }}
                   className={`relative z-10 flex-1 flex items-center justify-center gap-2 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer rounded-md ${
                     activeTab === "text"
                       ? "text-foreground"
