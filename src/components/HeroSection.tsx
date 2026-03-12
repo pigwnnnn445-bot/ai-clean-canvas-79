@@ -82,8 +82,8 @@ const HeroSection = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        toast.error("File size must be less than 5MB");
+      if (file.size > 10 * 1024 * 1024) {
+        toast.error("为了保证视频生成速度，请您上传的照片不超过10M");
         e.target.value = "";
         return;
       }
@@ -271,6 +271,7 @@ const HeroSection = () => {
                             <p className="text-xs text-foreground font-medium text-center">{t.hero.uploadFirstFrame}</p>
                           </label>
                         )}
+                        <p className="text-xs text-body-muted mt-1 text-center">为了保证视频生成速度，请您上传的照片不超过10M</p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-body-muted flex-shrink-0" />
                       <div className="flex-1 relative rounded-lg overflow-hidden border border-border h-32">
@@ -290,6 +291,7 @@ const HeroSection = () => {
                             <p className="text-xs text-foreground font-medium text-center">{t.hero.uploadLastFrame}</p>
                           </label>
                         )}
+                        <p className="text-xs text-body-muted mt-1 text-center">为了保证视频生成速度，请您上传的照片不超过10M</p>
                       </div>
                     </div>
                   ) : (
@@ -309,6 +311,7 @@ const HeroSection = () => {
                       </label>
                     )
                   )}
+                  <p className="text-xs text-body-muted mt-1">为了保证视频生成速度，请您上传的照片不超过10M</p>
 
                 </div>
               )}
