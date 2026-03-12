@@ -45,7 +45,7 @@ const UseCasesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="gradient" size="lg">Get Started Now</Button>
+          <Button variant="gradient" size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Get Started Now</Button>
         </div>
       </div>
     </section>
