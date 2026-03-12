@@ -652,7 +652,7 @@ const HeroSection = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-md"
-            onClick={() => setVideoModalOpen(false)}
+            onClick={() => { setVideoModalOpen(false); setModalVideoLoading(true); }}
           >
             <motion.div
               initial={{ scale: 0.85, opacity: 0 }}
@@ -663,40 +663,35 @@ const HeroSection = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setVideoModalOpen(false)}
+                onClick={() => { setVideoModalOpen(false); setModalVideoLoading(true); }}
                 className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-foreground/80 hover:bg-foreground flex items-center justify-center text-background transition-colors cursor-pointer z-10"
               >
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="rounded-xl overflow-hidden bg-card shadow-2xl relative min-h-[200px]">
+              <div className="rounded-xl overflow-hidden bg-card shadow-2xl relative" style={{ minHeight: modalVideoLoading ? '300px' : undefined }}>
                 {/* Loading spinner */}
-                <AnimatePresence>
-                  {modalVideoLoading && (
+                {modalVideoLoading && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
                     <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute inset-0 z-10 flex items-center justify-center"
-                    >
-                      <div className="flex flex-col items-center gap-3">
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                          className="w-10 h-10 rounded-full border-2 border-foreground/20 border-t-primary"
-                        />
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="w-10 h-10 rounded-full border-2 border-foreground/20 border-t-primary"
+                    />
+                  </div>
+                )}
                 <video
+                  key={modalVideoSrc}
                   src={modalVideoSrc || presetVideos[0]}
                   controls
                   autoPlay
                   loop
                   playsInline
-                  onCanPlay={() => setModalVideoLoading(false)}
+                  onCanPlayThrough={(e) => {
+                    setModalVideoLoading(false);
+                    (e.target as HTMLVideoElement).play();
+                  }}
+                  preload="auto"
                   className={`w-full h-auto block transition-opacity duration-300 ${modalVideoLoading ? 'opacity-0' : 'opacity-100'}`}
                 />
               </div>
