@@ -91,11 +91,11 @@ const HeroSection = () => {
       {/* Title */}
       <div className="container text-center mb-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-          Seedance <span className="text-gradient-brand">2.0</span>
+          {t.hero.title} <span className="text-gradient-brand">2.0</span>
         </h1>
         <p className="mt-4 text-body-secondary max-w-3xl mx-auto leading-relaxed">
-          Experience{" "}
-          <span className="text-gradient-brand font-semibold">true multi-modal AI video creation</span>.
+          {t.hero.subtitle}{" "}
+          <span className="text-gradient-brand font-semibold">{t.hero.subtitleHighlight}</span>.
           Combine images, videos, audio, and text to generate cinematic content with
           precise reference capabilities, seamless video extension, and natural language control.
         </p>
