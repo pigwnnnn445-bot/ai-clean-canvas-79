@@ -11,7 +11,7 @@ const pt: Translations = {
     { title: "Extensão e Edição de Vídeo", description: "Estenda vídeos existentes, mescle clipes ou edite segmentos específicos." },
     { title: "Geração de Áudio Integrada", description: "Gere automaticamente efeitos sonoros e música de fundo contextual." },
   ]},
-  useCases: { label: "Casos de Uso", title: "Possibilidades Infinitas Para Cada Criador", cta: "Comece Agora", items: [
+  useCases: { label: "Casos de Uso", title: "Possibilidades Infinitas Para Cada Criador", subtitle: "Da publicidade à narrativa criativa, explore as infinitas aplicações do vídeo com IA", cta: "Comece Agora", items: [ "Casos de Uso", title: "Possibilidades Infinitas Para Cada Criador", cta: "Comece Agora", items: [
     { title: "Publicidade e Marketing", desc: "Crie conteúdo promocional envolvente.", tags: ["Vídeos de Produto", "Conteúdo de Marca", "Anúncios"] },
     { title: "Narrativa Criativa", desc: "Crie narrativas únicas com entradas multimodais.", tags: ["Curtas", "Projetos Artísticos", "Clipes Musicais"] },
     { title: "Conteúdo para Redes Sociais", desc: "Gere conteúdo cativante com templates em tendência.", tags: ["Instagram Reels", "TikTok Vídeos", "YouTube Shorts"] },
