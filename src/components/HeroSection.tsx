@@ -291,6 +291,7 @@ const HeroSection = () => {
                             <p className="text-xs text-foreground font-medium text-center">{t.hero.uploadLastFrame}</p>
                           </label>
                         )}
+                        <p className="text-xs text-body-muted mt-1 text-center">为了保证视频生成速度，请您上传的照片不超过10M</p>
                       </div>
                     </div>
                   ) : (
