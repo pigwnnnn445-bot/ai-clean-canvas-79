@@ -513,9 +513,10 @@ const HeroSection = () => {
                       {isVisiblePreviewReady && (
                         <>
                           {/* Center play button - always visible */}
-                          <button
+                           <button
                             onClick={(e) => {
                               e.stopPropagation();
+                              setModalVideoLoading(true);
                               setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                               setVideoModalOpen(true);
                             }}
