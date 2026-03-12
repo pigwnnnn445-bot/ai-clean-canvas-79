@@ -274,14 +274,14 @@ const HeroSection = () => {
                     </div>
                   ) : (
                     uploadedImage ? (
-                      <div className="relative rounded-lg overflow-hidden border border-border aspect-video">
+                      <div className="relative rounded-lg overflow-hidden border border-border h-40">
                         <img src={uploadedImage} alt="Uploaded" className="w-full h-full object-cover" />
                         <button onClick={() => setUploadedImage(null)} className="absolute top-2 right-2 w-7 h-7 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
                           <X className="w-4 h-4 text-foreground" />
                         </button>
                       </div>
                     ) : (
-                      <label className="border-2 border-dashed border-border rounded-lg p-8 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
+                      <label className="border-2 border-dashed border-border rounded-lg h-40 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-primary/50 hover:bg-hover-bg transition-colors">
                         <input type="file" accept="image/png,image/jpg,image/jpeg,image/webp" className="hidden" onChange={(e) => handleFileChange(e, setUploadedImage)} />
                          <Upload className="w-6 h-6 text-primary" />
                         <p className="text-sm text-foreground font-medium">{t.hero.clickToUpload}</p>
