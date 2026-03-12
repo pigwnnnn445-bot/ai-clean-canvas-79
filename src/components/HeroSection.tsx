@@ -59,9 +59,9 @@ const HeroSection = () => {
     if (activeTab === "text") {
       return !hasPrompt;
     }
-    // image tab
+    // image tab - need prompt + at least first frame (or single upload)
     if (endFrameEnabled) {
-      return !(hasPrompt && firstFrame && lastFrame);
+      return !(hasPrompt && firstFrame);
     }
     return !(hasPrompt && uploadedImage);
   })();
