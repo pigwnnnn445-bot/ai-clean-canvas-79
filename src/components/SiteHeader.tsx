@@ -36,9 +36,8 @@ const SiteHeader = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="container flex h-16 items-center justify-between" aria-label="Main navigation">
-        <a href="#" className="flex items-center gap-2 text-xl font-bold text-foreground" aria-label="Home">
-          <img src="https://static.onlinecdn.org/gamsai_frontend/images/logo.webp" alt="Rita" className="w-8 h-8 rounded-lg" />
-          <span>Rita</span>
+        <a href="#" aria-label="Home">
+          <img src="https://static.onlinecdn.org/gamsai_frontend/images/logo.webp" alt="Rita" className="h-8" />
         </a>
 
         {/* Desktop */}
