@@ -518,7 +518,7 @@ const HeroSection = () => {
                               setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                               setVideoModalOpen(true);
                             }}
-                            className="absolute inset-0 z-[2] flex items-center justify-center group-hover/preview:opacity-0 transition-opacity duration-200"
+                            className="absolute inset-0 z-[2] flex items-center justify-center"
                           >
                             <div className="w-14 h-14 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center hover:bg-background/70 transition-colors cursor-pointer">
                               <Play className="w-7 h-7 text-foreground fill-foreground" />
