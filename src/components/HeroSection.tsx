@@ -190,8 +190,13 @@ const HeroSection = () => {
                         }`}
                       >
                         <img src={model.icon} alt={model.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
-                        <div className="min-w-0">
-                          <span className="text-sm font-semibold text-foreground">{model.name}</span>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-semibold text-foreground">{model.name}</span>
+                            {model.comingSoon && (
+                              <span className="px-1.5 py-0.5 text-[10px] font-semibold rounded text-primary bg-primary/10">Coming Soon</span>
+                            )}
+                          </div>
                           <p className="text-xs text-body-muted line-clamp-2">{model.description}</p>
                         </div>
                       </div>
