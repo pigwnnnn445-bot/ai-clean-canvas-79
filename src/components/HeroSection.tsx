@@ -51,6 +51,7 @@ const HeroSection = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
   const [hasGenerated, setHasGenerated] = useState(false);
+  const [hasHistory, setHasHistory] = useState(false);
   const [activePreviewIndex, setActivePreviewIndex] = useState(0);
 
   const presetVideos = ["/videos/1.mp4", "/videos/2.mp4", "/videos/3.mp4"];
