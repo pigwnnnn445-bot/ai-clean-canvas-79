@@ -124,30 +124,10 @@ const ShowcaseSection = () => {
       </div>
 
       <div className="container max-w-7xl">
-        <div className="hidden lg:grid grid-cols-4 gap-3">
-          {columns.map((col, ci) => (
-            <div key={ci} className="flex flex-col gap-3">
-              {col.map((item, i) => (
-                <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="hidden md:grid lg:hidden grid-cols-3 gap-3">
-          {distributeToColumns(showcaseItems, 3).map((col, ci) => (
-            <div key={ci} className="flex flex-col gap-3">
-              {col.map((item, i) => (
-                <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="grid md:hidden grid-cols-2 gap-3">
-          {distributeToColumns(showcaseItems, 2).map((col, ci) => (
-            <div key={ci} className="flex flex-col gap-3">
-              {col.map((item, i) => (
-                <ShowcaseCard key={i} item={item} onClick={() => setActiveItem(item)} />
-              ))}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-3 [column-fill:balanced]">
+          {showcaseItems.map((item, i) => (
+            <div key={i} className="mb-3 break-inside-avoid">
+              <ShowcaseCard item={item} onClick={() => setActiveItem(item)} />
             </div>
           ))}
         </div>
