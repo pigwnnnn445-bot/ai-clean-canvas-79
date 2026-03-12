@@ -11,7 +11,7 @@ const zh: Translations = {
     textToVideo: "文字转视频",
     aiModel: "AI 模型",
     images: "图片",
-    addEndFrame: "添加结束帧",
+    addEndFrame: "添加首尾帧",
     uploadFirstFrame: "上传首帧",
     uploadLastFrame: "上传末帧",
     clickToUpload: "点击上传或拖拽文件", supportedFormats: "PNG, JPG, JPEG, WEBP",
