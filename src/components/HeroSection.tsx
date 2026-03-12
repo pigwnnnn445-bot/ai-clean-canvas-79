@@ -297,7 +297,7 @@ const HeroSection = () => {
 
               {/* Resolution */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">Resolution</label>
+                <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">{t.hero.resolution}</label>
                 <div className="flex gap-2">
                   {resolutions.map((r) => (
                     <button
