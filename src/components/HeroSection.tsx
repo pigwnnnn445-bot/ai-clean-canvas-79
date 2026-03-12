@@ -150,7 +150,7 @@ const HeroSection = () => {
               <div ref={dropdownRef} className="relative">
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  AI Model
+                  {t.hero.aiModel}
                 </label>
                 <div
                   onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
