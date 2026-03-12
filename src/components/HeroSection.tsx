@@ -274,8 +274,8 @@ const HeroSection = () => {
                     </div>
                   ) : (
                     uploadedImage ? (
-                      <div className="relative rounded-lg overflow-hidden border border-border">
-                        <img src={uploadedImage} alt="Uploaded" className="w-full aspect-video object-cover" />
+                      <div className="relative rounded-lg overflow-hidden border border-border aspect-video">
+                        <img src={uploadedImage} alt="Uploaded" className="w-full h-full object-cover" />
                         <button onClick={() => setUploadedImage(null)} className="absolute top-2 right-2 w-7 h-7 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors cursor-pointer">
                           <X className="w-4 h-4 text-foreground" />
                         </button>
