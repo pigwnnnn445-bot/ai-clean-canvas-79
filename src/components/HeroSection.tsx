@@ -384,7 +384,6 @@ const HeroSection = () => {
                       setIsGenerating(false);
                       // Simulate failure
                       setGenerationFailed(true);
-                      toast.error(t.hero.generationFailedToast);
                     }, 4000);
                   }
                 }}
