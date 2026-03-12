@@ -233,7 +233,7 @@ const HeroSection = () => {
                             <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                               <Plus className="w-5 h-5 text-primary" />
                             </div>
-                            <p className="text-xs text-foreground font-medium text-center">Upload First Frame</p>
+                            <p className="text-xs text-foreground font-medium text-center">{t.hero.uploadFirstFrame}</p>
                           </label>
                         )}
                       </div>
