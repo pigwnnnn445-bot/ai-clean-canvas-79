@@ -13,6 +13,7 @@ const navLinks = [
 ];
 
 const SiteHeader = () => {
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
