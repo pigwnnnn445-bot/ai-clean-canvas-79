@@ -561,7 +561,7 @@ const HeroSection = () => {
               )}
 
               {/* Action buttons */}
-              {(hasGenerated || hasHistory) && (
+              {(hasGenerated || hasHistory || generationFailed) && (
                 <div className="flex items-center gap-1 mt-2">
                   {/* Download: only when current session has a successfully generated video */}
                   {hasGenerated && (
