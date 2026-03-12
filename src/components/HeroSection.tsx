@@ -440,24 +440,22 @@ const HeroSection = () => {
                       </div>
                     </div>
                   ) : generationFailed ? (
-                    <div className="w-full h-full flex flex-col items-center justify-center gap-4 px-6">
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-5 px-6">
                       <motion.div
                         initial={{ scale: 0.5, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}
-                        className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center"
                       >
-                        <AlertTriangle className="w-8 h-8 text-destructive" />
+                        <VideoOff className="w-12 h-12 text-muted-foreground/60" />
                       </motion.div>
-                      <motion.div
+                      <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-center"
+                        className="text-sm text-muted-foreground"
                       >
-                        <p className="text-sm font-semibold text-foreground">{t.hero.generationFailed}</p>
-                        <p className="text-xs text-body-muted mt-1 max-w-xs">{t.hero.generationFailedDesc}</p>
-                      </motion.div>
+                        {t.hero.generationFailed}
+                      </motion.p>
                       <motion.button
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -473,7 +471,7 @@ const HeroSection = () => {
                             setHasHistory(true);
                           }, 5000);
                         }}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium hover:opacity-90 transition-all cursor-pointer"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-brand text-primary-foreground text-sm font-medium hover:opacity-90 transition-all cursor-pointer"
                       >
                         <RotateCcw className="w-4 h-4" />
                         {t.hero.retry}
