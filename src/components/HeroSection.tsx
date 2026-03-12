@@ -424,7 +424,7 @@ const HeroSection = () => {
                 className={`relative w-full rounded-xl overflow-hidden bg-[#1a1a1a] border border-border shadow-soft ${hasGenerated && !isGenerating ? "cursor-pointer" : ""}`}
                 onClick={() => {
                   if (hasGenerated && !isGenerating) {
-                    setModalVideoSrc(presetVideos[activePreviewIndex]);
+                    setModalVideoSrc(presetVideos[visiblePreviewIndex]);
                     setVideoModalOpen(true);
                   }
                 }}
