@@ -58,6 +58,7 @@ const HeroSection = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
+  const [modalVideoLoading, setModalVideoLoading] = useState(true);
   const [hasGenerated, setHasGenerated] = useState(false);
   const [hasHistory, setHasHistory] = useState(false);
   const [activePreviewIndex, setActivePreviewIndex] = useState(0);
