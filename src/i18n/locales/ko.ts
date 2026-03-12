@@ -15,6 +15,10 @@ const ko: Translations = {
     downloadVideo: "비디오 다운로드", downloadSuccess: "비디오가 성공적으로 다운로드되었습니다", viewHistory: "기록 보기",
     modelDesc20: "더 안정적인 피사체, 더 부드러운 전환, 바로 사용 가능한 비디오에 가까운 결과물.",
     modelDesc15: "영상 속 움직임이 자연스럽고 유연하며, 질감이 섬세하고 사실적이며, 전체적인 스타일이 일관되고 매우 세련됩니다.",
+    generationFailed: "생성 실패",
+    generationFailedDesc: "서버가 현재 바쁩니다. 나중에 다시 시도하거나 설정을 조정해 주세요.",
+    retry: "재시도",
+    generationFailedToast: "생성에 실패했습니다. 서버가 바쁩니다. 나중에 다시 시도해 주세요.",
   },
   showcase: { title: "", titleHighlight: "영감을 얻으세요", subtitle: "Seedance 2.0의 멀티모달 기능으로 만든 놀라운 비디오 예시를 살펴보세요." },
   features: {

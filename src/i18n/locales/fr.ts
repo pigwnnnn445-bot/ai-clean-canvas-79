@@ -15,6 +15,10 @@ const fr: Translations = {
     downloadVideo: "Télécharger la Vidéo", downloadSuccess: "Vidéo téléchargée avec succès", viewHistory: "Voir l'Historique",
     modelDesc20: "Sujets plus stables, transitions plus fluides et résultats plus proches d'une vidéo prête à l'emploi.",
     modelDesc15: "Le mouvement est naturel et fluide, la texture est délicate et réaliste, et le style général est cohérent et très soigné.",
+    generationFailed: "Échec de la génération",
+    generationFailedDesc: "Le serveur est actuellement occupé. Veuillez réessayer plus tard ou ajuster vos paramètres.",
+    retry: "Réessayer",
+    generationFailedToast: "Échec de la génération. Le serveur est occupé, veuillez réessayer plus tard.",
   },
   showcase: { title: "Trouvez", titleHighlight: "l'Inspiration", subtitle: "Explorez des exemples vidéo époustouflants créés avec les capacités multimodales de Seedance 2.0." },
   features: {
