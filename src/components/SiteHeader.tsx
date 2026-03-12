@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -7,7 +8,7 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Use Cases", href: "#use-cases" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "/pricing", isRoute: true },
   { label: "FAQ", href: "#faq" },
 ];
 
