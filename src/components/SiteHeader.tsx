@@ -28,7 +28,13 @@ const SiteHeader = () => {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.href}
+                href={link.isRoute ? undefined : link.href}
+                onClick={(e) => {
+                  if (link.isRoute) {
+                    e.preventDefault();
+                    navigate(link.href);
+                  }
+                }}
                 className="text-sm text-body-secondary transition-colors hover:text-primary cursor-pointer"
               >
                 {link.label}
