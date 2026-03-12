@@ -418,7 +418,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right: Video Preview */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col group/preview">
               {/* Main video card with carousel */}
               <div
                 className={`relative w-full rounded-xl overflow-hidden bg-[#1a1a1a] border border-border shadow-soft ${hasGenerated && !isGenerating ? "cursor-pointer" : ""}`}
@@ -511,28 +511,42 @@ const HeroSection = () => {
 
                       {isVisiblePreviewReady && (
                         <>
-                          {/* Left arrow */}
+                          {/* Center play button - always visible */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setModalVideoSrc(presetVideos[visiblePreviewIndex]);
+                              setVideoModalOpen(true);
+                            }}
+                            className="absolute inset-0 z-[2] flex items-center justify-center group-hover/preview:opacity-0 transition-opacity duration-200"
+                          >
+                            <div className="w-14 h-14 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center hover:bg-background/70 transition-colors cursor-pointer">
+                              <Play className="w-7 h-7 text-foreground fill-foreground" />
+                            </div>
+                          </button>
+
+                          {/* Left arrow - visible on hover */}
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               setActivePreviewIndex((visiblePreviewIndex - 1 + presetVideos.length) % presetVideos.length);
                             }}
-                            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
+                            className="absolute left-3 top-1/2 -translate-y-1/2 z-[3] w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-all cursor-pointer opacity-0 group-hover/preview:opacity-100"
                           >
                             <ChevronLeft className="w-5 h-5" />
                           </button>
-                          {/* Right arrow */}
+                          {/* Right arrow - visible on hover */}
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               setActivePreviewIndex((visiblePreviewIndex + 1) % presetVideos.length);
                             }}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-colors cursor-pointer"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 z-[3] w-9 h-9 rounded-full bg-background/40 backdrop-blur-sm flex items-center justify-center text-foreground/80 hover:bg-background/60 transition-all cursor-pointer opacity-0 group-hover/preview:opacity-100"
                           >
                             <ChevronRight className="w-5 h-5" />
                           </button>
-                          {/* Bottom controls bar */}
-                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-2 pt-8">
+                          {/* Bottom controls bar - visible on hover */}
+                          <div className="absolute bottom-0 left-0 right-0 z-[3] bg-gradient-to-t from-black/80 to-transparent px-4 pb-2 pt-8 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-200">
                             {/* Progress bar */}
                             <div className="w-full h-0.5 bg-foreground/20 rounded-full mb-2">
                               <div className="w-1/5 h-full bg-primary rounded-full" />
