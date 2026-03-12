@@ -46,7 +46,7 @@ const SiteHeader = () => {
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
           <Button variant="ghost" size="sm">Sign In</Button>
-          <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90">Start Free</Button>
+          <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Start Free</Button>
         </div>
 
         {/* Mobile toggle */}
