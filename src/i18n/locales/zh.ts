@@ -18,7 +18,7 @@ const zh: Translations = {
     prompt: "提示词", promptPlaceholder: "描述您想要的动画效果...",
     resolution: "分辨率", duration: "时长", aspectRatio: "宽高比",
     generate: "生成", generating: "生成中...",
-    cost: "消耗", credits: "积分", available: "可用",
+    cost: "消耗", credits: "配额", available: "可用",
     downloadVideo: "下载视频", downloadSuccess: "视频下载成功", viewHistory: "查看历史记录",
     modelDesc20: "主体更稳定，转场更流畅，输出结果更接近可直接使用的视频。",
     modelDesc15: "画面运动自然流畅，质感细腻逼真，整体风格统一且高度精致。",

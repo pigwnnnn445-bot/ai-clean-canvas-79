@@ -32,7 +32,7 @@ const en: Translations = {
     generate: "Generate",
     generating: "Generating...",
     cost: "Cost",
-    credits: "credits",
+    credits: "quota",
     available: "Available",
     downloadVideo: "Download Video",
     downloadSuccess: "Video downloaded successfully",
