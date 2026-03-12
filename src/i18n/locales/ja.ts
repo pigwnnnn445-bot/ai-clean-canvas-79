@@ -4,6 +4,7 @@ const ja: Translations = {
   nav: { features: "機能", useCases: "活用事例", howItWorks: "使い方", pricing: "料金", faq: "よくある質問", signIn: "ログイン", signOut: "ログアウト" },
   hero: {
     title: "Seedance", subtitle: "体験しよう", subtitleHighlight: "真のマルチモーダルAI動画制作",
+    subtitleDesc: "画像、動画、音声、テキストを組み合わせて、精密な参照機能、シームレスな動画拡張、自然言語制御でシネマティックなコンテンツを生成します。",
     imageToVideo: "画像から動画", textToVideo: "テキストから動画", aiModel: "AIモデル", images: "画像",
     addEndFrame: "最終フレームを追加", uploadFirstFrame: "最初のフレームをアップロード", uploadLastFrame: "最後のフレームをアップロード",
     clickToUpload: "クリックしてアップロードまたはドラッグ＆ドロップ", supportedFormats: "PNG, JPG, JPEG, WEBP",

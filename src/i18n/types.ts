@@ -12,6 +12,7 @@ export interface Translations {
     title: string;
     subtitle: string;
     subtitleHighlight: string;
+    subtitleDesc: string;
     imageToVideo: string;
     textToVideo: string;
     aiModel: string;

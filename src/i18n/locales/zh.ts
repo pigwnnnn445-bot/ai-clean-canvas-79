@@ -6,6 +6,7 @@ const zh: Translations = {
     title: "Seedance",
     subtitle: "体验",
     subtitleHighlight: "真正的多模态AI视频创作",
+    subtitleDesc: "结合图片、视频、音频和文本，生成具有精准参考能力、无缝视频扩展和自然语言控制的电影级内容。",
     imageToVideo: "图片转视频",
     textToVideo: "文字转视频",
     aiModel: "AI 模型",

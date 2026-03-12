@@ -4,6 +4,7 @@ const de: Translations = {
   nav: { features: "Funktionen", useCases: "Anwendungsfälle", howItWorks: "So funktioniert's", pricing: "Preise", faq: "FAQ", signIn: "Anmelden", signOut: "Abmelden" },
   hero: {
     title: "Seedance", subtitle: "Erleben Sie", subtitleHighlight: "echte multimodale KI-Videoerstellung",
+    subtitleDesc: "Kombinieren Sie Bilder, Videos, Audio und Text, um filmische Inhalte mit präzisen Referenzfunktionen, nahtloser Videoerweiterung und natürlicher Sprachsteuerung zu erstellen.",
     imageToVideo: "Bild zu Video", textToVideo: "Text zu Video", aiModel: "KI-Modell", images: "Bilder",
     addEndFrame: "Endbild hinzufügen", uploadFirstFrame: "Erstes Bild hochladen", uploadLastFrame: "Letztes Bild hochladen",
     clickToUpload: "Klicken zum Hochladen oder Drag & Drop", supportedFormats: "PNG, JPG, JPEG, WEBP",

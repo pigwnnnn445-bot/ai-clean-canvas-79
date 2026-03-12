@@ -4,6 +4,7 @@ const ko: Translations = {
   nav: { features: "기능", useCases: "활용 사례", howItWorks: "사용 방법", pricing: "가격", faq: "FAQ", signIn: "로그인", signOut: "로그아웃" },
   hero: {
     title: "Seedance", subtitle: "경험하세요", subtitleHighlight: "진정한 멀티모달 AI 비디오 제작",
+    subtitleDesc: "이미지, 비디오, 오디오, 텍스트를 결합하여 정밀한 참조 기능, 원활한 비디오 확장, 자연어 제어로 시네마틱 콘텐츠를 생성하세요.",
     imageToVideo: "이미지를 비디오로", textToVideo: "텍스트를 비디오로", aiModel: "AI 모델", images: "이미지",
     addEndFrame: "마지막 프레임 추가", uploadFirstFrame: "첫 번째 프레임 업로드", uploadLastFrame: "마지막 프레임 업로드",
     clickToUpload: "클릭하여 업로드 또는 드래그 앤 드롭", supportedFormats: "PNG, JPG, JPEG, WEBP",
