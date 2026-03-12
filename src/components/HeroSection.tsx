@@ -83,7 +83,7 @@ const HeroSection = () => {
     const file = e.target.files?.[0];
     if (file) {
       if (file.size > 10 * 1024 * 1024) {
-        toast.error(t.hero.fileSizeLimit || "File size must be less than 10MB");
+        toast.error("File size must be less than 10MB");
         e.target.value = "";
         return;
       }
