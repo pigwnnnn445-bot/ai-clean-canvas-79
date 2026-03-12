@@ -96,6 +96,13 @@ const HeroSection = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const activeSrc = presetVideos[activePreviewIndex];
+    if (loadedPreviewMap[activeSrc]) {
+      setVisiblePreviewIndex(activePreviewIndex);
+    }
+  }, [activePreviewIndex, loadedPreviewMap]);
+
   return (
     <section className="pt-24 pb-16">
       {/* Title */}
