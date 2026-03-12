@@ -15,6 +15,10 @@ const de: Translations = {
     downloadVideo: "Video herunterladen", downloadSuccess: "Video erfolgreich heruntergeladen", viewHistory: "Verlauf anzeigen",
     modelDesc20: "Stabilere Motive, glattere Übergänge und Ergebnisse näher an einsatzfertiger Videoausgabe.",
     modelDesc15: "Die Bewegung im Material ist natürlich und flüssig, die Textur fein und realistisch, und der Gesamtstil konsistent und hochwertig.",
+    generationFailed: "Generierung fehlgeschlagen",
+    generationFailedDesc: "Der Server ist derzeit ausgelastet. Bitte versuchen Sie es später erneut oder passen Sie Ihre Einstellungen an.",
+    retry: "Erneut versuchen",
+    generationFailedToast: "Generierung fehlgeschlagen. Der Server ist derzeit ausgelastet.",
   },
   showcase: { title: "Lassen Sie sich", titleHighlight: "inspirieren", subtitle: "Entdecken Sie beeindruckende Videobeispiele, die mit den multimodalen Fähigkeiten von Seedance 2.0 erstellt wurden." },
   features: {
