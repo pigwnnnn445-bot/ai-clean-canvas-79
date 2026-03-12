@@ -282,7 +282,7 @@ const HeroSection = () => {
               <div>
                 <label className="flex items-center gap-1.5 text-xs text-body-muted mb-2">
                   <Type className="w-3.5 h-3.5" />
-                  Prompt
+                  {t.hero.prompt}
                 </label>
                 <div className="relative">
                   <textarea
