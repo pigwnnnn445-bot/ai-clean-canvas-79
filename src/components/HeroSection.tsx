@@ -478,14 +478,18 @@ const HeroSection = () => {
                     </div>
                   ) : (
                     <>
-                      <video
-                        key={presetVideos[activePreviewIndex]}
-                        src={presetVideos[activePreviewIndex]}
-                        muted
-                        playsInline
-                        preload="metadata"
-                        className="w-full h-full object-contain bg-black"
-                      />
+                      {presetVideos.map((src, idx) => (
+                        <video
+                          key={src}
+                          src={src}
+                          muted
+                          playsInline
+                          preload="auto"
+                          className={`absolute inset-0 w-full h-full object-contain bg-black transition-opacity duration-300 ${
+                            activePreviewIndex === idx ? "opacity-100 z-[1]" : "opacity-0 z-0"
+                          }`}
+                        />
+                      ))}
                       {/* Left arrow */}
                       <button
                         onClick={(e) => {
