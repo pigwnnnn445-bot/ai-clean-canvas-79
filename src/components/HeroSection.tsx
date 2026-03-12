@@ -98,11 +98,10 @@ const HeroSection = () => {
           {t.hero.title} <span className="text-gradient-brand">2.0</span>
         </h1>
         <p className="mt-4 text-body-secondary max-w-3xl mx-auto leading-relaxed">
-          {t.hero.subtitle}{" "}
-          <span className="text-gradient-brand font-semibold">{t.hero.subtitleHighlight}</span>.
-          Combine images, videos, audio, and text to generate cinematic content with
-          precise reference capabilities, seamless video extension, and natural language control.
-        </p>
+           {t.hero.subtitle}{" "}
+           <span className="text-gradient-brand font-semibold">{t.hero.subtitleHighlight}</span>.
+           {" "}{t.hero.subtitleDesc}
+         </p>
       </div>
 
       {/* Tool + Preview */}
