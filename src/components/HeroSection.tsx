@@ -42,6 +42,7 @@ const HeroSection = () => {
   const [selectedRes, setSelectedRes] = useState("720p");
   const [selectedRatio, setSelectedRatio] = useState("16:9");
   const [selectedDuration, setSelectedDuration] = useState("5s");
+  const models = getModels(t);
   const [selectedModel, setSelectedModel] = useState(models[0]);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [endFrameEnabled, setEndFrameEnabled] = useState(false);

@@ -12,6 +12,8 @@ const ja: Translations = {
     generate: "生成", generating: "生成中...",
     cost: "コスト", credits: "クレジット", available: "利用可能",
     downloadVideo: "動画をダウンロード", downloadSuccess: "動画のダウンロードに成功しました", viewHistory: "履歴を表示",
+    modelDesc20: "より安定した被写体、よりスムーズなトランジション、すぐに使えるビデオ出力に近い結果。",
+    modelDesc15: "映像の動きは自然で滑らか、質感は繊細でリアル、全体のスタイルは一貫して高度に洗練されています。",
   },
   showcase: { title: "", titleHighlight: "インスピレーション", subtitle: "Seedance 2.0のマルチモーダル機能で作成された素晴らしい動画例をご覧ください。" },
   features: {
