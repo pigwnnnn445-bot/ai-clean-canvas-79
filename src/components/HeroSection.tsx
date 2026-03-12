@@ -384,7 +384,7 @@ const HeroSection = () => {
                       setIsGenerating(false);
                       // Simulate failure
                       setGenerationFailed(true);
-                      toast.error("Generation failed. The server is currently busy, please try again later.");
+                      toast.error(t.hero.generationFailedToast);
                     }, 4000);
                   }
                 }}
