@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, Download, History, ChevronLeft, ChevronRight, Volume2, Maximize2, MoreVertical, AlertTriangle, RotateCcw } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, Image, Type, ChevronDown, Sparkles, Play, Plus, ArrowRight, X, Download, History, ChevronLeft, ChevronRight, Volume2, Maximize2, MoreVertical } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
@@ -52,6 +52,7 @@ const HeroSection = () => {
   const [lastFrame, setLastFrame] = useState<string | null>(null);
   const [prompt, setPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [generationFailed, setGenerationFailed] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
@@ -378,11 +379,13 @@ const HeroSection = () => {
                 onClick={() => {
                   if (!isGenerateDisabled && !isGenerating) {
                     setIsGenerating(true);
+                    setGenerationFailed(false);
                     setTimeout(() => {
                       setIsGenerating(false);
-                      setHasGenerated(true);
-                      setHasHistory(true);
-                    }, 5000);
+                      // Simulate failure
+                      setGenerationFailed(true);
+                      toast.error("Generation failed. The server is currently busy, please try again later.");
+                    }, 4000);
                   }
                 }}
                 className={`w-full py-3 rounded-lg bg-gradient-brand text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
@@ -435,6 +438,46 @@ const HeroSection = () => {
                           ❯❯❯
                         </motion.span>
                       </div>
+                    </div>
+                  ) : generationFailed ? (
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-4 px-6">
+                      <motion.div
+                        initial={{ scale: 0.5, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                        className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center"
+                      >
+                        <AlertTriangle className="w-8 h-8 text-destructive" />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-center"
+                      >
+                        <p className="text-sm font-semibold text-foreground">Generation Failed</p>
+                        <p className="text-xs text-body-muted mt-1 max-w-xs">The server is currently busy. Please try again later or adjust your settings.</p>
+                      </motion.div>
+                      <motion.button
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setGenerationFailed(false);
+                          setIsGenerating(true);
+                          setTimeout(() => {
+                            setIsGenerating(false);
+                            setGenerationFailed(false);
+                            setHasGenerated(true);
+                            setHasHistory(true);
+                          }, 5000);
+                        }}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium hover:opacity-90 transition-all cursor-pointer"
+                      >
+                        <RotateCcw className="w-4 h-4" />
+                        Retry
+                      </motion.button>
                     </div>
                   ) : (
                     <>
