@@ -40,23 +40,15 @@ const SiteHeader = () => {
           <img src="https://static.onlinecdn.org/gamsai_frontend/images/logo.webp" alt="Rita" className="h-8" />
         </a>
 
-        {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                target={link.isExternal ? "_blank" : undefined}
-                rel={link.isExternal ? "noopener noreferrer" : undefined}
-                className="text-sm text-body-secondary transition-colors hover:text-primary cursor-pointer"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
         <div className="hidden md:flex items-center gap-2">
+          <a
+            href="https://www.rita.ai/pricing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-body-secondary transition-colors hover:text-primary cursor-pointer"
+          >
+            {t.nav.pricing}
+          </a>
           <LanguageSwitcher />
           <ThemeToggle />
           {isLoggedIn ? (
