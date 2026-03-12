@@ -24,7 +24,7 @@ const vi: Translations = {
     { title: "Mô tả Tầm nhìn", description: "Sử dụng ngôn ngữ tự nhiên để mô tả điều bạn muốn." },
     { title: "Tạo & Lặp lại", description: "Tạo video 4-15 giây." },
   ]},
-  testimonials: { label: "Đánh giá", title: "Được yêu thích bởi Nhà sáng tạo Toàn cầu" },
+  testimonials: { title: "Được yêu thích bởi Nhà sáng tạo Toàn cầu", subtitle: "Nhà sáng tạo trên toàn thế giới chia sẻ trải nghiệm với Seedance 2.0" },
   pricing: { title: "Bảng giá", subtitle: "Chọn gói phù hợp nhất.", monthly: "Hàng tháng", annually: "Hàng năm", save: "Tiết kiệm 50%", perMonth: "/tháng", subscribe: "Đăng ký", mostPopular: "Phổ biến nhất", plans: [
     { name: "Cơ bản", desc: "Dành cho người mới", credits: "800 credits/tháng", features: ["Tối đa 80 video/tháng", "Nhiều mô hình AI", "Tốc độ tiêu chuẩn", "Không watermark", "Giấy phép thương mại"] },
     { name: "Tiêu chuẩn", desc: "Cho hầu hết nhà sáng tạo", credits: "2.000 credits/tháng", features: ["Tối đa 200 video/tháng", "Nhiều mô hình AI", "Tạo ưu tiên", "Không watermark", "Hỗ trợ ưu tiên", "Giấy phép thương mại"] },

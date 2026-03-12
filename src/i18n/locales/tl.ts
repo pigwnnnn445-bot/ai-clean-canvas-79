@@ -24,7 +24,7 @@ const tl: Translations = {
     { title: "Ilarawan ang Iyong Vision", description: "Gamitin ang natural na wika para ilarawan ang gusto mo." },
     { title: "Gumawa at Mag-iterate", description: "Gumawa ng 4-15 segundo na video." },
   ]},
-  testimonials: { label: "Mga Testimonya", title: "Minamahal ng mga Creator sa Buong Mundo" },
+  testimonials: { title: "Minamahal ng mga Creator sa Buong Mundo", subtitle: "Mga creator mula sa buong mundo ang nagbabahagi ng kanilang karanasan sa Seedance 2.0" },
   pricing: { title: "Presyo", subtitle: "Pumili ng plan na angkop sa iyo.", monthly: "Buwanan", annually: "Taunan", save: "Makatipid ng 50%", perMonth: "/buwan", subscribe: "Mag-subscribe", mostPopular: "Pinakasikat", plans: [
     { name: "Basic", desc: "Para sa mga hobbyist at baguhan", credits: "800 credits/buwan", features: ["Hanggang 80 video/buwan", "Maraming AI model", "Standard na bilis", "Walang watermark", "Commercial license"] },
     { name: "Standard", desc: "Para sa karamihan ng creators", credits: "2,000 credits/buwan", features: ["Hanggang 200 video/buwan", "Maraming AI model", "Priority generation", "Walang watermark", "Priority support", "Commercial license"] },

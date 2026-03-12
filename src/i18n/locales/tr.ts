@@ -24,7 +24,7 @@ const tr: Translations = {
     { title: "Vizyonunuzu Tanımlayın", description: "Ne istediğinizi doğal dille açıklayın." },
     { title: "Oluşturun ve İterasyon Yapın", description: "4-15 saniyelik video oluşturun." },
   ]},
-  testimonials: { label: "Referanslar", title: "Dünya Genelinde Yaratıcılar Tarafından Seviliyor" },
+  testimonials: { title: "Dünya Genelinde Yaratıcılar Tarafından Seviliyor", subtitle: "Dünya çapındaki içerik üreticileri Seedance 2.0 deneyimlerini paylaşıyor" },
   pricing: { title: "Fiyatlandırma", subtitle: "Size en uygun planı seçin.", monthly: "Aylık", annually: "Yıllık", save: "%50 Tasarruf", perMonth: "/ay", subscribe: "Abone Ol", mostPopular: "En Popüler", plans: [
     { name: "Temel", desc: "Amatörler ve yeni başlayanlar için", credits: "800 kredi/ay", features: ["Aylık 80 videoya kadar", "Birden fazla AI modeli", "Standart hız", "Filigransız", "Ticari lisans"] },
     { name: "Standart", desc: "Çoğu yaratıcı için ideal", credits: "2.000 kredi/ay", features: ["Aylık 200 videoya kadar", "Birden fazla AI modeli", "Öncelikli oluşturma", "Filigransız", "Öncelikli destek", "Ticari lisans"] },
