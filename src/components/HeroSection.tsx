@@ -374,7 +374,10 @@ const HeroSection = () => {
 
             {/* Right: Video Preview */}
             <div className="flex-1 flex flex-col items-center justify-center">
-              <div className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft">
+               <div
+                  className="relative w-full rounded-lg overflow-hidden bg-card-secondary border border-border shadow-soft cursor-pointer group"
+                  onClick={() => !isGenerating && setVideoModalOpen(true)}
+                >
                 <div className="aspect-video relative">
                   {isGenerating ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-4">
