@@ -49,6 +49,11 @@ const HeroSection = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
+  const [hasGenerated, setHasGenerated] = useState(false);
+  const [activePreviewIndex, setActivePreviewIndex] = useState(0);
+
+  const presetVideos = ["/videos/1.mp4", "/videos/2.mp4", "/videos/3.mp4"];
   const isGenerateDisabled = (() => {
     const hasPrompt = prompt.trim().length > 0;
     if (activeTab === "text") {
