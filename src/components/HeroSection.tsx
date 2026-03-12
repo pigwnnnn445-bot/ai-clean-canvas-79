@@ -82,6 +82,11 @@ const HeroSection = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string | null) => void) => {
     const file = e.target.files?.[0];
     if (file) {
+      if (file.size > 10 * 1024 * 1024) {
+        toast.error(t.hero.fileSizeLimit || "File size must be less than 10MB");
+        e.target.value = "";
+        return;
+      }
       const url = URL.createObjectURL(file);
       setter(url);
     }
