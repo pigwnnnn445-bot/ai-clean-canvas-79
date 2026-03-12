@@ -557,40 +557,7 @@ const HeroSection = () => {
                           >
                             <ChevronRight className="w-5 h-5" />
                           </button>
-                          {/* Bottom controls bar - visible on hover */}
-                          <div className="absolute bottom-0 left-0 right-0 z-[3] bg-gradient-to-t from-black/80 to-transparent px-4 pb-2 pt-8 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-200">
-                            {/* Progress bar */}
-                            <div className="w-full h-0.5 bg-foreground/20 rounded-full mb-2">
-                              <div className="w-1/5 h-full bg-primary rounded-full" />
-                            </div>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-3">
-                                <Play
-                                  className="w-5 h-5 text-foreground cursor-pointer hover:text-primary transition-colors"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setModalVideoLoading(true);
-                                    setModalVideoSrc(presetVideos[visiblePreviewIndex]);
-                                    setVideoModalOpen(true);
-                                  }}
-                                />
-                                <span className="text-xs text-foreground/70">0:00 / 0:05</span>
-                              </div>
-                              <div className="flex items-center gap-3">
-                                <Volume2 className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
-                                <Maximize2
-                                  className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setModalVideoLoading(true);
-                                    setModalVideoSrc(presetVideos[visiblePreviewIndex]);
-                                    setVideoModalOpen(true);
-                                  }}
-                                />
-                                <MoreVertical className="w-4 h-4 text-foreground/60 cursor-pointer hover:text-foreground transition-colors" />
-                              </div>
-                            </div>
-                          </div>
+                          {/* Bottom controls bar - only visible during playback, not on hover */}
                         </>
                       )}
                     </>
