@@ -39,7 +39,7 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button variant="gradient" size="xl">Start Creating Now</Button>
+          <Button variant="gradient" size="xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Start Creating Now</Button>
         </div>
       </div>
     </section>

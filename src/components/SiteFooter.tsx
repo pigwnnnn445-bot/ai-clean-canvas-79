@@ -16,7 +16,7 @@ const FooterCTA = () => {
             Reference anything, edit anything, create anything.
           </p>
           <div className="mt-8">
-            <Button variant="gradient" size="xl">Start Creating Now</Button>
+            <Button variant="gradient" size="xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Start Creating Now</Button>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm text-body-muted">
             <span>Multi-modal input</span>
