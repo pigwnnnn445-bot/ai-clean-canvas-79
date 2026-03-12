@@ -384,7 +384,6 @@ const HeroSection = () => {
                       setIsGenerating(false);
                       // Simulate failure
                       setGenerationFailed(true);
-                      toast.error(t.hero.generationFailedToast);
                     }, 4000);
                   }
                 }}
@@ -545,7 +544,7 @@ const HeroSection = () => {
               </div>
 
               {/* Dot indicators */}
-              {!isGenerating && !hasGenerated && (
+              {!isGenerating && !hasGenerated && !generationFailed && (
                 <div className="flex items-center justify-center gap-2 mt-3">
                   {presetVideos.map((_, idx) => (
                     <div
@@ -562,7 +561,7 @@ const HeroSection = () => {
               )}
 
               {/* Action buttons */}
-              {(hasGenerated || hasHistory) && (
+              {(hasGenerated || hasHistory || generationFailed) && (
                 <div className="flex items-center gap-1 mt-2">
                   {/* Download: only when current session has a successfully generated video */}
                   {hasGenerated && (
@@ -579,7 +578,7 @@ const HeroSection = () => {
                     </Tooltip>
                   )}
                   {/* History: only when user has past generated records */}
-                  {hasHistory && (
+                  {(hasHistory || generationFailed) && (
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <button
