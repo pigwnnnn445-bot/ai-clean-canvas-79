@@ -432,7 +432,7 @@ const HeroSection = () => {
             <div className="flex-1 flex flex-col">
               {/* Main video card with carousel */}
               <div
-                className={`relative w-full rounded-xl overflow-hidden bg-[#1a1a1a] border border-border shadow-soft ${hasGenerated && !isGenerating ? "cursor-pointer" : ""}`}
+                className={`relative w-full rounded-xl overflow-hidden bg-[#1a1a1a] border border-border shadow-soft group/preview ${hasGenerated && !isGenerating ? "cursor-pointer" : ""}`}
                 onClick={() => {
                   if (hasGenerated && !isGenerating) {
                     setModalVideoSrc(presetVideos[visiblePreviewIndex]);
