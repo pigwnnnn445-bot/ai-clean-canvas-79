@@ -83,23 +83,23 @@ const VideoModal = ({ item, onClose }: { item: ShowcaseItem; onClose: () => void
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.85, opacity: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative max-w-4xl w-full mx-4"
+        className="relative max-w-4xl w-full mx-4 max-h-[85vh] flex flex-col items-center"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-foreground/80 hover:bg-foreground flex items-center justify-center text-background transition-colors cursor-pointer z-10"
+          className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground/80 hover:bg-foreground flex items-center justify-center text-background transition-colors cursor-pointer z-10"
         >
           <X className="w-4 h-4" />
         </button>
-        <div className="rounded-xl overflow-hidden bg-card shadow-2xl">
+        <div className="rounded-xl overflow-hidden bg-card shadow-2xl max-h-[85vh]">
           <video
             ref={videoRef}
             src={item.video}
             loop
             controls
             playsInline
-            className="w-full h-auto block"
+            className="w-full h-full max-h-[85vh] object-contain block"
           />
         </div>
       </motion.div>
