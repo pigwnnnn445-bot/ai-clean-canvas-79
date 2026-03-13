@@ -9,16 +9,16 @@ interface ShowcaseItem {
 }
 
 const showcaseItems: ShowcaseItem[] = [
-  { video: "/videos/1.mp4", prompt: "An editorial photograph of a grand organic modern kitchen with marble backsplash and waterfall island..." },
-  { video: "/videos/2.mp4", prompt: "Ultra realistic photo of a vinyl record playing on a turntable, warm ambient lighting..." },
-  { video: "/videos/3.mp4", prompt: "A cute little boy astronaut sitting and fishing from a crescent moon, clay animation..." },
-  { video: "/videos/4.mp4", prompt: "Top view, premium ultra-realistic professional food photography, dark navy blue textured fabric..." },
-  { video: "/videos/5.mp4", prompt: "Stylish couple dancing elegant waltz on reflective salt flat mirror surface, surreal fashion editorial..." },
-  { video: "/videos/6.mp4", prompt: "A golden retriever puppy on skateboard doing stunt on air, wide angle lens, sunny daylight..." },
-  { video: "/videos/7.mp4", prompt: "Minimal cosmetic cream jar, matte white container, natural stone pedestal, luxury skincare photography..." },
-  { video: "/videos/8.mp4", prompt: "Feminine fantasy house architecture, soft flowing curved forms, pink and blush palette, dreamy garden..." },
-  { video: "/videos/9.mp4", prompt: "A cute black cat with big eyes holding a cup of coffee, minimalist flat illustration style..." },
-  { video: "/videos/10.mp4", prompt: "Low angle view through a dense field of soft peach and pastel pink flowers, shallow depth of field..." },
+  { video: "/videos/1.mp4", prompt: "Cozy everyday lifestyle video with multiple shots inside a coffee shop. Barista making coffee, hot coffee poured with steam rising, person sitting down with coffee, slowly drinking near a window with soft daylight. Warm cozy lighting, calm daily life atmosphere, cinematic style" },
+  { video: "/videos/2.mp4", prompt: "Boxing exhibition event with UFC-style visuals. Two fighters boxing as near-silhouettes with visible muscle outlines, subtle crowd in background, dramatic spotlight from above, smoke and light beams, intense atmosphere" },
+  { video: "/videos/3.mp4", prompt: "A realistic cinematic video of a fluffy orange cat driving a small car, paws on the steering wheel, looking focused on a quiet street. Camera moves from front windshield to side tracking shot. Soft daylight, shallow depth of field, ultra detailed" },
+  { video: "/videos/4.mp4", prompt: "A man driving on a long empty highway when a massive tornado appears in the distance. Dark storm clouds, strong winds blowing dust. Driver grips steering wheel in shock. Wide shot of tornado approaching. Dramatic lighting, cinematic style, ultra detailed" },
+  { video: "/videos/5.mp4", prompt: "A cute cat sleeping on a trash can in a quiet street. A dog walks past and accidentally bumps it, waking the cat who jumps up in shock while the dog looks confused. Funny moment, cinematic camera, bright natural lighting" },
+  { video: "/videos/6.mp4", prompt: "Luxury seaside scene: crystal champagne flutes and chilled bottle in ice bucket on infinity pool edge, turquoise ocean horizon. Straw sun hat and sunglasses on white linen lounger. Cinematic push-in, shallow depth of field, ultra-realistic editorial style, 4K" },
+  { video: "/videos/7.mp4", prompt: "A car driving forward while scenery transforms through seasons: summer rainforest with dense green trees, autumn with golden leaves falling, then snowy winter landscape. Smooth cinematic transitions, tracking shot, natural lighting, 4K" },
+  { video: "/videos/8.mp4", prompt: "A parkour athlete running across city rooftops, leaping between buildings with fast moves. Camera follows closely over gaps and ledges. Dramatic city skyline at sunset, cinematic tracking shots, ultra realistic action scene, 4K" },
+  { video: "/videos/9.mp4", prompt: "Beautiful female cats designed like K-pop idols dancing street dance together. Natural feline proportions, realistic fur, Korean idol street fashion. Dynamic synchronized moves, pastel urban backdrop with graffiti and neon lights, cinematic shallow depth of field" },
+  { video: "/videos/10.mp4", prompt: "A confident brown tabby cat surfing on a colorful surfboard wearing stylish tortoiseshell eyeglasses. Riding ocean waves with water splashing, tropical beach with palm trees. Low-angle camera, realistic fur in wind, cinematic surf photography, 4K" },
 ];
 
 
