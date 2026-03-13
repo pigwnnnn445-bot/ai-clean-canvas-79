@@ -429,7 +429,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right: Video Preview */}
-            <div className="flex-1 flex flex-col group/preview">
+            <div className="flex-1 flex flex-col">
               {/* Main video card with carousel */}
               <div
                 className={`relative w-full rounded-xl overflow-hidden bg-[#1a1a1a] border border-border shadow-soft ${hasGenerated && !isGenerating ? "cursor-pointer" : ""}`}
