@@ -1,5 +1,5 @@
 import { Play, X, Copy, Check } from "lucide-react";
-import { toast } from "sonner";
+
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/i18n";
@@ -65,7 +65,7 @@ const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => vo
             onClick={(e) => {
               e.stopPropagation();
               navigator.clipboard.writeText(item.prompt);
-              toast.success("Prompt copied!");
+              navigator.clipboard.writeText(item.prompt);
             }}
             className="shrink-0 p-1 rounded-md hover:bg-foreground/10 text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
             aria-label="Copy prompt"
