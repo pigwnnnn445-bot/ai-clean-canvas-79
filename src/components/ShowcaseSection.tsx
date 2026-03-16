@@ -1,4 +1,5 @@
-import { Play, X } from "lucide-react";
+import { Play, X, Copy, Check } from "lucide-react";
+import { toast } from "sonner";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/i18n";
