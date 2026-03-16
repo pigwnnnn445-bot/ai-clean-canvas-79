@@ -34,6 +34,7 @@ const showcaseItems: ShowcaseItem[] = [
 
 const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => void }) => {
   const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   return (
     <div
@@ -65,12 +66,13 @@ const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => vo
             onClick={(e) => {
               e.stopPropagation();
               navigator.clipboard.writeText(item.prompt);
-              navigator.clipboard.writeText(item.prompt);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 1500);
             }}
             className="shrink-0 p-1 rounded-md hover:bg-foreground/10 text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
             aria-label="Copy prompt"
           >
-            <Copy className="w-3.5 h-3.5" />
+            {copied ? <Check className="w-3.5 h-3.5 text-green-500" /> : <Copy className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>
