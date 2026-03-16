@@ -34,6 +34,7 @@ const showcaseItems: ShowcaseItem[] = [
 
 const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => void }) => {
   const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   return (
     <div
