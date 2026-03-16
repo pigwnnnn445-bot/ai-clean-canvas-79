@@ -1,6 +1,7 @@
 import { Translations } from "../types";
 
 const de: Translations = {
+  meta: { title: "Seedance 2.0 AI-Videogenerator | Multimodale Videoerstellung & Erweiterung", description: "Erstellen Sie AI-Videos mit Seedance 2.0 mit Text-, Bild-, Video- und Audio-Eingaben. Ideal für Charakterkonsistenz, Bewegungsreferenz, Videoerweiterung und natürliche Sprachbearbeitung." },
   nav: { features: "Funktionen", useCases: "Anwendungsfälle", howItWorks: "So funktioniert's", pricing: "Preise", faq: "FAQ", signIn: "Anmelden", signOut: "Abmelden" },
   hero: {
     title: "Seedance", subtitle: "Erleben Sie", subtitleHighlight: "echte multimodale KI-Videoerstellung",

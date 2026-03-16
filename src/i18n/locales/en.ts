@@ -1,6 +1,7 @@
 import { Translations } from "../types";
 
 const en: Translations = {
+  meta: { title: "Seedance 2.0 AI Video Generator | Multimodal Video Creation & Extension", description: "Generate AI videos with Seedance 2.0 using text, image, video, and audio inputs. Ideal for character consistency, motion reference, video extension, and natural language editing." },
   nav: {
     features: "Features",
     useCases: "Use Cases",

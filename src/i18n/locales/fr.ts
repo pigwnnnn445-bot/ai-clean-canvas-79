@@ -1,6 +1,7 @@
 import { Translations } from "../types";
 
 const fr: Translations = {
+  meta: { title: "Seedance 2.0 Générateur Vidéo IA | Création et Extension Vidéo Multimodale", description: "Générez des vidéos IA avec Seedance 2.0 en utilisant du texte, des images, des vidéos et de l'audio. Idéal pour la cohérence des personnages, la référence de mouvement, l'extension vidéo et l'édition en langage naturel." },
   nav: { features: "Fonctionnalités", useCases: "Cas d'Usage", howItWorks: "Comment ça Marche", pricing: "Tarifs", faq: "FAQ", signIn: "Connexion", signOut: "Déconnexion" },
   hero: {
     title: "Seedance", subtitle: "Découvrez", subtitleHighlight: "la création vidéo IA multimodale",
