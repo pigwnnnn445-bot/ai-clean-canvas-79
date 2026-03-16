@@ -583,38 +583,34 @@ const HeroSection = () => {
               )}
 
               {/* Action buttons */}
-              {(hasGenerated || hasHistory || generationFailed) && (
-                <div className="flex items-center gap-1 mt-2">
-                  {/* Download: only when current session has a successfully generated video */}
-                  {hasGenerated && (
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <button
-                          onClick={() => toast.success(t.hero.downloadSuccess)}
-                          className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
-                        >
-                          <Download className="w-4 h-4" />
-                        </button>
-                      </TooltipTrigger>
-                      <TooltipContent>{t.hero.downloadVideo}</TooltipContent>
-                    </Tooltip>
-                  )}
-                  {/* History: only when user has past generated records */}
-                  {(hasHistory || generationFailed) && (
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <button
-                          onClick={() => window.open("https://www.rita.ai/zh/ai-video", "_blank")}
-                          className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
-                        >
-                          <History className="w-4 h-4" />
-                        </button>
-                      </TooltipTrigger>
-                      <TooltipContent>{t.hero.viewHistory}</TooltipContent>
-                    </Tooltip>
-                  )}
-                </div>
-              )}
+              <div className="flex items-center gap-1 mt-2">
+                {/* Download: only when current session has a successfully generated video */}
+                {hasGenerated && (
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => toast.success(t.hero.downloadSuccess)}
+                        className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                      >
+                        <Download className="w-4 h-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>{t.hero.downloadVideo}</TooltipContent>
+                  </Tooltip>
+                )}
+                {/* History: always visible */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={() => window.open("https://www.rita.ai/zh/ai-video", "_blank")}
+                      className="p-1.5 rounded-md text-body-muted hover:text-foreground hover:bg-hover-bg transition-colors cursor-pointer"
+                    >
+                      <History className="w-4 h-4" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>{t.hero.viewHistory}</TooltipContent>
+                </Tooltip>
+              </div>
             </div>
           </div>
         </motion.div>
