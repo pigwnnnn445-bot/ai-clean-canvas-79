@@ -1,5 +1,6 @@
 import { Translations } from "../types";
 const zhTw: Translations = {
+  meta: { title: "Seedance 2.0 AI影片生成器 | 多模態影片創作與擴展", description: "使用Seedance 2.0透過文字、圖片、影片和音訊輸入生成AI影片。適用於角色一致性、動作參考、影片擴展和自然語言編輯。" },
   nav: { features: "功能", useCases: "應用場景", howItWorks: "使用方法", pricing: "定價", faq: "常見問題", signIn: "登入", signOut: "登出" },
   hero: { title: "Seedance", subtitle: "體驗", subtitleHighlight: "真正的多模態AI影片創作", subtitleDesc: "結合圖片、影片、音訊和文字，生成具有精準參考能力、無縫影片擴展和自然語言控制的電影級內容。", imageToVideo: "圖片轉影片", textToVideo: "文字轉影片", aiModel: "AI 模型", images: "圖片", addEndFrame: "新增首尾幀", uploadFirstFrame: "上傳首幀", uploadLastFrame: "上傳末幀", clickToUpload: "點擊上傳或拖曳檔案", supportedFormats: "PNG, JPG, JPEG, WEBP", prompt: "提示詞", promptPlaceholder: "描述您想要的動畫效果...", resolution: "解析度", duration: "時長", aspectRatio: "寬高比", generate: "生成", generating: "生成中...", cost: "消耗", credits: "配額", available: "可用", downloadVideo: "下載影片", downloadSuccess: "影片下載成功", viewHistory: "查看歷史記錄", modelDesc20: "主體更穩定，轉場更流暢，輸出結果更接近可直接使用的影片。", modelDesc15: "畫面運動自然流暢，質感細膩逼真，整體風格統一且高度精緻。", generationFailed: "生成失敗", generationFailedDesc: "伺服器目前繁忙，請稍後重試或調整設定。", retry: "重試", generationFailedToast: "生成失敗。伺服器目前繁忙，請稍後重試。" },
   showcase: { title: "獲取", titleHighlight: "靈感", subtitle: "探索使用 Seedance 2.0 多模態功能創作的精彩影片範例。" },

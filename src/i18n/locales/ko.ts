@@ -1,6 +1,7 @@
 import { Translations } from "../types";
 
 const ko: Translations = {
+  meta: { title: "Seedance 2.0 AI 비디오 생성기 | 멀티모달 비디오 제작 및 확장", description: "Seedance 2.0으로 텍스트, 이미지, 비디오, 오디오 입력을 사용하여 AI 비디오를 생성하세요. 캐릭터 일관성, 모션 레퍼런스, 비디오 확장 및 자연어 편집에 이상적입니다." },
   nav: { features: "기능", useCases: "활용 사례", howItWorks: "사용 방법", pricing: "가격", faq: "FAQ", signIn: "로그인", signOut: "로그아웃" },
   hero: {
     title: "Seedance", subtitle: "경험하세요", subtitleHighlight: "진정한 멀티모달 AI 비디오 제작",

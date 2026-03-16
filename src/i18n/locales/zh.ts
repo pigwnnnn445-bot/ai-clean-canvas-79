@@ -1,6 +1,7 @@
 import { Translations } from "../types";
 
 const zh: Translations = {
+  meta: { title: "Seedance 2.0 AI视频生成器 | 多模态视频创作与扩展", description: "使用Seedance 2.0通过文本、图片、视频和音频输入生成AI视频。适用于角色一致性、动作参考、视频扩展和自然语言编辑。" },
   nav: { features: "功能", useCases: "应用场景", howItWorks: "使用方法", pricing: "定价", faq: "常见问题", signIn: "登录", signOut: "退出" },
   hero: {
     title: "Seedance",

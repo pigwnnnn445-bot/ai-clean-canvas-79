@@ -1,6 +1,7 @@
 import { Translations } from "../types";
 
 const ja: Translations = {
+  meta: { title: "Seedance 2.0 AI動画ジェネレーター | マルチモーダル動画制作・拡張", description: "Seedance 2.0でテキスト、画像、動画、音声入力からAI動画を生成。キャラクターの一貫性、モーション参照、動画拡張、自然言語編集に最適。" },
   nav: { features: "機能", useCases: "活用事例", howItWorks: "使い方", pricing: "料金", faq: "よくある質問", signIn: "ログイン", signOut: "ログアウト" },
   hero: {
     title: "Seedance", subtitle: "体験しよう", subtitleHighlight: "真のマルチモーダルAI動画制作",
