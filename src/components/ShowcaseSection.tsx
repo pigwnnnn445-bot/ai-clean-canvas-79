@@ -1,4 +1,5 @@
-import { Play, X } from "lucide-react";
+import { Play, X, Copy, Check } from "lucide-react";
+import { toast } from "sonner";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/i18n";
@@ -58,7 +59,20 @@ const ShowcaseCard = ({ item, onClick }: { item: ShowcaseItem; onClick: () => vo
           hovered ? "opacity-100" : "opacity-0"
         }`}
       >
-        <p className="text-xs text-foreground/90 line-clamp-2">{item.prompt}</p>
+        <div className="flex items-start gap-1.5">
+          <p className="text-xs text-foreground/90 line-clamp-2 flex-1">{item.prompt}</p>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigator.clipboard.writeText(item.prompt);
+              toast.success("Prompt copied!");
+            }}
+            className="shrink-0 p-1 rounded-md hover:bg-foreground/10 text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
+            aria-label="Copy prompt"
+          >
+            <Copy className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
     </div>
   );
