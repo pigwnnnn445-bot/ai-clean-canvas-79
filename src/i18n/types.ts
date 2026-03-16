@@ -1,4 +1,8 @@
 export interface Translations {
+  meta: {
+    title: string;
+    description: string;
+  };
   nav: {
     features: string;
     useCases: string;

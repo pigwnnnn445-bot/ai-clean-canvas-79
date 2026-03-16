@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useTranslation } from "@/i18n/context";
 import SiteHeader from "@/components/SiteHeader";
 import HeroSection from "@/components/HeroSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
@@ -9,6 +11,16 @@ import FAQSection from "@/components/FAQSection";
 import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = t.meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", t.meta.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", t.meta.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", t.meta.description);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", t.meta.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", t.meta.description);
+  }, [t]);
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
