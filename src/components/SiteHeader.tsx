@@ -25,14 +25,6 @@ const SiteHeader = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { t } = useTranslation();
 
-  const navLinks = [
-    { label: t.nav.features, href: "#features" },
-    { label: t.nav.useCases, href: "#use-cases" },
-    { label: t.nav.howItWorks, href: "#how-it-works" },
-    { label: t.nav.pricing, href: "https://www.rita.ai/pricing", isExternal: true },
-    { label: t.nav.faq, href: "#faq" },
-  ];
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="container flex h-16 items-center justify-between" aria-label="Main navigation">
@@ -78,13 +70,23 @@ const SiteHeader = () => {
           )}
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile */}
         <div className="flex md:hidden items-center gap-2">
-          {isLoggedIn && (
-            <Avatar className="h-7 w-7">
+          <a
+            href="https://www.rita.ai/pricing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-body-secondary transition-colors hover:text-primary cursor-pointer"
+          >
+            {t.nav.pricing}
+          </a>
+          {isLoggedIn ? (
+            <Avatar className="h-7 w-7 cursor-pointer" onClick={() => setIsLoggedIn(false)}>
               <AvatarImage src={mockUser.avatar} alt={mockUser.name} />
               <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
             </Avatar>
+          ) : (
+            <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90" onClick={() => setIsLoggedIn(true)}>{t.nav.signIn}</Button>
           )}
           <button
             className="text-foreground cursor-pointer"
@@ -99,29 +101,7 @@ const SiteHeader = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-background px-6 py-4">
-          <ul className="flex flex-col gap-4">
-            <li>
-              <a
-                href="https://www.rita.ai/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-body-secondary hover:text-primary cursor-pointer"
-                onClick={() => setMobileOpen(false)}
-              >
-                {t.nav.pricing}
-              </a>
-            </li>
-          </ul>
-          <div className="mt-4 flex flex-col gap-2">
-            {isLoggedIn ? (
-              <Button size="sm" variant="ghost" onClick={() => { setIsLoggedIn(false); setMobileOpen(false); }}>
-                <LogOut className="mr-2 h-4 w-4" /> {t.nav.signOut}
-              </Button>
-            ) : (
-              <Button size="sm" className="bg-gradient-brand text-primary-foreground" onClick={() => { setIsLoggedIn(true); setMobileOpen(false); }}>{t.nav.signIn}</Button>
-            )}
-          </div>
-          <div className="mt-4 flex items-center gap-2 border-t border-border pt-4">
+          <div className="flex items-center gap-2">
             <LanguageSwitcher />
             <ThemeToggle />
           </div>
