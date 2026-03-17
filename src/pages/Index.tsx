@@ -9,6 +9,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import SiteFooter from "@/components/SiteFooter";
+import MobileBottomBar from "@/components/MobileBottomBar";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -35,6 +36,7 @@ const Index = () => {
         <FAQSection />
       </main>
       <SiteFooter />
+      <MobileBottomBar />
     </div>
   );
 };

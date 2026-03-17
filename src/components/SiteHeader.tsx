@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Menu, X, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -21,7 +21,6 @@ const mockUser = {
 };
 
 const SiteHeader = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { t } = useTranslation();
 
@@ -32,6 +31,7 @@ const SiteHeader = () => {
           <img src="https://static.onlinecdn.org/gamsai_frontend/images/logo.webp" alt="Rita" className="h-8" />
         </a>
 
+        {/* Desktop */}
         <div className="hidden md:flex items-center gap-2">
           <a
             href="https://www.rita.ai/pricing"
@@ -88,25 +88,8 @@ const SiteHeader = () => {
           ) : (
             <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90" onClick={() => setIsLoggedIn(true)}>{t.nav.signIn}</Button>
           )}
-          <button
-            className="text-foreground cursor-pointer"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </nav>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-background px-6 py-4">
-          <div className="flex items-center gap-2">
-            <LanguageSwitcher />
-            <ThemeToggle />
-          </div>
-        </div>
-      )}
     </header>
   );
 };
