@@ -81,10 +81,27 @@ const SiteHeader = () => {
             {t.nav.pricing}
           </a>
           {isLoggedIn ? (
-            <Avatar className="h-7 w-7 cursor-pointer" onClick={() => setIsLoggedIn(false)}>
-              <AvatarImage src={mockUser.avatar} alt={mockUser.name} />
-              <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
-            </Avatar>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="cursor-pointer rounded-full ring-2 ring-primary/20 hover:ring-primary/50 transition-all">
+                  <Avatar className="h-7 w-7">
+                    <AvatarImage src={mockUser.avatar} alt={mockUser.name} />
+                    <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <div className="px-2 py-1.5">
+                  <p className="text-sm font-medium">{mockUser.name}</p>
+                  <p className="text-xs text-muted-foreground">{mockUser.email}</p>
+                </div>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => setIsLoggedIn(false)} className="cursor-pointer">
+                  <LogOut className="mr-2 h-4 w-4" />
+                  {t.nav.signOut}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           ) : (
             <Button size="sm" className="bg-gradient-brand text-primary-foreground hover:opacity-90" onClick={() => setIsLoggedIn(true)}>{t.nav.signIn}</Button>
           )}
