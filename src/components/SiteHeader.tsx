@@ -80,8 +80,6 @@ const SiteHeader = () => {
 
         {/* Mobile toggle */}
         <div className="flex md:hidden items-center gap-2">
-          <LanguageSwitcher />
-          <ThemeToggle />
           {isLoggedIn && (
             <Avatar className="h-7 w-7">
               <AvatarImage src={mockUser.avatar} alt={mockUser.name} />
@@ -102,19 +100,17 @@ const SiteHeader = () => {
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-background px-6 py-4">
           <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  target={link.isExternal ? "_blank" : undefined}
-                  rel={link.isExternal ? "noopener noreferrer" : undefined}
-                  className="text-sm text-body-secondary hover:text-primary cursor-pointer"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a
+                href="https://www.rita.ai/pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-body-secondary hover:text-primary cursor-pointer"
+                onClick={() => setMobileOpen(false)}
+              >
+                {t.nav.pricing}
+              </a>
+            </li>
           </ul>
           <div className="mt-4 flex flex-col gap-2">
             {isLoggedIn ? (
@@ -124,6 +120,10 @@ const SiteHeader = () => {
             ) : (
               <Button size="sm" className="bg-gradient-brand text-primary-foreground" onClick={() => { setIsLoggedIn(true); setMobileOpen(false); }}>{t.nav.signIn}</Button>
             )}
+          </div>
+          <div className="mt-4 flex items-center gap-2 border-t border-border pt-4">
+            <LanguageSwitcher />
+            <ThemeToggle />
           </div>
         </div>
       )}
